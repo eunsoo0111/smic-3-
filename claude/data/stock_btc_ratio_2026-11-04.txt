@@ -1,0 +1,16 @@
+BTC last 2026-11-04 78543 1y hi 2025-11-10 105997 1y lo 2026-06-30 58559
+ATH 2025-10-06 124753
+2025-09-30 114056
+2025-12-31 87509
+2026-03-31 68233
+2026-06-30 58559
+2026-09-30 83554
+COIN  ratio(px/BTC*1e4) now 18.805  1y pctile 1%  3y pctile 0%  3y min 17.975 max 43.718  first date 2021-11-04
+HOOD  ratio(px/BTC*1e4) now 11.078  1y pctile 21%  3y pctile 70%  3y min 2.161 max 18.369  first date 2021-11-04
+MSTR  ratio(px/BTC*1e4) now 17.536  1y pctile 29%  3y pctile 21%  3y min 11.172 max 50.226  first date 2021-11-04
+CME   ratio(px/BTC*1e4) now 39.312  1y pctile 67%  3y pctile 79%  3y min 21.006 max 60.804  first date 2021-11-04
+BLSH  ratio(px/BTC*1e4) now 2.969  1y pctile 0%  3y pctile 0%  3y min 2.940 max 6.305  first date 2025-08-13
+GLXY  ratio(px/BTC*1e4) now 2.176  1y pctile 4%  3y pctile 15%  3y min 1.745 max 5.438  first date 2025-05-16
+MARA  ratio(px/BTC*1e4) now 0.926  1y pctile 4%  3y pctile 1%  3y min 0.839 max 7.152  first date 2021-11-04
+XYZ   ratio(px/BTC*1e4) now 9.826  1y pctile 67%  3y pctile 58%  3y min 4.801 max 18.652  first date 2021-11-04
+CBOE  ratio(px/BTC*1e4) now 44.512  1y pctile 84%  3y pctile 91%  3y min 18.452 max 49.916  first date 2021-11-04
