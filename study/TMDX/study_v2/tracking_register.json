@@ -131,7 +131,7 @@
    "now": "pass-through 유지(10-K ①), OIG 2026-09 권고(③)",
    "bull": "조항 변경 없음",
    "downside": "OCS·NOP 비용 인정 축소·미이식 장기 배분 변경",
-   "action": "downside: asp_growth 0% → −5%, H6 기각·치명 리스크 경보",
+   "action": "downside: asp_growth +1% → −5%, H6 기각·치명 리스크 경보",
    "next_date": "2027-04"
   },
   {

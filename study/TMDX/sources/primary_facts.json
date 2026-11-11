@@ -416,5 +416,63 @@
     "asp_heart": 0.13096,
     "asp_lung": 0.15276,
     "note": "장기별 미국 매출(①) ÷ 장기별 케이스(②) = 케이스당 매출: 간 약 109.5K, 심장 약 131.0K, 폐 약 152.8K 달러"
+  },
+  "supplementary": {
+    "_note": "요약본에 쓰인 원장 밖 값(시세·보조 사실·역산). 등급은 각 항목에 표기",
+    "cash_fy25_end": {
+      "v": 488.366,
+      "grade": "①",
+      "ref": "PR_3Q26 대차대조표 2025-12-31 열"
+    },
+    "adj_opm_9m25_pct": {
+      "v": 20.2,
+      "grade": "①",
+      "ref": "PR_3Q26 요약표"
+    },
+    "opex_3q25": {
+      "v": 61.275,
+      "grade": "①",
+      "ref": "PR_3Q26 손익계산서"
+    },
+    "ide_approvals": {
+      "v": "2026-10 ENHANCE Part B·DENOVO IDE(CHOPS 대조군) 승인",
+      "grade": "①",
+      "ref": "PR_3Q26 Recent Business Highlights"
+    },
+    "liver_tx_2024_total": {
+      "v": 11458,
+      "grade": "①(SRTR, 사용자 엑셀 인용)",
+      "ref": "사용자 엑셀 투포1 표 A"
+    },
+    "liver_living_2024": {
+      "v": 606,
+      "grade": "계산",
+      "ref": "UNOS 2025 생체 709 '+17%' 역산"
+    },
+    "liver_deceased_2024": {
+      "v": 10852,
+      "grade": "계산",
+      "ref": "11,458 − 606"
+    },
+    "tmdx_liver_cases_2024": {
+      "v": 2821,
+      "grade": "계산(②)",
+      "ref": "회사 2024 간 점유율 26% × 10,852"
+    },
+    "price_low_2026_10_28": {
+      "v": 66.9,
+      "grade": "③",
+      "ref": "stockanalysis 일별 시세"
+    },
+    "price_reaction_2026_11_06_pct": {
+      "v": 27.92,
+      "grade": "③",
+      "ref": "stockanalysis 일별 시세(종가 88.24)"
+    },
+    "short_interest": {
+      "v": "877만 주(2026-11-06), 유통 대비 약 25%",
+      "grade": "③",
+      "ref": "무배경 S0 판 S26(ShortSqueeze)·사용자 엑셀(7월 23~24%)"
+    }
   }
 }
