@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "equity-study findings.json (S1) — check_study.py 가 읽는 키(hyp_id·verdict·what_flips_it·what_is_missing) + hypothesis-verifier.md 계약(magnitude·grade·evidence·tracking_metric_proposal). 감사 10-26 S15: 코드가 요구하는 키에서 추출, 코드는 아직 이 파일을 읽지 않는다",
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": ["hyp_id", "verdict", "what_flips_it"],
+      "properties": {
+        "hyp_id": {"type": "string", "minLength": 1},
+        "verdict": {"enum": ["supported", "refuted", "unknown"]},
+        "magnitude": {"type": "string"},
+        "grade": {"type": "string"},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "what_flips_it": {"type": "string", "minLength": 1},
+        "what_is_missing": {"type": "string"},
+        "tracking_metric_proposal": {}
+      },
+      "if": {"properties": {"verdict": {"const": "unknown"}}, "required": ["verdict"]},
+      "then": {"required": ["what_is_missing"], "properties": {"what_is_missing": {"type": "string", "minLength": 1}}}
+    }
+  },
+  "oneOf": [
+    {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+    {"type": "object", "required": ["findings"], "properties": {
+      "ticker": {"type": "string"}, "name": {"type": "string"}, "asof": {"type": "string"},
+      "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}}}}
+  ]
+}

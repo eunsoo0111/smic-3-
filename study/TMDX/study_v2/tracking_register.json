@@ -1,0 +1,221 @@
+{
+ "ticker": "TMDX",
+ "asof": "2026-11-11",
+ "principles": [
+  "지표 하나 = 모델 입력(dial) 하나 + 행동 하나",
+  "문턱은 데이터가 오기 전에 적고, 프린트 뒤 맞추려 고쳐 쓰지 않는다",
+  "기대 칸은 앞으로 나올 것만(이미 나온 3Q26 은 반영됨)",
+  "회사 전망은 회사 주장(②)으로 표기하고 한 단계 낮춰 읽는다"
+ ],
+ "metrics": [
+  {
+   "id": "us_liver_rev_qoq",
+   "group": "간(EPS)",
+   "metric": "미국 간 매출 분기(4Q26)",
+   "feeds": "share_liver FY27E(INPUTS)",
+   "source": "10-K FY2026 장기별 매출 표(4Q = 연간 − 9M 437.2M)",
+   "cadence": "분기",
+   "ai_step": "collect(SEC) · judge(문턱)",
+   "now": "3Q26 150.2M(QoQ +1.5%)",
+   "bull": "≥ 160M(QoQ +6.5% 이상, 계절 강세 일부 재현) → 27E 점유율 54.5%",
+   "downside": "< 150.2M(QoQ 음수) → 하방 케이스(27E 48.5%)",
+   "action": "bull: 27E 점유율 +2.5%p·값 재계산 / downside: 하방 케이스로 기본 이동, H2 재판정",
+   "next_date": "2027-02"
+  },
+  {
+   "id": "util_liver",
+   "group": "산업(EPS)",
+   "metric": "기증자당 사망 기증 간 이식(2026 연간)",
+   "feeds": "util_liver FY27E·FY28E",
+   "source": "OPTN 데이터 빌더(장기별 사망 기증 이식 ÷ 사망 기증자)",
+   "cadence": "월(연간 판정)",
+   "ai_step": "collect · read",
+   "now": "2025 0.703(UNOS)",
+   "bull": "2026 ≥ 0.73",
+   "downside": "2026 ≤ 0.70(정체)",
+   "action": "bull: util +0.015 상향 / downside: util 보합·하방 케이스 가중",
+   "next_date": "2027-01"
+  },
+  {
+   "id": "donors_yoy",
+   "group": "산업(EPS)",
+   "metric": "미국 사망 기증자 YoY",
+   "feeds": "donor_growth FY27E",
+   "source": "OPTN 월간 / UNOS 연간 발표",
+   "cadence": "월",
+   "ai_step": "collect",
+   "now": "3Q26 −6%(콜 ②), 2025 −2.5%",
+   "bull": "2026 −3% 이내·2027 1H 보합",
+   "downside": "2027 1H 까지 −6% 이하 지속(사용자 킬 스위치 −10%)",
+   "action": "downside: donor_growth FY27E −5% 로(하방 케이스)",
+   "next_date": "2027-01"
+  },
+  {
+   "id": "adj_opm_fy27_guide",
+   "group": "마진(EPS)",
+   "metric": "2027 조정 OPM 가이던스 중간값",
+   "feeds": "opex_growth FY27E · gm FY27E",
+   "source": "4Q26 실적 보도자료·콜",
+   "cadence": "연 1회(+분기 갱신)",
+   "ai_step": "read · judge",
+   "now": "FY26 12.5~14%(②), 컨센 함의 FY27 약 15.9%",
+   "bull": "≥ 16.5%",
+   "downside": "< 15%",
+   "action": "bull: opex +8% 로 / downside: opex +14%·H4 기각",
+   "next_date": "2027-02"
+  },
+  {
+   "id": "rev_fy27_guide",
+   "group": "매출(EPS)",
+   "metric": "2027 매출 가이던스 중간값",
+   "feeds": "share_liver·trial_enroll_share FY27E 역산 대조",
+   "source": "4Q26 실적 보도자료",
+   "cadence": "연 1회",
+   "ai_step": "read · judge",
+   "now": "컨센 FY27E 901.4M(S&P ③), 우리 927M",
+   "bull": "≥ 920M(회사 보수적 가이던스 관행 감안 시 강세)",
+   "downside": "< 880M(+15% 미만, 사용자 킬 스위치)",
+   "action": "downside: 기본 → 하방 50% 가중, 의견 한 단계 하향",
+   "next_date": "2027-02"
+  },
+  {
+   "id": "trial_enrollment",
+   "group": "심장·폐(배수)",
+   "metric": "ENHANCE Part B·DENOVO 첫 등록·누적 등록",
+   "feeds": "trial_enroll_share FY27E · pe_12m",
+   "source": "회사 발표·분기 콜·clinicaltrials.gov",
+   "cadence": "분기",
+   "ai_step": "collect · read",
+   "now": "0명(IRB 진행, 1Q27 개시 예정 ②)",
+   "bull": "1Q27 첫 등록 + 1H27 누적 ≥ 210명(연 목표 40% 의 절반)",
+   "downside": "1Q27 실적(2027-05)까지 첫 등록 발표 없음",
+   "action": "downside: trial 25%·P/E 24배 세상으로 / 일정 미끄러짐 횟수 +1",
+   "next_date": "2027-05"
+  },
+  {
+   "id": "catalyst_slips",
+   "group": "신뢰(배수)",
+   "metric": "경영진 일정 미끄러짐 횟수(2026-11 이후)",
+   "feeds": "pe_12m(배수 할인)",
+   "source": "분기 보도자료·콜 대조",
+   "cadence": "분기",
+   "ai_step": "read · judge",
+   "now": "0(기준 재설정) — 과거: 임상 매출 2026말→1Q27, 이탈리아 NOP 1H26→1H27(③)",
+   "bull": "0회 유지(Part B·DENOVO·유럽 NOP·CHOPS 510(k) 일정대로)",
+   "downside": "2회 이상",
+   "action": "downside: 기본 P/E 30 → 26배",
+   "next_date": "2027-05"
+  },
+  {
+   "id": "convert_vs_94",
+   "group": "신용",
+   "metric": "2028-03~06 주가 vs 전환가 94.00 · 본사 매입옵션 행사 여부",
+   "feeds": "cash_end FY28E · dil_shares FY28E",
+   "source": "시세 · 10-Q/10-K 주석 · 8-K",
+   "cadence": "분기(2028 상반기는 일)",
+   "ai_step": "collect · judge",
+   "now": "90.95(2026-11-10), 매입 '합리적으로 확실'(회계)",
+   "bull": "주가 > 94 유지(주식 결제, capped call 141.88 까지 상쇄) 또는 2027 내 유리한 선제 차환",
+   "downside": "2027 말 주가 < 80 이고 본사 매입 실행 → 1.5~2.5억 달러 신규 조달(희석·이자 증가)",
+   "action": "downside: FY28E 이자비용 +9M·주식수 가정 재검토, H5 경보",
+   "next_date": "2027-12"
+  },
+  {
+   "id": "ipps_fy28_proposed",
+   "group": "정책",
+   "metric": "FY2028 IPPS 제안 규칙의 장기획득비용 조항",
+   "feeds": "asp_growth FY28E",
+   "source": "CMS 연방관보(매년 4월) · OIG 후속",
+   "cadence": "연 1회",
+   "ai_step": "read · judge",
+   "now": "pass-through 유지(10-K ①), OIG 2026-09 권고(③)",
+   "bull": "조항 변경 없음",
+   "downside": "OCS·NOP 비용 인정 축소·미이식 장기 배분 변경",
+   "action": "downside: asp_growth 0% → −5%, H6 기각·치명 리스크 경보",
+   "next_date": "2027-04"
+  },
+  {
+   "id": "service_gm",
+   "group": "매크로",
+   "metric": "서비스 매출총이익률",
+   "feeds": "gm FY27E",
+   "source": "10-Q MD&A",
+   "cadence": "분기",
+   "ai_step": "collect",
+   "now": "3Q26 32.2%(②, 4Q 일부 정상화 예고)",
+   "bull": "≥ 31%",
+   "downside": "< 28%",
+   "action": "downside: gm FY27E −1%p",
+   "next_date": "2027-02"
+  }
+ ],
+ "flip_table": [
+  [
+   "us_liver_rev_qoq",
+   "4Q26 미국 간 매출 < 150.2M(2027-02 말 10-K)",
+   "기본 → 하방(27E 점유율 48.5%, 12개월 값 약 59달러)"
+  ],
+  [
+   "rev_fy27_guide",
+   "2027 매출 가이던스 중간값 < 880M",
+   "기본 → 하방 50% 가중, 의견 한 단계 하향"
+  ],
+  [
+   "adj_opm_fy27_guide",
+   "2027 조정 OPM 가이던스 중간값 ≥ 16.5%",
+   "27E EPS +0.2~0.3달러, 기본 값 약 120달러대"
+  ],
+  [
+   "trial_enrollment",
+   "2027-05 까지 Part B·DENOVO 첫 등록 없음",
+   "P/E 30 → 24배(값 약 89달러)"
+  ],
+  [
+   "convert_vs_94",
+   "2027 말 주가 < 80 + 본사 매입 실행",
+   "FY28E 이자 +9M·조달 희석 검토, 신용 경보"
+  ]
+ ],
+ "calendar": [
+  [
+   "2026-12-31",
+   "내부통제 중대한 취약점 해소 목표(FY26 말) — 10-K 에서 판정"
+  ],
+  [
+   "2027-01",
+   "OPTN 2026 연간 이식·기증자(활용률 판정)"
+  ],
+  [
+   "2027-02",
+   "4Q26 실적·2027 가이던스(가장 큰 이벤트)"
+  ],
+  [
+   "2027-03",
+   "1Q27: ENHANCE Part B·DENOVO 첫 등록 예정, 유럽 NOP 1H27"
+  ],
+  [
+   "2027-04",
+   "CMS FY2028 IPPS 제안 규칙(장기획득비용)"
+  ],
+  [
+   "2027-05",
+   "1Q27 실적(첫 임상 매출)"
+  ],
+  [
+   "2027-09",
+   "2H27: CHOPS 510(k) 결정 목표·OCS Kidney 첫 인체 임상·Part A PMA 보완(2027 중)"
+  ],
+  [
+   "2027-12-31",
+   "본사 매입옵션 고정가 374.6M 시한"
+  ],
+  [
+   "2028-03-01",
+   "전환사채 자유 전환 시작(전환가 94.00), 2028-04-03 capped call 자동 행사 시작"
+  ],
+  [
+   "2028-06-01",
+   "전환사채 460M 만기"
+  ]
+ ]
+}

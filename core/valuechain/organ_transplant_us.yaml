@@ -1,0 +1,68 @@
+# 미국 사망 기증 장기이식 밸류체인 (TMDX 스터디 2026-11-11 첫 작성)
+# 등급: ① 공시·정부/등록 통계 ② 회사 주장 ③ 셀사이드·보도·논문 재가공
+# 흐름: 기증자 발생 → OPO(동의·관리) → OPTN 매칭 → 이식센터 수락 → 회수 → 보존 → 운송 → 이식 → 지불
+chain: transplant.us
+asof: "2026-11-11"
+sources:
+  - "UNOS 보도자료 2025 통계(OPTN, 2026-01) — 이식 49,064 · 사망 기증자 16,550"
+  - "TMDX 10-K FY2025 (accession 0001193125-26-067032) — 상환 구조·NOP·항공"
+  - "TMDX 10-Q 3Q26 (accession 0001193125-26-449827)"
+  - "사용자 엑셀 '산업·기업' 시트(HRSA·SRTR·논문 인용) — 심장·폐 이식 수, DCD 비중"
+boxes:
+  - id: transplant.us.donor_hospital
+    name: 기증자 발생(병원 중환자실)
+    what: 뇌사(DBD) 또는 연명치료 중단 후 순환정지(DCD) 기증자. 2025 사망 기증자 16,550명(−2.5%, 14년 만의 첫 감소)
+    q_driver: 사망 기증자 수 — TMDX 가 못 바꾸는 변수(역풍)
+    grade: "①"
+  - id: transplant.us.opo
+    name: 장기구득기관(OPO)
+    what: 지역(DSA)별 비영리 독점 기관 약 55곳. 가족 동의·기증자 관리·장기 배정 실행. CMS 3단계 성과 체계(CMS-3409-F, 2026-10-30 최종)
+    players: [지역 OPO 약 55곳]
+    tmdx: TMDX 는 OPO 에도 판매(10-Q) · 약 20곳과 활용률 개선 협업(콜 ②)
+    grade: "①"
+  - id: transplant.us.optn_match
+    name: OPTN 매칭(대기자 배정)
+    what: 위급도(간 MELD)·혈액형·크기·거리로 장기 제안. UNOS 가 1986~2024 단독 운영, HRSA 가 현대화 중
+    grade: "①"
+  - id: transplant.us.transplant_center
+    name: 이식센터(수락·수술)
+    what: 제안된 장기를 받을지 결정하고 이식. 실패는 공개 성적에 찍혀 애매한 장기는 거절하는 경향
+    tmdx: TMDX 의 주 고객(매출 상당 부분이 소수 고객 — 10-K 위험요인)
+    grade: "①"
+  - id: transplant.us.recovery_surgery
+    name: 장기 회수(외과팀 출장)
+    what: 원래 이식센터 외과팀이 기증 병원으로 출장해 장기를 꺼냄
+    tmdx: NOP(National OCS Program) — TMDX 외과팀이 회수·관류·관리를 대행(서비스 매출)
+    grade: "①"
+  - id: transplant.us.preservation
+    name: 장기 보존
+    what: 얼음상자(정적 냉장) → 저온 관류(HOPE) → 상온 관류(NMP, OCS) / 체내 국소 관류(NRP, 시술)
+    players: [TransMedics OCS(상온·간·심장·폐), OrganOx metra(Terumo, 상온·간), Bridge to Life VitaSmart(저온·간), XVIVO(저온·심장·폐), Paragonix SherpaPak(Getinge, 저온 정적·심장), TransMedics CHOPS(저온, 임상 대조군)]
+    tmdx: OCS 일회용 관류 세트·용액(제품 매출, 총이익률 약 79%)
+    grade: "①(TMDX)·③(경쟁사)"
+  - id: transplant.us.transport_air
+    name: 장기·팀 운송(항공·지상)
+    what: 전세기·상업 항공·차량. 시간이 곧 장기 생존
+    tmdx: 자체 항공기(10-K 기준 22대 취득) · 3Q26 NOP 항공 수요의 약 86% 자체 처리(콜 ②) · 유럽 PAD Aviation(VIE 연결, 2026-07)
+    grade: "①·②"
+  - id: transplant.us.payer
+    name: 지불(메디케어·메디케이드·민간보험)
+    what: 이식 입원은 MS-DRG 정액, 장기획득비용은 원가보고서로 '합리적·필요' 원가 별도 상환(pass-through). OCS 콘솔·세트·용액은 장기획득비용으로 분류(10-K ①)
+    risk: CMS·MAC 이 '합리적·필요'를 다르게 판단하면 상환 축소(10-K 위험요인) · OIG 2026-09 감사
+    grade: "①"
+edges:
+  - {from: transplant.us.donor_hospital, to: transplant.us.opo, what: 기증자 의뢰·동의}
+  - {from: transplant.us.opo, to: transplant.us.optn_match, what: 장기 등록·배정 실행}
+  - {from: transplant.us.optn_match, to: transplant.us.transplant_center, what: 장기 제안(수락/거절)}
+  - {from: transplant.us.transplant_center, to: transplant.us.recovery_surgery, what: 회수팀 파견 또는 NOP 위탁}
+  - {from: transplant.us.recovery_surgery, to: transplant.us.preservation, what: 회수 장기 보존}
+  - {from: transplant.us.preservation, to: transplant.us.transport_air, what: 운송}
+  - {from: transplant.us.transport_air, to: transplant.us.transplant_center, what: 도착·이식}
+  - {from: transplant.us.payer, to: transplant.us.transplant_center, what: DRG 정액 + 장기획득비용 원가 상환}
+  - {from: transplant.us.transplant_center, to: transplant.us.preservation, what: "TMDX 에 케이스당 약 11.4만 달러(2025 미국 이식 매출 584.7M ÷ 5,139건)"}
+utilization_2025:
+  _note: "기증자당 사망 기증 이식 = 그 장기 이식 수 ÷ 사망 기증자 16,550"
+  liver: {transplants: 11635, per_donor: 0.703, grade: "①"}
+  heart: {transplants: 4587, per_donor: 0.277, grade: "①(HRSA, 사용자 엑셀 인용)"}
+  lung: {transplants: 3490, per_donor: 0.211, grade: "①(HRSA, 사용자 엑셀 인용)"}
+  kidney: {deceased_transplants: 21052, unused_company_claim: "약 9,000개(콜 ②)", grade: "①·②"}

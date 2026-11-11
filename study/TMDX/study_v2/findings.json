@@ -1,0 +1,101 @@
+{
+ "ticker": "TMDX",
+ "name": "TransMedics Group",
+ "asof": "2026-11-11",
+ "findings": [
+  {
+   "hyp_id": "H1",
+   "verdict": "supported",
+   "magnitude": "2025 사망 기증 간 이식 +783건 = 기증자 효과 −280 + 활용률 효과 +1,063(약 3.8배). 기증자당 0.639 → 0.703(+10%)",
+   "grade": "①(UNOS·SRTR) + 계산",
+   "evidence": [
+    "verification/H1_liver_utilization.md",
+    "UNOS 2025: 간 12,344(생체 709)·사망 기증자 16,550"
+   ],
+   "what_flips_it": "2026 OPTN 연간 기증자당 사망 기증 간 이식 ≤ 0.70 또는 사망 기증 간 이식 감소율 > 기증자 감소율",
+   "what_is_missing": "2026 OPTN 월간(같은 정의)",
+   "tracking_metric_proposal": "util_liver",
+   "cross_check": "무배경 S0 판도 '기증자 −6% 속 유기 +35%'를 같은 방향으로 봄(both) — 다만 그 판은 DCD 정책 강화로 분모가 줄 위험을 더 무겁게 둠"
+  },
+  {
+   "hyp_id": "H2",
+   "verdict": "supported",
+   "magnitude": "간 점유율 26%(24) → 36.1%(25) → 3Q26 연환산 약 47.5%. 27E 52%·28E 56.5% 가정, 27E ±2.5%p = EPS ±0.35달러. 현재가는 28E 약 52%(30배) 내재",
+   "grade": "①(10-Q 매출) + ②(장기별 케이스)",
+   "evidence": [
+    "verification/H2_liver_share.md",
+    "간 매출 QoQ 3Q24 −0.5%·3Q25 −6.9%·3Q26 +1.5%"
+   ],
+   "what_flips_it": "4Q26 미국 간 매출 < 150.2M(계절 강세 분기 역성장), 1Q27 까지 QoQ 음수",
+   "what_is_missing": "분기 장기별 케이스 수(미공시), 4Q 실제 비행·지상 운송 혼합",
+   "tracking_metric_proposal": "us_liver_rev_qoq",
+   "cross_check": "무배경 S0 판은 '점유율 엔진 증명'에 동의, 반대로 2026 QoQ 둔화(9.5→6.5→1.5%)·4Q 가이던스 평탄을 강조 — 반대 증거 칸에 반영"
+  },
+  {
+   "hyp_id": "H3",
+   "verdict": "unknown",
+   "magnitude": "27E 임상 케이스 420건 × 0.10M = 42M(매출의 약 4.5%), 배수 30배(기본) vs 24배(실패)",
+   "grade": "①(IDE 승인)·②(일정)",
+   "evidence": [
+    "verification/H3_heart_lung_option.md",
+    "3Q26 심장 매출 +21.7% YoY ①"
+   ],
+   "what_flips_it": "1Q27 실적(2027-05)까지 첫 등록 발표 없음, 1H27 등록 < 연 목표 20%, XVIVO 2027 내 승인",
+   "what_is_missing": "첫 등록 날짜·속도, CHOPS 군 가격, IDE 케이스 상환 단가",
+   "tracking_metric_proposal": "trial_enrollment",
+   "cross_check": "무배경 S0 판이 일정 미끄러짐 이력(임상 매출 2026말→1Q27)을 지적 — 반증 문턱을 날짜로 고정"
+  },
+  {
+   "hyp_id": "H4",
+   "verdict": "supported",
+   "magnitude": "27E 조정 OPM 16.5%(기본) vs 컨센 함의 약 15.9%(우리 방식)·약 17%(무배경 S2 방식) — 차이 작음. 27E opex +10% vs 매출 +21%",
+   "grade": "②(회사: R&D 안정·GM 유지) + ①(9M 실적)",
+   "evidence": [
+    "verification/H4_margin_opex.md",
+    "consensus_check.json decomposition"
+   ],
+   "what_flips_it": "2027 가이던스 조정 OPM 중간값 < 15% 또는 opex 증가율 ≥ 매출 증가율",
+   "what_is_missing": "2027 가이던스(2027-02 말)",
+   "tracking_metric_proposal": "adj_opm_fy27_guide",
+   "cross_check": "S2 무하네스 짝: 마진 확장이 '이미 컨센에 들어 있다'는 데 동의 — 우리 우위는 마진이 아니라 매출(간 점유율·임상) 쪽"
+  },
+  {
+   "hyp_id": "H5",
+   "verdict": "supported",
+   "magnitude": "리스 포함 순부채 약 373M(3Q26). 2027 말 현금 약 203M(본사 374.6M 매입 후), 2028.6 전환사채 현금 상환 시 2028 말 약 −67M → 1.5~2.5억 달러 신규 조달 필요",
+   "grade": "①(10-Q 주석 10·11) + 모델",
+   "evidence": [
+    "verification/H5_credit_financing.md",
+    "model/model_summary.json cash_end"
+   ],
+   "what_flips_it": "본사 매입 포기(연 23.9M 임대), 2027 내 선제 차환, 2028-03~06 주가 > 94(주식 결제·capped call 141.88 까지 상쇄)",
+   "what_is_missing": "회사의 매입옵션 행사 의사 공식 확인, 2027 자본 배분 계획",
+   "tracking_metric_proposal": "convert_vs_94",
+   "cross_check": "무배경 S0 판은 EV 에서 리스를 뺐다(only_blind rejected) — 우리만 본 축"
+  },
+  {
+   "hyp_id": "H6",
+   "verdict": "unknown",
+   "magnitude": "치명적이나 확률 낮음 — 상환 축소 시 가격 저항(정량 미측정)",
+   "grade": "①(10-K 상환 문구)·③(OIG 요약)",
+   "evidence": [
+    "verification/H6_policy_reimbursement.md"
+   ],
+   "what_flips_it": "FY2028 IPPS 제안 규칙(2027-04)·원가보고서 지침이 OCS·NOP 비용 인정 축소 또는 미이식 장기 비용 배분 변경",
+   "what_is_missing": "OIG OAS-25-07-124 원문 권고·CMS 답변, IPPS FY28 제안 규칙",
+   "tracking_metric_proposal": "ipps_fy28_proposed",
+   "cross_check": "무배경 S0 판이 OIG 3.8억 달러 과다 지급 권고를 찾아 줌(adopted)"
+  },
+  {
+   "hyp_id": "H7",
+   "verdict": "supported",
+   "magnitude": "차환 +2%p = 주당 약 0.17달러(2028~29), 본사 매입 뒤 이자수익 약 −6M, 해외 매출 약 3%",
+   "grade": "①(쿠폰·해외 비중)·②(연료 전가)",
+   "evidence": [
+    "verification/H7_macro_rates_fuel.md"
+   ],
+   "what_flips_it": "서비스 GM < 28% 회귀 또는 2028 차환 금리 ≥ 6%",
+   "tracking_metric_proposal": "service_gm"
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "schema": "consensus_check@1",
+ "ticker": "TMDX",
+ "asof": "2026-11-11",
+ "sources": {
+  "naver_as_of": "해당 없음(미국 종목) — stockanalysis.com(S&P Global Market Intelligence) 2026-11-09 갱신",
+  "fetched_at": "2026-11-11",
+  "n_firms": 13,
+  "sellside_n_read": 0,
+  "series_first_date": "미측정 — 컨센 시계열 유료(Pro)"
+ },
+ "unit": "USD m (스키마 기본 '원'은 KR 종목용 — 이 팩은 달러)",
+ "rows": [
+  {
+   "metric": "rev",
+   "period": "FY26E",
+   "cons_mean": 766.72,
+   "dist": {
+    "low": 742.0,
+    "median": "미측정",
+    "high": 772.2,
+    "n": 12,
+    "src": "S&P"
+   },
+   "ours_base": 768.2,
+   "diff_pct": 0.0019,
+   "ours_cases": {
+    "base": 768.153,
+    "downside": 768.153,
+    "upside": 768.153
+   },
+   "base_position": "high_q"
+  },
+  {
+   "metric": "rev",
+   "period": "FY27E",
+   "cons_mean": 901.36,
+   "dist": {
+    "low": "미측정",
+    "median": "미측정",
+    "high": "미측정",
+    "n": "미측정",
+    "src": "S&P(범위 유료)"
+   },
+   "ours_base": 927.0,
+   "diff_pct": 0.0284,
+   "ours_cases": {
+    "base": 926.973,
+    "downside": 820.889,
+    "upside": 995.874
+   },
+   "base_position": "미측정"
+  },
+  {
+   "metric": "eps",
+   "period": "FY26E",
+   "cons_mean": 1.67,
+   "dist": {
+    "low": 1.51,
+    "median": "미측정",
+    "high": 1.78,
+    "n": "미측정",
+    "src": "S&P 조정 EPS"
+   },
+   "ours_base": 1.65,
+   "diff_pct": -0.0146,
+   "ours_cases": {
+    "base": 1.646,
+    "downside": 1.646,
+    "upside": 1.646
+   },
+   "base_position": "mid"
+  },
+  {
+   "metric": "eps",
+   "period": "FY27E",
+   "cons_mean": 2.49,
+   "dist": {
+    "low": "미측정",
+    "median": "미측정",
+    "high": "미측정",
+    "n": "미측정",
+    "src": "S&P 조정 EPS"
+   },
+   "ours_base": 2.67,
+   "diff_pct": 0.071,
+   "ours_cases": {
+    "base": 2.667,
+    "downside": 1.859,
+    "upside": 3.404
+   },
+   "base_position": "미측정"
+  },
+  {
+   "metric": "tp",
+   "period": "12M",
+   "cons_mean": 104.55,
+   "dist": {
+    "low": 70,
+    "median": 110,
+    "high": 125,
+    "n": 13,
+    "src": "S&P"
+   },
+   "ours_base": 111.0,
+   "diff_pct": 0.0615,
+   "ours_cases": {
+    "base": 111.0,
+    "downside": 59.4,
+    "upside": 172.8
+   },
+   "base_position": "mid"
+  }
+ ],
+ "revisions_30d": {
+  "up": 3,
+  "down": 0,
+  "flat": 2,
+  "tp_change_median_pct": 0.15,
+  "rows": [
+   [
+    "Canaccord",
+    "2026-11-06",
+    "95→120 Buy"
+   ],
+   [
+    "JPM",
+    "2026-11-06",
+    "73→85 Hold"
+   ],
+   [
+    "UBS",
+    "2026-11-09",
+    "77→88 Hold"
+   ],
+   [
+    "Barclays",
+    "2026-11-09",
+    "120 유지 Buy"
+   ],
+   [
+    "Oppenheimer",
+    "2026-11-07",
+    "Hold 유지, 목표가 n/a"
+   ]
+  ]
+ },
+ "decomposition": [
+  {
+   "metric": "opm",
+   "period": "FY27E",
+   "implied_dial": "조정 영업이익률",
+   "formula": "(조정 EPS 2.49 × 희석 41.19M − 전환사채 세후 이자 7.35) ÷ (1−25%) + 영업외 순비용 16.0 = 조정 영업이익 → ÷ 컨센 매출 901.4",
+   "value": 0.159
+  },
+  {
+   "metric": "rev",
+   "period": "FY27E",
+   "implied_dial": "매출 성장률",
+   "formula": "901.36 ÷ 766.72 − 1",
+   "value": 0.1756
+  },
+  {
+   "metric": "rev",
+   "period": "FY26E",
+   "implied_dial": "4Q26 매출",
+   "formula": "766.72 − 9M 실적 566.89",
+   "value": 199.83
+  },
+  {
+   "metric": "tp",
+   "period": "12M",
+   "implied_dial": "FY27E 조정 EPS 배수",
+   "formula": "평균 목표가 104.55 ÷ 2.49",
+   "value": 42.0
+  }
+ ],
+ "deficits": [
+  "FY27·FY28 컨센 분포·애널 수 유료(미측정)",
+  "셀사이드 리포트 원문 0편(사용자 제공 없음)",
+  "컨센 EPS 의 주식수 기준(if-converted 여부) 미확인 — 무하네스 짝이 지적"
+ ]
+}

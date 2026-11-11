@@ -1,0 +1,49 @@
+{
+ "ticker": "TMDX",
+ "asof": "2026-11-09",
+ "source": "stockanalysis.com forecast (S&P Global Market Intelligence·TipRanks)",
+ "grade": "③",
+ "brokers": 13,
+ "rating_mix": {
+  "strong_buy": 6,
+  "buy": 3,
+  "hold": 4,
+  "sell": 0
+ },
+ "pt": {
+  "avg": 104.55,
+  "median": 110,
+  "low": 70,
+  "high": 125
+ },
+ "revenue": {
+  "FY25A": 605.49,
+  "FY26E": {
+   "avg": 766.72,
+   "low": 742.0,
+   "high": 772.2,
+   "n": 12
+  },
+  "FY27E": {
+   "avg": 901.36
+  }
+ },
+ "eps_adj": {
+  "FY25A": 2.63,
+  "FY26E": {
+   "avg": 1.67,
+   "low": 1.51,
+   "high": 1.78
+  },
+  "FY27E": {
+   "avg": 2.49
+  }
+ },
+ "pre_q3_from_user_workbook": {
+  "FY27E_rev": 875,
+  "FY27E_eps": 2.25,
+  "grade": "③",
+  "note": "Yahoo, 3Q 전 11명(사용자 엑셀)"
+ },
+ "missing": "FY27·FY28 범위·애널 수는 유료 — 미측정"
+}

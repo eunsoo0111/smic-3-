@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "node_state.schema.json",
+  "title": "노드 상태 하네스 W1 — market-intel/nodes/<ticker>/ 폴더의 각 파일 스키마",
+  "$comment": "정본 market-intel/analysts/_study_contracts/NODE_STATE_HARNESS.md. tracking_register.json 은 여기서 다시 정의하지 않는다 — 정본 원 레포 트래킹 스키마(v2-proposal, 미동봉; market-intel/analysts/_study_contracts/tracking_register.schema.json 의 하위·상위 호환)을 check_node_state.py 가 직접 로드해 검증한다(정본은 가리킨다, 옮겨 적지 않는다). 이 파일은 node.json · sector_narrative.json · narrative.json(회사) · drivers.json · node_event(events.jsonl 각 행)의 5종만 정의한다.",
+  "$defs": {
+
+    "node": {
+      "title": "node.json — 지도(node) 최소 판 (§1-D, build_nodes.py 산출)",
+      "type": "object",
+      "required": ["ticker", "name", "chain_refs", "universe_tier", "state", "asof"],
+      "properties": {
+        "ticker": {"type": ["string", "null"], "description": "국내 6자리 또는 해외 <MIC>:<TICKER>. 비상장 잎은 null(leaf_id 로만 식별, nodes/_unlisted/ 에 위치)"},
+        "leaf_id": {"type": "string", "description": "ticker 가 null 인 잎(비상장) 전용 — box_id::name 슬러그. yaml 에 잎 고유 id 가 없어 box_id+name/ticker 로 구성(이 스크립트가 도입한 규약, §1-D 주석)"},
+        "name": {"type": "string"},
+        "aliases": {"type": "array", "items": {"type": "string"}},
+        "chain_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["chain", "box_id", "leaf_id"],
+            "properties": {
+              "chain": {"type": "string", "description": "core/valuechain/<chain>.yaml 의 chain id — yaml 을 그대로, 이름 바꾸지 않는다"},
+              "box_id": {"type": "string", "description": "yaml stages[].boxes[].id 그대로"},
+              "leaf_id": {"type": "string", "description": "box_id::ticker 또는 box_id::name(비상장) — 잎 고유 id가 yaml에 없어 이 스크립트가 구성"},
+              "pending": {"type": "boolean", "description": "yaml leaves_pending 출신이면 true"}
+            }
+          }
+        },
+        "universe_tier": {"enum": [1, 2, 3, "overseas", null], "description": "core/universe.yaml coverage(1)·coverage_overseas·market-intel/coverage/universe_tier23.jsonl(2·3). null=지도에만 있음(유니버스 밖)"},
+        "state": {"enum": ["지도만", "유니버스", "스터디"], "description": "승격은 node_trigger 가 제안·본체가 정한다(강등 없음, §1-D)"},
+        "has_study": {"type": "boolean"},
+        "has_model": {"type": "boolean", "description": "modeling/modelhub/<ticker>/ 디렉토리 존재(직접 조인, model_links.json 과 같은 잣대)"},
+        "ticker_null_reason": {"type": "string", "description": "ticker 가 null 일 때 필수(없음—비상장 등)"},
+        "asof": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "source": {"type": "string"}
+      }
+    },
+
+    "sector_narrative": {
+      "title": "sector_narrative.json — 메인 내러티브(§1-B·§1-C)",
+      "type": "object",
+      "required": ["sector", "asof", "phases", "stage_ref", "approved_by"],
+      "properties": {
+        "sector": {"type": "string"},
+        "asof": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "chain": {"type": "string", "description": "core/valuechain/<chain>.yaml id"},
+        "stage_ref": {
+          "type": "array",
+          "description": "국면(phase) ↔ 체인 yaml stage/box id 연결(§1-D-(3), 코드는 이름 바꾸지 않는다)",
+          "items": {"type": "object", "required": ["phase_id", "chain", "ref_kind", "ref_id"],
+            "properties": {"phase_id": {"type": "string"}, "chain": {"type": "string"}, "ref_kind": {"enum": ["stage", "box"]}, "ref_id": {"type": "string"}, "note": {"type": "string"}}}
+        },
+        "phases": {
+          "type": "array", "minItems": 3, "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "order", "evidence", "next_phase_signal"],
+            "properties": {
+              "id": {"type": "string"},
+              "label": {"type": "string", "minLength": 4},
+              "order": {"type": "integer", "minimum": 1},
+              "current": {"type": "boolean", "description": "지금 국면이면 true — 정확히 1개"},
+              "evidence": {"type": "string", "minLength": 5, "description": "통관·채널 공시·리포트 근거. 빈칸 금지 게이트"},
+              "next_phase_signal": {"type": "string", "minLength": 5, "description": "「다음 국면으로 넘어갔다는 신호」 — 미측정이면 그 사유를 적는다(빈칸 금지)"}
+            }
+          }
+        },
+        "signals": {"type": "array", "items": {"type": "object"}, "description": "국면 전환 신호 계열. 반입 시엔 「미측정—반입 시」 허용(harness §1-C 비고)"},
+        "history": {"type": "array", "items": {"type": "object", "required": ["date", "change", "basis"], "properties": {"date": {"type": "string"}, "change": {"type": "string"}, "basis": {"type": "string"}}}},
+        "approved_by": {"type": ["string", "null"]}
+      }
+    },
+
+    "company_narrative": {
+      "title": "nodes/<ticker>/narrative.json — 세부 내러티브(§1-B·§1-C, sector_ref 필수)",
+      "type": "object",
+      "required": ["ticker", "name", "sector_ref", "asof", "sub_narratives", "approved_by"],
+      "properties": {
+        "ticker": {"type": "string"},
+        "name": {"type": "string"},
+        "sector_ref": {"type": "string", "minLength": 3, "description": "섹터 판 경로#phase_id, 예: market-intel/analysts/consumer/study/kbeauty_2026/sector_narrative.json#P3. 게이트: 없으면 FAIL"},
+        "asof": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "position": {"type": "string", "description": "이 체인에서 회사의 위치 — 브랜드 직판/ODM/도매·유통 등"},
+        "sub_narratives": {
+          "type": "array", "minItems": 1, "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "claim", "company_specific_factors", "hypothesis", "falsify"],
+            "properties": {
+              "id": {"type": "string", "pattern": "^SN\\d+$"},
+              "claim": {"type": "string", "minLength": 8},
+              "company_specific_factors": {"type": "array", "items": {"type": "string"}, "minItems": 1, "description": "캐파·마진구조·재고·채널계약·지역믹스 — 섹터 문단 복사 금지"},
+              "hypothesis": {"type": "string", "minLength": 8},
+              "falsify": {"type": "string", "minLength": 5},
+              "evidence": {"type": "string"}
+            }
+          }
+        },
+        "approved_by": {"type": ["string", "null"]}
+      }
+    },
+
+    "drivers": {
+      "title": "nodes/<ticker>/drivers.json — 메인 드라이버(§1-C, 회사당 2~3)",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "why", "direction", "current", "expectation"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^D\\d+$"},
+          "name": {"type": "string", "minLength": 3},
+          "why": {"type": "string", "minLength": 8, "description": "EPS 나 배수를 왜 움직이나 — 한 줄"},
+          "direction": {"type": "string", "minLength": 3},
+          "current": {
+            "type": "object", "required": ["v", "asof", "source"],
+            "properties": {"v": {}, "asof": {"type": "string"}, "source": {"type": "string"}}
+          },
+          "expectation": {
+            "type": "object", "required": ["market", "ours", "judge_date"],
+            "properties": {"market": {"type": "string"}, "ours": {"type": "string"}, "judge_date": {"type": "string"}}
+          }
+        }
+      }
+    },
+
+    "node_event": {
+      "title": "nodes/<ticker>/events.jsonl 의 한 행 — catalyst@1 호환 + importance + registered_to",
+      "type": "object",
+      "required": ["schema", "node", "date", "event", "importance", "added_kst", "added_by"],
+      "properties": {
+        "schema": {"const": "node_event@1"},
+        "node": {"type": "string", "description": "ticker"},
+        "box_ref": {"type": "array", "items": {"type": "object", "properties": {"chain": {"type": "string"}, "box_id": {"type": "string"}}}, "description": "event_to_box 와 같은 키(§1-D-(4))"},
+        "date": {"type": "string"},
+        "date_basis": {"type": "string"},
+        "event": {"type": "string", "minLength": 4},
+        "importance": {"enum": ["green", "amber", "red"], "description": "🔴 는 크기·방향(사건성 아님) — importance-red-is-magnitude-not-event"},
+        "market_expect": {"type": "string"},
+        "our_expect": {"type": "string"},
+        "judge_action": {"type": "string"},
+        "source": {"type": "string"},
+        "added_kst": {"type": "string"},
+        "added_by": {"type": "string"},
+        "registered_to": {
+          "type": "array",
+          "description": "이미 등재된 정본 행에 연결만 할 때 채운다(중복 삽입 금지)",
+          "items": {"type": "object", "required": ["file"], "properties": {"file": {"type": "string"}, "key": {"type": "string"}, "line": {"type": "integer"}}}
+        }
+      }
+    },
+
+    "tracking_last_eval": {
+      "title": "nodes/<ticker>/tracking_register.json 의 last_eval 칸 — node_track 레인 산출(W2 §2 node_track, 백로그 12(c))",
+      "$comment": "metrics[] 자체의 스키마는 여전히 원 레포 트래킹 스키마(v2-proposal, 미동봉)가 정본이다(check_node_state.py 가 그 파일을 직접 로드해 검증 — 위 파일 헤더 주석 참조). 이 $def 는 그 옆에 매달리는 last_eval 한 칸만 정의한다. 백로그 12-g(2026-09-29, 「트래킹 파생량 정합」)에서 rule_source/rule_missing/next_read_date/sched_state(12-e·12-f 산출, 이미 by_metric 에 얹히고 있었으나 여기 미기재)에 이어 derivation_match 를 by_metric 항목에 추가 선언했다 — by_metric 항목 스키마는 additionalProperties 제약이 없어 이 필드들을 안 적어도 기존 산출이 위반은 아니었지만, 정본은 가리키고 옮겨 적지 않는다 원칙에 따라 실제로 쓰는 필드는 여기 문서화한다.",
+      "type": "object",
+      "required": ["run_at_kst", "metrics_n", "green_n", "amber_n", "red_n", "unmeasured_n", "no_source_n", "unscored_n", "by_metric"],
+      "properties": {
+        "run_at_kst": {"type": "string", "description": "node_track.py 실행 시각(KST 실측)"},
+        "metrics_n": {"type": "integer", "minimum": 0, "description": "분모 — 이 노드 tracking_register.metrics 총 개수"},
+        "green_n": {"type": "integer", "minimum": 0},
+        "amber_n": {"type": "integer", "minimum": 0},
+        "red_n": {"type": "integer", "minimum": 0},
+        "unmeasured_n": {"type": "integer", "minimum": 0, "description": "source.adapter ∈ {manual, dart_filing} — 어댑터가 원천적으로 값을 못 낸다(수동·DART 실행 금지 dry_run 고정), 「미측정—어댑터 없음」"},
+        "no_source_n": {"type": "integer", "minimum": 0, "description": "adapter 는 customs_hs/krx_close 등 있으나 이번 실행에 캐시·원천 행이 0(no_source/error) — unmeasured_n 과 분모가 다르다(어댑터 없음이 아니라 원천 결손)"},
+        "unscored_n": {"type": "integer", "minimum": 0, "description": "값은 왔으나 수치가 아니거나 문턱이 비수치라 채점 불가(예: 기저 창 없음 growth_r12=null)"},
+        "scheduled_n": {"type": "integer", "minimum": 0, "description": "⭐ 백로그 12-e/12-g — next_date(판독 예정일)가 아직 안 지난 지표 수. unmeasured_n 의 부분집합이었으나 12-g 부터 derivation 이 걸린 unscored 지표(파생량은 맞는데 판독 창이 아직 안 온 경우)도 포함할 수 있어 unmeasured_n+unscored_n 을 넘지 않는 부분집합(합계 아님)"},
+        "overdue_n": {"type": "integer", "minimum": 0, "description": "⭐ 백로그 12-e — next_date 가 지났는데 값이 없는 지표 수(scheduled_n 과 같은 분모 규칙)"},
+        "rule_missing_n": {"type": "integer", "minimum": 0, "description": "⭐ 백로그 12-f — thresholds.rule_missing(「없음—이유: ...」)이 달린 지표 수. bucket 과 무관한 별도 축(unscored·unmeasured 를 가로지를 수 있다)"},
+        "retired_n": {"type": "integer", "minimum": 0, "description": "⭐ 백로그 12-h — metric.status==\"retired\" 인 지표 수. unmeasured_n 의 부분집합(check_node_state.py 의 하드코딩 6버킷 합 검사를 안 깨려고 bucket 자체는 여전히 unmeasured — 새 7번째 bucket 이 아니다, scheduled_n/overdue_n/rule_missing_n 과 같은 패턴의 별도 축)"},
+        "by_metric": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "adapter", "bucket", "state", "reason"],
+            "properties": {
+              "id": {"type": "string"},
+              "adapter": {"type": "string"},
+              "bucket": {"enum": ["green", "amber", "red", "unmeasured", "no_source", "unscored"]},
+              "state": {"type": "string", "description": "evaluate.py 원 판정 문자열(그대로 보존)"},
+              "value": {"description": "evaluate.py 가 읽은 raw value(dict 형 포함)"},
+              "threshold_basis": {"type": ["string", "null"]},
+              "asof": {"type": ["string", "null"]},
+              "reason": {"type": "string", "description": "왜 이 bucket 인지 사람이 읽는 한 줄"},
+              "next_read_date": {"type": "string", "description": "⭐ 백로그 12-e — metric.next_date 그대로(sched_state 가 있을 때만 실림)"},
+              "sched_state": {"enum": ["scheduled", "overdue"], "description": "⭐ 백로그 12-e·12-g — next_date 대비 오늘(KST). 12-g 부터 unmeasured 뿐 아니라 derivation 이 걸린 unscored(파생량은 맞는데 판독 창 미도래)에도 붙는다"},
+              "rule_source": {"type": "string", "description": "⭐ 백로그 12-f — thresholds.rule_source 그대로 옮겨 적음(있을 때만)"},
+              "rule_missing": {"const": true, "description": "⭐ 백로그 12-f — thresholds.rule_missing 이 있으면 true(불리언, 이유 문면 자체는 reason 에 이어붙는다)"},
+              "derivation_match": {
+                "enum": ["match", "type_mismatch", "window_not_reached", "conditions_unverified", "no_derivation_info", null],
+                "description": "⭐ 백로그 12-g — source.derivation vs thresholds.derivation 대조 결과(node_track.py derivation_match()). match 여야 evaluate.py 채점을 시도한다(그래도 red_rule/green_rule 자체가 없으면 여전히 unscored). type_mismatch=기간·형태가 다름(파생량 불일치, 영구), window_not_reached=형태는 같은데 asof 가 아직 문턱이 가리키는 창이 아님(scheduled 로 이어짐), conditions_unverified=AND 부가조건을 기계로 못 재서 막음, no_derivation_info=source/thresholds 어느 한쪽에 derivation 이 아예 없음(12-g 이전 지표, 구판 그대로 안 막는다)."
+              },
+              "retired": {"const": true, "description": "⭐ 백로그 12-h — metric.status==\"retired\" 일 때만 true. bucket 은 unmeasured 그대로(check_node_state.py 6버킷 합 불변)."},
+              "retired_by": {"type": "array", "items": {"type": "string"}, "description": "⭐ 백로그 12-h — metric.retired_by 그대로 옮겨 적음(retired=true 일 때만)"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

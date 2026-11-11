@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "equity-study disclosures.jsonl 한 줄 (disclosure_event@1) — disclosure-reader.md 계약에서 추출. events.jsonl(node_event@1)과 같은 키 + 공시 칸. 파일은 줄마다 이 스키마",
+  "type": "object",
+  "required": ["schema", "node", "box_ref", "date", "date_basis", "event", "importance", "market_expect", "our_expect", "judge_action", "source", "added_kst", "added_by", "registered_to", "rcept_no", "type", "amount_krw", "amount_vs_rev_pct", "period_basis", "meaning", "px_reaction", "signal"],
+  "properties": {
+    "schema": {"const": "disclosure_event@1"},
+    "node": {"type": "string"},
+    "box_ref": {"type": "array"},
+    "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "date_basis": {"type": "string"},
+    "event": {"type": "string"},
+    "importance": {"enum": ["red", "amber", "grey"]},
+    "market_expect": {"type": "string"}, "our_expect": {"type": "string"}, "judge_action": {"type": "string"},
+    "source": {"type": "string", "pattern": "^dart:"},
+    "added_kst": {"type": "string"},
+    "added_by": {"type": "string"},
+    "registered_to": {"type": "array", "maxItems": 0, "description": "서브는 비워 둔다"},
+    "rcept_no": {"type": "string"},
+    "type": {"enum": ["supply_contract", "prelim_earnings", "equity_issue", "cb_bw", "buyback", "insider", "capex", "litigation", "clarification", "ir"]},
+    "amount_krw": {"type": ["number", "null"]},
+    "amount_vs_rev_pct": {"type": ["number", "null"]},
+    "period_basis": {"enum": ["3M", "누적", "도출", "n/a"]},
+    "meaning": {"type": "string"},
+    "px_reaction": {"type": "object", "required": ["d0", "d1", "d5", "d5_excess", "basis"]},
+    "signal": {"type": "object", "required": ["kind", "rule", "future_date"], "properties": {"kind": {"enum": ["long", "short", "watch", "none"]}}}
+  }
+}

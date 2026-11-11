@@ -1,0 +1,214 @@
+{
+ "_note": "이음매 계약 3블록(cycle_context·blind_contrast·chain_position)이 어떤 꼴로 채워지는지 보이는 **가상 종목 예시**다(티커 999999·회사명·숫자·경로 전부 가상). 실제 스터디에서는 ref·source 칸에 자기 레포의 실재 경로를, 숫자 칸에 원천·기준시점이 붙은 실측값을 적는다. 판정이 아니라 계약 예시다.",
+ "ticker": "999999",
+ "name": "예시장비(가상)",
+ "asof": "2026-10-01",
+ "created": "2026-10-01",
+ "cycle_context": {
+  "searched": {
+   "tickers": [
+    "999999"
+   ],
+   "boxes": [
+    "semi.back.example_tool",
+    "semi.pkg.example_stack"
+   ],
+   "sources": [
+    "market-intel/nodes/999999/node.json (chain_refs 2)",
+    "market-intel/narratives/node_narratives.json nodes[semi.back.example_tool|semi.pkg.example_stack]",
+    "grep -l '\"999999\"' market-intel/narratives/*.md (frontmatter tickers)",
+    "core/calendar/catalysts.jsonl (999999 행)"
+   ],
+   "n_found": 3,
+   "asof": "2026-10-01"
+  },
+  "items": [
+   {
+    "narrative_id": "example-demand-cycle",
+    "ref": "market-intel/narratives/example-demand-cycle.md",
+    "asof": "2026-09-20",
+    "found_via": "node_narratives nodes[semi.pkg.example_stack]",
+    "stance": "adopt",
+    "why": "편의 「고객 증설이 장비 PO 로 내려오는 시차」 틀이 우리 H2(주문 = 공시 PO + 비공시 수출 PO)와 같은 축이라 채택한다.",
+    "maps_to": [
+     "MN1",
+     "H2"
+    ]
+   },
+   {
+    "narrative_id": "example-bottleneck",
+    "ref": "market-intel/narratives/example-bottleneck.md",
+    "asof": "2026-09-01",
+    "found_via": "frontmatter tickers",
+    "stance": "reject",
+    "why": "편은 이 공정을 「교체 불가 자리」로 적었지만 체인 yaml 의 병목 등급이 그 뒤 mid 로 내려갔다(경쟁사 인증 실재) — 공급 축 근거로 쓰지 않는다.",
+    "maps_to": [
+     "MN2"
+    ]
+   },
+   {
+    "narrative_id": "example-theme-list",
+    "ref": "market-intel/narratives/example-theme-list.md",
+    "asof": "2026-08-31",
+    "found_via": "frontmatter tickers",
+    "stance": "irrelevant",
+    "why": "테마 목록에 이름만 있고 이 회사 고유 드라이버 문면이 없다 — 가설과 잇지 않는다."
+   }
+  ],
+  "ledger_rows": [
+   {
+    "ref": "core/events/expectation_ledger.jsonl",
+    "exp_id": "EXP-<원장 id>",
+    "event_key": "20261116:999999:earnings.q3",
+    "note": "분기보고서 마감일 — 트래킹 레지스터의 3Q 프린트와 같은 날"
+   }
+  ]
+ },
+ "blind_contrast": {
+  "status": "not_run — 실호출은 본체가",
+  "backend": "external",
+  "model": "<model>",
+  "prompt_text": "<회사명>(KRX:<티커>), 기준일 <YYYY-MM-DD>. 이 회사에 대해 시장이 믿는 이야기, 이익을 움직이는 변수, 밸류체인에서의 위치, 틀릴 조건을 원천과 함께 써라.",
+  "prompt_ref": "S0_blind_prompt.txt",
+  "prompt_sha": "000000000000",
+  "command": "printf '%s' \"<prompt_text>\" > study/S0_blind_prompt.txt && <외부 모델 호출 명령> --prompt-file study/S0_blind_prompt.txt --out study/S0_blind_external.md",
+  "output_ref": "S0_blind_external.md",
+  "made_before_s0_synthesis": true,
+  "only_blind": [],
+  "only_ours": [],
+  "both": [],
+  "_how_to_fill": "실호출 뒤: prompt_sha = sha256(S0_blind_prompt.txt) 앞 12자(예시의 0 열두 개는 자리표), output_ref·prompt_ref 는 팩 study/ 안. 출력을 주장 단위로 나눠 narrative.json 의 MN·H 와 대조 — 무하네스에만 있는 주장 → only_blind(전부 disposition), 우리에게만 → only_ours, 양쪽 → both. 세 배열이 다 비면 오류. blind 파일은 narrative.json 과 같은 커밋이나 그 앞 커밋에 넣는다(check_study 가 최초 커밋 순서를 잰다). 예시 칸은 실호출 전이라 비어 있다(신규 팩이면 not_run 으로 오류)."
+ },
+ "chain_position": {
+  "boxes": [
+   "semi.back.example_tool",
+   "semi.pkg.example_stack"
+  ],
+  "upstream": [
+   {
+    "name": "모듈·부품 매입처(실명 미공개)",
+    "name_en": "Module and parts vendors",
+    "what": "핵심 모듈 外 원재료",
+    "share_or_dependence": "원재료 매입 중 핵심 모듈 비중 n%(반기보고서, ①)",
+    "source": "<팩>/study/S0_NOTE.md §2 손익 구조(반기·사업보고서, ①)",
+    "asof": "2026-06",
+    "what_en": "Core modules",
+    "share_en": "n% of materials"
+   }
+  ],
+  "downstream": [
+   {
+    "name": "고객사 A(메모리 IDM, 가상)",
+    "name_en": "Customer A",
+    "what": "주력 장비",
+    "share_or_dependence": "단일판매공시 합계 n억(VAT 별도) — 매출 비중 실명 미공개",
+    "source": "DART 단일판매·공급계약 공시 전수(rcept 목록은 <팩>/study/S0_NOTE.md §2①)",
+    "asof": "2026-09",
+    "what_en": "Main tool",
+    "share_en": "KRW n bn POs"
+   },
+   {
+    "name": "후공정 외주사(OSAT) 다수",
+    "name_en": "OSATs",
+    "what": "보조 장비",
+    "share_or_dependence": "모름 — 공시_미제공(주요매출처 실명 열거, 비중 0)",
+    "source": "반기보고서 II.4 주요매출처",
+    "asof": "2026-06",
+    "what_en": "Auxiliary tools",
+    "share_en": "share undisclosed"
+   }
+  ],
+  "what_company_does": "고객의 증설·세대 전환 때 필요한 공정 장비를 만들어 메모리 IDM 과 OSAT 에 판다. 품목은 장비 본체와 개조 키트로 나뉜다(반기보고서 품목표, ①).",
+  "who_pays_whom": "고객이 증설 때 장비 PO 를 내고 납품 때 매출이 인식·대금이 들어온다(PO→납기 중앙 약 1분기, 공시 n건). 회사는 모듈·부품을 사서 조립·외주가공한다. 고객의 돈은 최종 제품 출하에서 나온다.",
+  "concentration": {
+   "customers": "상위 2 거래처 비중 n%(사업보고서 주석, 실명 미공개, ①). 수출 비중 n%(①).",
+   "suppliers": "모름 — 공시_미제공(매입처 실명·비중 미기재)."
+  },
+  "bottlenecks": [
+   "물량을 정하는 것은 자기 캐파가 아니라 고객 인증·세대 전환·PO 타이밍이다(②)",
+   "리드타임이 짧아(약 1분기) 수주가 바로 다음 분기 매출이 되고 분기 마진이 출렁인다(①)"
+  ],
+  "substitutes": [
+   "같은 고객 안 경쟁 장비사 2곳 인증(보도, ③)",
+   "장기: 차세대 공정 장비로의 전환 — 시점 미상(④)"
+  ],
+  "value_capture": "체인의 이익 풀은 최종 제품(고객)에 있고 장비사는 고객 capex 의 한 조각을 가져간다. 몫 = 대수 × 대당가. 몫을 잃는 길은 고객 안 점유 하락과 차세대 공정 전환이다(가설).",
+  "q_asp_to_pnl": "매출 = 신규 장비 대수 × 대당가(④) + 비주력 매출 → PO 뒤 약 1분기에 인식. 대수 = 고객 증설 × 단위 증설당 장비 수 × 회사 몫(④).",
+  "stale_facts": [
+   {
+    "field": "semi.back.example_tool values.share — 글로벌 점유율",
+    "asof": "2018",
+    "note": "3년 초과 — 화면 회색 처리 대상"
+   }
+  ],
+  "sources": [
+   "core/valuechain/semi_krx_subchains.yaml#<박스 id> (체인 yaml 견본 — 자기 체인 파일로 바꾼다)",
+   "<팩>/study/S0_NOTE.md",
+   "<팩>/study/findings.json"
+  ],
+  "proposals": [],
+  "proposals_needed": "yaml 에 없는 박스·간선은 core/valuechain/_inbox/<date>_<ticker>_chain_proposals.jsonl 에 chain-proposal@1 로 낸다."
+ },
+ "body_section_draft": {
+  "_note": "write-up 본문 「Value chain position」 절이 이 블록에서 바로 나온다는 것을 보이는 초안(영문은 예시, 판정 문장 아님).",
+  "id": "vc",
+  "head": "Value chain position: the company sells one process step between customer capacity and output, and its share is set by customer POs, not by its own capacity",
+  "paras": [
+   "Customers buy the tool when they add capacity or change generation; each PO turns into revenue about one quarter later, so the order book is the quarterly margin.",
+   "Customer concentration is high and undisclosed by name; module vendors supply most materials, unnamed. Two competing vendors are qualified at the same customer."
+  ],
+  "figures": [
+   "fig:chain_999999.svg",
+   "Ex05"
+  ],
+  "counterparties": [
+   "Customer A",
+   "Customer B",
+   "Competitor X",
+   "Competitor Y"
+  ],
+  "table": {
+   "id": "chain_facts",
+   "caption": "Value chain facts",
+   "columns": [
+    "Fact",
+    "Value",
+    "Period",
+    "Source"
+   ],
+   "rows": [
+    [
+     "Export share of revenue",
+     "n%",
+     "FY25",
+     "Company filings"
+    ],
+    [
+     "Top-2 customers (unnamed)",
+     "n%",
+     "FY25",
+     "Company filings"
+    ],
+    [
+     "PO to delivery, median of filed contracts",
+     "~1 quarter",
+     "2024-2026",
+     "Company filings"
+    ],
+    [
+     "Core modules share of materials",
+     "n%",
+     "1H26",
+     "Company filings"
+    ],
+    [
+     "Global share (stale)",
+     "n%",
+     "2018",
+     "Sell-side reports"
+    ]
+   ],
+   "source": "Source: Company filings, Sell-side reports, ${WRITEUP_AUTHOR}"
+  }
+ }
+}

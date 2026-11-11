@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "equity-study consensus_check.json (S2 전, consensus_check@1) — consensus-checker.md 계약에서 추출(check_study.py 는 파일 존재만 본다: S2_consensus 짝 규칙)",
+  "type": "object",
+  "required": ["schema", "ticker", "asof", "sources", "rows", "revisions_30d", "decomposition", "unit", "deficits"],
+  "properties": {
+    "schema": {"const": "consensus_check@1"},
+    "ticker": {"type": "string"}, "asof": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "sources": {"type": "object", "required": ["naver_as_of", "fetched_at", "n_firms", "sellside_n_read", "series_first_date"]},
+    "rows": {"type": "array", "items": {"type": "object",
+      "required": ["metric", "period", "cons_mean", "dist", "ours_base", "diff_pct", "ours_cases", "base_position"],
+      "properties": {
+        "metric": {"enum": ["rev", "op", "opm", "ni", "eps", "tp"]},
+        "period": {"type": "string"},
+        "dist": {"type": "object", "required": ["low", "median", "high", "n", "src"]},
+        "ours_cases": {"type": "object"},
+        "base_position": {"type": "string", "description": "below_low|low_q|mid|high_q|above_high|미측정"}}}},
+    "revisions_30d": {"type": "object", "required": ["up", "down", "flat", "tp_change_median_pct", "rows"]},
+    "decomposition": {"type": "array", "items": {"type": "object", "required": ["metric", "period", "implied_dial", "formula", "value"]}},
+    "unit": {"const": "원"},
+    "deficits": {"type": "array"}
+  }
+}
