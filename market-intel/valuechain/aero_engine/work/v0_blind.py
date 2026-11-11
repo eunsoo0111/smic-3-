@@ -1,0 +1,31 @@
+import sys; sys.path.insert(0, "_contracts")
+from v0_helpers import *
+N = [
+ P("sv", "협동체 터보팬 엔진 Shop Visit", "CFM56-7B/-5B·V2500(구형), LEAP·GTF(신형)의 성능복원 정비 1회. 엔진을 내려 분해·검사·부품 교체·수리·조립·시운전"),
+ S("sv.exec", "sv", "정비 실행", "입고→분해→검사→수리 판정→조립→테스트 셀 시운전. 슬롯(작업장·인력)이 Q의 상한"),
+ I("sv.exec.slot", "sv.exec", "service_ip", "정비 슬롯·인력", "OEM 직영 숍, 항공사 계열 MRO, 독립 MRO의 엔진 라인. 인증(FAA Part 145/EASA)과 OEM 라이선스 필요"),
+ I("sv.exec.testcell", "sv.exec", "equipment", "테스트 셀", "조립 후 추력·EGT 마진 시운전 설비. 신형 고바이패스 엔진은 대형 셀 필요"),
+ I("sv.exec.exchange", "sv.exec", "service_ip", "엔진·모듈 교환과 리스", "정비 기간(TAT) 동안 대체 엔진을 빌려주거나 정비된 모듈과 맞교환. TAT가 길수록 수요 증가"),
+ S("sv.parts", "sv", "교체 부품", "Shop Visit 비용의 대부분. 고온부(HPT)와 수명제한부품(LLP)이 핵심"),
+ I("sv.parts.hpt", "sv.parts", "component", "고압터빈 블레이드·베인", "단결정 니켈 초합금 정밀주조 + 열차폐 코팅. 가장 자주, 가장 비싸게 교체되는 부품"),
+ I("sv.parts.llp", "sv.parts", "component", "수명제한부품(LLP)", "디스크·샤프트 등 회전체. 사이클 한도 도달 시 강제 교체. 단조품"),
+ I("sv.parts.pma", "sv.parts", "component", "PMA 대체부품", "FAA 승인 비순정 부품. 순정 대비 할인. 고온부 PMA는 드묾"),
+ I("sv.parts.usm", "sv.parts", "component", "중고 부품(USM)", "해체 엔진에서 떼어 재인증한 부품. 퇴역이 줄면 공급이 마름"),
+ I("sv.parts.acc", "sv.parts", "component", "보기류·제어계·나셀", "연료 계통, 액추에이터, 센서, 역추진장치. 부품번호 단위 독점이 많음"),
+ I("sv.parts.pma_llp", "sv.parts", "component", "PMA 수명제한부품", "회전체 LLP의 비순정품", absent="회전 수명부품은 OEM 외 승인 사례가 사실상 없음(검증 필요)"),
+ I("sv.parts.usm_new", "sv.parts", "component", "신형 엔진(LEAP·GTF) 중고 부품", "신형 엔진용 USM", absent="해체 기재가 거의 없어 중고 부품 풀이 아직 형성되지 않음(검증 필요)"),
+ S("sv.repair", "sv", "부품 수리", "교체 대신 수리해 재사용. 코팅 재생, 용접, 열처리"),
+ I("sv.repair.blade", "sv.repair", "service_ip", "블레이드·베인 수리(DER 포함)", "팁 복원, 코팅 박리·재코팅, 냉각홀 가공. OEM 수리와 독립 DER 수리"),
+ I("sv.repair.heat", "sv.repair", "service_ip", "열처리·HIP·표면처리", "주조품 기공 제거(HIP), 열차폐 코팅(TBC), 숏피닝"),
+ S("sv.mat", "sv", "소재·성형(부품의 상류)", "초합금 용해 → 단조/주조 → 가공. 증설이 가장 느린 구간"),
+ I("sv.mat.ni", "sv.mat", "material", "니켈 초합금(용해·분말)", "VIM/VAR/ESR 다중 용해 빌릿, 디스크용 분말야금. 엔진 인증 소재"),
+ I("sv.mat.ti", "sv.mat", "material", "티타늄(스펀지·잉곳·빌릿)", "팬·압축기 블레이드와 디스크용. 러시아 VSMPO 이탈 후 서방 공급 타이트"),
+ I("sv.mat.forge", "sv.mat", "component", "디스크·샤프트·링 단조", "대형 프레스·등온 단조. 부품번호·공정·공급자 단위 인증"),
+ I("sv.mat.cast", "sv.mat", "component", "에어포일·구조물 정밀주조", "단결정·방향성 응고 주조. 과점"),
+ I("sv.mat.minor", "sv.mat", "material", "희소 합금원소(Re·Hf·Co·Ta)", "단결정 초합금의 고온 강도 원소. 부산물 금속이라 공급 탄력 낮음"),
+ I("sv.mat.cmc", "sv.mat", "material", "세라믹 기지 복합재(CMC)·SiC 섬유", "LEAP 슈라우드 등 신형 엔진 고온부. 구형 엔진에는 없음"),
+ S("sv.ip", "sv", "설계권·계약", "형식증명 보유자가 부품 가격과 정비 매뉴얼을 통제"),
+ I("sv.ip.tc", "sv.ip", "service_ip", "형식증명·부품 카탈로그 가격", "OEM이 매년 카탈로그 가격을 인상. 순정 부품 P의 원천"),
+ I("sv.ip.pbh", "sv.ip", "service_ip", "시간당 정비계약(PBH)", "비행시간당 요금을 받고 정비를 보장. 신형 엔진은 대부분 OEM 계약에 묶임"),
+]
+dump("aero_engine/work/v0_blind.json", "aero_engine", "협동체 터보팬 엔진 Shop Visit(애프터마켓)", "CFM56-7B 성능복원 Shop Visit 1회 비용", N)

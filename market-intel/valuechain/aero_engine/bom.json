@@ -1,0 +1,1506 @@
+{
+ "schema": "valuechain/bom@1",
+ "chain": "aero_engine",
+ "product": "협동체 터보팬 엔진 Shop Visit(애프터마켓)",
+ "unit_basis": "CFM56-7B 성능복원 Shop Visit 1회 비용",
+ "asof": "2026-11-11",
+ "status": "v3_queued",
+ "approved_by": {
+  "who": "Claude(본체)",
+  "at": "2026-11-11",
+  "stage": "V0",
+  "note": "무하네스 초안 26노드에 검색으로 4노드(신형 엔진 슬롯, 항공 밖 경쟁 용도 2칸) 보강 후 승인. 레포에 체인 yaml 없음"
+ },
+ "stage_log": [
+  {
+   "stage": "V0",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "v0_blind.json 작성 후 검색 보강, v0_diff.md"
+  },
+  {
+   "stage": "V1",
+   "at": "2026-11-11",
+   "by": "Claude(본체, 서브 없이 직접)",
+   "what": "입력 22개 메이커·비용 비중 채움. 출처 S101~S125"
+  },
+  {
+   "stage": "V2",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "레포에 core/valuechain yaml이 없어 box_ref 전부 빈칸 문면"
+  },
+  {
+   "stage": "V3",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "GAPS.md·BOM.md·착수 큐"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "sv",
+   "kind": "product",
+   "parent": null,
+   "name": "협동체 터보팬 엔진 Shop Visit",
+   "spec": "CFM56-7B/-5B·V2500(구형), LEAP·GTF(신형)의 성능복원 정비 1회. 엔진을 내려 분해·검사·부품 교체·수리·조립·시운전",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [],
+   "price": {
+    "v": 6.8,
+    "unit": "백만 USD/회",
+    "asof": "2023",
+    "source": "S101",
+    "grade": "②",
+    "basis": "FTAI IR 자료의 CFM56 Shop Visit 비용(LLP 포함, 약 3년 전 수치·회사 주장). 2026년 벤더 자료는 성능복원만 200~450만 달러로 제시(S102)"
+   },
+   "note": "시장 Q: CFM56 Shop Visit 2026·2027년 각 2,300~2,400회, GE는 상단 예상(S103). CFM56 운용 약 19,000~20,000대, 2026년 퇴역률 전망 3~4% → 1.5~2%로 하향(S105). 엔진 정비는 2026년 민항 애프터마켓 1,390억 달러의 53%(S117). 반대 신호: CFM56 엔진 가치가 2026년 상반기 횡보(S119)"
+  },
+  {
+   "id": "sv.exec",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "정비 실행",
+   "spec": "입고→분해→검사→수리 판정→조립→테스트 셀 시운전. 슬롯(작업장·인력)이 Q의 상한",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.exec.slot",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.exec",
+   "name": "정비 슬롯·인력",
+   "spec": "OEM 직영 숍, 항공사 계열 MRO, 독립 MRO의 엔진 라인. 인증(FAA Part 145/EASA)과 OEM 라이선스 필요",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": {
+    "v": 7,
+    "unit": "%",
+    "asof": "2023",
+    "source": "S101",
+    "grade": "②",
+    "basis": "CFM56 Shop Visit 비용 중 인건비(FTAI IR, 회사 주장)"
+   },
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S121",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE",
+     "note": "상업 서비스 매출 연초 이후 +20% 이상, 서비스 수주잔고 1,700억 달러 이상, 자체 Shop Visit 처리량 분기 최고"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "①",
+     "source": "S111",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF",
+     "note": "3Q26 추진 애프터마켓 +18.7%. 민수 부품 달러 성장률 1Q +29.3% → 2Q +26.7% → 3Q +17.0%로 둔화"
+    },
+    {
+     "name": "MTU Aero Engines",
+     "country": "DE",
+     "role": "main",
+     "grade": "①",
+     "source": "S112",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XETR:MTX",
+     "note": "1H26 민수 정비 매출 34억 유로(+21%, 달러 +29%)"
+    },
+    {
+     "name": "StandardAero",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S110",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:SARO",
+     "note": "3Q26 매출 +4.0%, Engine Services EBITDA +24%. 가이던스 4분기 연속 상향"
+    },
+    {
+     "name": "FTAI Aviation",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S105",
+     "share_pct": {
+      "v": 15,
+      "unit": "%",
+      "asof": "2026-11-11",
+      "source": "S105",
+      "grade": "②",
+      "basis": "CFM56 정비 시장 내 점유율(회사 주장, 3Q26)"
+     },
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FTAI",
+     "note": "3Q26 모듈 311개, 2026년 1,200개·2027년 1,700개 목표"
+    },
+    {
+     "name": "Lufthansa Technik",
+     "country": "DE",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Deutsche Lufthansa",
+      "parent_ticker": "XETR:LHA"
+     }
+    },
+    {
+     "name": "ST Engineering",
+     "country": "SG",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XSES:S63"
+    },
+    {
+     "name": "AFI KLM E&M",
+     "country": "FR",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Air France-KLM",
+      "parent_ticker": "XPAR:AF"
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "OEM 직영 대 독립 MRO의 CFM56 물량 비중(원천 못 찾음)",
+    "숍별 처리량과 TAT"
+   ]
+  },
+  {
+   "id": "sv.exec.testcell",
+   "kind": "input",
+   "input_type": "equipment",
+   "parent": "sv.exec",
+   "name": "테스트 셀",
+   "spec": "조립 후 추력·EGT 마진 시운전 설비. 신형 고바이패스 엔진은 대형 셀 필요",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "MDS Aero Support",
+     "country": "CA",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "Safran Test Cells",
+     "country": "FR",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Safran",
+      "parent_ticker": "XPAR:SAF"
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "테스트 셀이 정비 병목이라는 보도(S124)의 규모",
+    "상장 순수 노출 기업이 있는지"
+   ]
+  },
+  {
+   "id": "sv.exec.exchange",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.exec",
+   "name": "엔진·모듈 교환과 리스",
+   "spec": "정비 기간(TAT) 동안 대체 엔진을 빌려주거나 정비된 모듈과 맞교환. TAT가 길수록 수요 증가",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — CFM56 리스료 원천 미확보(일부 기종 최대 +40% 보도, 기준일 불명)",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "FTAI Aviation",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S125",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FTAI",
+     "note": "CFM56 최대 보유자로 소개. 리스 부문은 자산 경량화로 EBITDA 감소"
+    },
+    {
+     "name": "Willis Lease Finance",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:WLFC"
+    },
+    {
+     "name": "AerCap",
+     "country": "IE",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:AER"
+    },
+    {
+     "name": "GA Telesis",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.parts",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "교체 부품",
+   "spec": "Shop Visit 비용의 대부분. 고온부(HPT)와 수명제한부품(LLP)이 핵심",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.parts.hpt",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "고압터빈 블레이드·베인",
+   "spec": "단결정 니켈 초합금 정밀주조 + 열차폐 코팅. 가장 자주, 가장 비싸게 교체되는 부품",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": {
+    "v": 58,
+    "unit": "%",
+    "asof": "2023",
+    "source": "S101",
+    "grade": "②",
+    "basis": "CFM56 Shop Visit 비용 중 에어포일 전체(HPT 외 포함, FTAI IR·회사 주장)"
+   },
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE",
+     "note": "CFM 순정 부품 공급(Safran과 50:50)"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF"
+    },
+    {
+     "name": "Howmet Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S122",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HWM",
+     "note": "3Q26 매출 +29%. 가스터빈 매출 +45%라 AI 전력 수요와 섞임"
+    },
+    {
+     "name": "Precision Castparts",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Berkshire Hathaway",
+      "parent_ticker": "XNYS:BRK.B"
+     }
+    },
+    {
+     "name": "Chromalloy",
+     "country": "US",
+     "role": "qualifying",
+     "grade": "②",
+     "source": "S108",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Veritas Capital(비상장 PE)",
+      "parent_ticker": null
+     },
+     "note": "CFM56-5B/7B HPT 블레이드 PMA 2025년 10월 FAA 승인. 유일한 비순정 대안이라는 회사 주장. FTAI와 협력"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "HPT 블레이드가 CFM56 오버홀의 최대 제약이라는 보도(S106)의 물량 기준",
+    "순정 블레이드 카탈로그 가격 인상률(원천 못 찾음)"
+   ]
+  },
+  {
+   "id": "sv.parts.llp",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "수명제한부품(LLP)",
+   "spec": "디스크·샤프트 등 회전체. 사이클 한도 도달 시 강제 교체. 단조품",
+   "qty_per_unit": {
+    "v": [
+     14,
+     18
+    ],
+    "unit": "개/세트",
+    "asof": "2026-11-11",
+    "source": "S102",
+    "grade": "②",
+    "basis": "CFM56-7B LLP 한 세트 부품 수(벤더 자료)"
+   },
+   "price": {
+    "v": [
+     1.1,
+     1.6
+    ],
+    "unit": "백만 USD/세트",
+    "asof": "2026-11-11",
+    "source": "S102",
+    "grade": "②",
+    "basis": "신품 LLP 한 세트(벤더 자료, 페이지마다 수치 다름)"
+   },
+   "cost_share_pct": {
+    "v": 23,
+    "unit": "%",
+    "asof": "2023",
+    "source": "S101",
+    "grade": "②",
+    "basis": "CFM56 Shop Visit 비용 중 LLP(FTAI IR·회사 주장)"
+   },
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.parts.pma",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "PMA 대체부품",
+   "spec": "FAA 승인 비순정 부품. 순정 대비 할인. 고온부 PMA는 드묾",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 순정 대비 할인율 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "HEICO",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S109",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HEI",
+     "note": "FY26 3Q Flight Support 매출 9.478억 달러(+18%, 유기적 +12%), 영업이익 +24%"
+    },
+    {
+     "name": "Chromalloy",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S108",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Veritas Capital(비상장 PE)",
+      "parent_ticker": null
+     },
+     "note": "CFM56-5B/7B용 PMA 4종"
+    },
+    {
+     "name": "Jet Parts Engineering",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S108",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "note": "2026년 3월 PMA 5종 승인"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "PMA가 CFM56 부품 시장에서 차지하는 비중",
+    "리스사가 PMA 장착 엔진을 받는지"
+   ]
+  },
+  {
+   "id": "sv.parts.usm",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "중고 부품(USM)",
+   "spec": "해체 엔진에서 떼어 재인증한 부품. 퇴역이 줄면 공급이 마름",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "AerSale",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:ASLE"
+    },
+    {
+     "name": "FTAI Aviation",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FTAI"
+    },
+    {
+     "name": "AAR",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:AIR"
+    },
+    {
+     "name": "VSE",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:VSEC"
+    },
+    {
+     "name": "AerFin",
+     "country": "GB",
+     "role": "second",
+     "grade": "②",
+     "source": "S106",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "note": "잔여 수명 긴 블레이드 중고 물량이 줄었다고 발언"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "해체 기재 수 추이(퇴역률 1.5~2%)와 USM 가격"
+   ]
+  },
+  {
+   "id": "sv.parts.acc",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "보기류·제어계·나셀",
+   "spec": "연료 계통, 액추에이터, 센서, 역추진장치. 부품번호 단위 독점이 많음",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "TransDigm",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S113",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:TDG",
+     "note": "FY27 매출 가이던스 119.5~121.5억 달러(FY26 105.57억, 중간값 +14%)"
+    },
+    {
+     "name": "RTX (Collins)",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S120",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:RTX",
+     "note": "3Q26 Collins 민수 애프터마켓 +9%"
+    },
+    {
+     "name": "Honeywell Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S120",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:HONA",
+     "note": "3Q26 민수 애프터마켓 +2%, 기계 부품 조달이 제약"
+    },
+    {
+     "name": "Woodward",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:WWD"
+    },
+    {
+     "name": "Loar Holdings",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:LOAR"
+    },
+    {
+     "name": "Parker-Hannifin",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:PH"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.parts.pma_llp",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "PMA 수명제한부품",
+   "spec": "회전체 LLP의 비순정품",
+   "qty_per_unit": "없음 — 회전 수명부품은 OEM 외 승인 사례가 사실상 없음(검증 필요)",
+   "price": "없음 — 회전 수명부품은 OEM 외 승인 사례가 사실상 없음(검증 필요)",
+   "cost_share_pct": "없음 — 회전 수명부품은 OEM 외 승인 사례가 사실상 없음(검증 필요)",
+   "makers": "없음 — 회전 수명부품은 OEM 외 승인 사례가 사실상 없음(검증 필요)",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.parts.usm_new",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.parts",
+   "name": "신형 엔진(LEAP·GTF) 중고 부품",
+   "spec": "신형 엔진용 USM",
+   "qty_per_unit": "없음 — 해체 기재가 거의 없어 중고 부품 풀이 아직 형성되지 않음(검증 필요)",
+   "price": "없음 — 해체 기재가 거의 없어 중고 부품 풀이 아직 형성되지 않음(검증 필요)",
+   "cost_share_pct": "없음 — 해체 기재가 거의 없어 중고 부품 풀이 아직 형성되지 않음(검증 필요)",
+   "makers": "없음 — 해체 기재가 거의 없어 중고 부품 풀이 아직 형성되지 않음(검증 필요)",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.repair",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "부품 수리",
+   "spec": "교체 대신 수리해 재사용. 코팅 재생, 용접, 열처리",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.repair.blade",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.repair",
+   "name": "블레이드·베인 수리(DER 포함)",
+   "spec": "팁 복원, 코팅 박리·재코팅, 냉각홀 가공. OEM 수리와 독립 DER 수리",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": {
+    "v": 12,
+    "unit": "%",
+    "asof": "2023",
+    "source": "S101",
+    "grade": "②",
+    "basis": "CFM56 Shop Visit 비용 중 수리 전체(FTAI IR·회사 주장)"
+   },
+   "makers": [
+    {
+     "name": "Chromalloy",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Veritas Capital(비상장 PE)",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "StandardAero",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S110",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:SARO",
+     "note": "Component Repair 매출 +7%, 마진 25.8%로 4.9%p 하락"
+    },
+    {
+     "name": "MTU Aero Engines",
+     "country": "DE",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XETR:MTX"
+    },
+    {
+     "name": "HEICO",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HEI"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.repair.heat",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.repair",
+   "name": "열처리·HIP·표면처리",
+   "spec": "주조품 기공 제거(HIP), 열차폐 코팅(TBC), 숏피닝",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "Bodycote",
+     "country": "GB",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XLON:BOY"
+    },
+    {
+     "name": "Linde (Praxair Surface Technologies)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:LIN"
+    },
+    {
+     "name": "OC Oerlikon",
+     "country": "CH",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XSWX:OERL"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.mat",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "소재·성형(부품의 상류)",
+   "spec": "초합금 용해 → 단조/주조 → 가공. 증설이 가장 느린 구간",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.mat.ni",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "sv.mat",
+   "name": "니켈 초합금(용해·분말)",
+   "spec": "VIM/VAR/ESR 다중 용해 빌릿, 디스크용 분말야금. 엔진 인증 소재",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "Carpenter Technology",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S114",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:CRS",
+     "note": "1Q FY27 영업이익 1.964억 달러(+28%), SAO 마진 37.7%, 항공 구조재·유통 수주 +49%. FY29 영업이익 목표 12~13억 달러"
+    },
+    {
+     "name": "ATI",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ATI",
+     "note": "5번째 VIM로 2H27 가동, 약 9,000t/년(용량 +8~10%)"
+    },
+    {
+     "name": "Special Metals / Cannon Muskegon",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Berkshire Hathaway(PCC)",
+      "parent_ticker": "XNYS:BRK.B"
+     }
+    },
+    {
+     "name": "Acerinox (VDM·Haynes)",
+     "country": "ES",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XMAD:ACX"
+    },
+    {
+     "name": "Aubert & Duval",
+     "country": "FR",
+     "role": "second",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Airbus·Safran·Tikehau 컨소시엄",
+      "parent_ticker": "XPAR:SAF"
+     },
+     "note": "Safran과 LEAP 단조품 계약 갱신"
+    },
+    {
+     "name": "Cogne Acciai Speciali (SMP)",
+     "country": "IT",
+     "role": "second",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Walsin Lihwa",
+      "parent_ticker": "XTAI:1605"
+     },
+     "note": "18t VIM 신설, Rolls-Royce 계약 약 2.4억 달러"
+    },
+    {
+     "name": "Doncasters",
+     "country": "GB",
+     "role": "second",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "note": "앨라배마 초합금 공장 5,000만 달러 투자"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "업체별 엔진용 초합금 용해 점유율(원천 못 찾음)",
+    "신규 용량은 2027년 말~2030년에 가동되고 항공·방산·가스터빈이 나눠 쓴다(S115) — 항공 몫"
+   ]
+  },
+  {
+   "id": "sv.mat.ti",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "sv.mat",
+   "name": "티타늄(스펀지·잉곳·빌릿)",
+   "spec": "팬·압축기 블레이드와 디스크용. 러시아 VSMPO 이탈 후 서방 공급 타이트",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "ATI",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S116",
+     "share_pct": {
+      "v": 26.7,
+      "unit": "%",
+      "asof": "2025",
+      "source": "S116",
+      "grade": "②",
+      "basis": "항공 티타늄 시장 2025년(시장조사 보고서, 신뢰도 낮음)"
+     },
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ATI"
+    },
+    {
+     "name": "VSMPO-AVISMA",
+     "country": "RU",
+     "role": "historical",
+     "grade": "②",
+     "source": "S116",
+     "share_pct": {
+      "v": [
+       20,
+       25
+      ],
+      "unit": "%",
+      "asof": "2025",
+      "source": "S116",
+      "grade": "②",
+      "basis": "항공 티타늄(공급자 가이드, 신뢰도 낮음)"
+     },
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "note": "제재·탈러시아로 이탈 중"
+    },
+    {
+     "name": "TIMET",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Berkshire Hathaway(PCC)",
+      "parent_ticker": "XNYS:BRK.B"
+     }
+    },
+    {
+     "name": "Howmet Aerospace",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HWM"
+    },
+    {
+     "name": "Toho Titanium",
+     "country": "JP",
+     "role": "main",
+     "grade": "②",
+     "source": "S116",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XTKS:5727",
+     "note": "스펀지 +3,000t(2026년 1월)"
+    },
+    {
+     "name": "OSAKA Titanium Technologies",
+     "country": "JP",
+     "role": "main",
+     "grade": "②",
+     "source": "S116",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XTKS:5726",
+     "note": "스펀지 +10,000t(2028년 3월). SMIC 2024.05 커버"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "항공·방산 스펀지 수요 7.9만t(2024) → 9.0만t(2028) → 10.2만t(2031) 전망(Toho, S116)의 엔진 등급 몫"
+   ]
+  },
+  {
+   "id": "sv.mat.forge",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.mat",
+   "name": "디스크·샤프트·링 단조",
+   "spec": "대형 프레스·등온 단조. 부품번호·공정·공급자 단위 인증",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "Precision Castparts (Wyman-Gordon)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Berkshire Hathaway",
+      "parent_ticker": "XNYS:BRK.B"
+     }
+    },
+    {
+     "name": "ATI",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ATI"
+    },
+    {
+     "name": "Howmet Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HWM"
+    },
+    {
+     "name": "Aubert & Duval",
+     "country": "FR",
+     "role": "main",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Airbus·Safran·Tikehau 컨소시엄",
+      "parent_ticker": "XPAR:SAF"
+     }
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "captive",
+     "grade": "②",
+     "source": "S115",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF",
+     "note": "30,000t 프레스 가동, 회전체 라인 2029년"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.mat.cast",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.mat",
+   "name": "에어포일·구조물 정밀주조",
+   "spec": "단결정·방향성 응고 주조. 과점",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "Precision Castparts",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S122",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Berkshire Hathaway",
+      "parent_ticker": "XNYS:BRK.B"
+     },
+     "note": "Howmet과 단결정 블레이드 사실상 복점"
+    },
+    {
+     "name": "Howmet Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S122",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HWM",
+     "note": "가스터빈 에어포일 세계 점유율 50% 이상(회사 주장, 분모는 발전용)"
+    },
+    {
+     "name": "Consolidated Precision Products",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S107",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Warburg Pincus·Berkshire Partners → GE Aerospace 인수 예정",
+      "parent_ticker": "XNYS:GE"
+     },
+     "note": "GE가 117.5억 달러에 인수 합의(2026-09-08), 2H27 종결 예정. 2027년 EBITDA의 약 26배"
+    },
+    {
+     "name": "Doncasters",
+     "country": "GB",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "GE의 CPP 인수로 다른 엔진사·MRO의 주조품 조달이 어떻게 바뀌나"
+   ]
+  },
+  {
+   "id": "sv.mat.minor",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "sv.mat",
+   "name": "희소 합금원소(Re·Hf·Co·Ta)",
+   "spec": "단결정 초합금의 고온 강도 원소. 부산물 금속이라 공급 탄력 낮음",
+   "qty_per_unit": "미측정 — 엔진 매뉴얼 기준 수량 미확인",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "미측정 — 비용 분해 원천 미확보",
+   "makers": [
+    {
+     "name": "Molymet",
+     "country": "CL",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XSGO:MOLYMET",
+     "note": "레늄"
+    },
+    {
+     "name": "KGHM",
+     "country": "PL",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XWAR:KGH",
+     "note": "레늄"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.mat.cmc",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "sv.mat",
+   "name": "세라믹 기지 복합재(CMC)·SiC 섬유",
+   "spec": "LEAP 슈라우드 등 신형 엔진 고온부. 구형 엔진에는 없음",
+   "qty_per_unit": "없음 — CFM56에는 쓰지 않음(LEAP부터)",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "없음 — 기준 단위가 CFM56이라 분모 밖",
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "captive",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE"
+    },
+    {
+     "name": "NGS Advanced Fibers",
+     "country": "JP",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "Nippon Carbon·GE·Safran 합작",
+      "parent_ticker": "XTKS:5302"
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.ip",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "설계권·계약",
+   "spec": "형식증명 보유자가 부품 가격과 정비 매뉴얼을 통제",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.ip.tc",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.ip",
+   "name": "형식증명·부품 카탈로그 가격",
+   "spec": "OEM이 매년 카탈로그 가격을 인상. 순정 부품 P의 원천",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 카탈로그 가격 인상률 원천 미확보(IATA는 코로나 이전보다 높다고만 언급, S123)",
+   "cost_share_pct": "없음 — 부품 가격에 녹아 있어 따로 떼지 못함",
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S121",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE",
+     "note": "2026년 조정 EPS 가이던스 8.00~8.10달러, 2027년 상업 서비스 두 자릿수 초반 성장 예상"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "①",
+     "source": "S111",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF",
+     "note": "2026년 경상영업이익 가이던스 64~65억 유로"
+    },
+    {
+     "name": "RTX (Pratt & Whitney)",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S120",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:RTX"
+    },
+    {
+     "name": "Rolls-Royce",
+     "country": "GB",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XLON:RR.",
+     "note": "광동체 중심. 발전 사업이 있어 AI 전력과 섞임"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.ip.pbh",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.ip",
+   "name": "시간당 정비계약(PBH)",
+   "spec": "비행시간당 요금을 받고 정비를 보장. 신형 엔진은 대부분 OEM 계약에 묶임",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "없음 — 계약 형태라 Shop Visit 비용의 구성 항목이 아님",
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S121",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE",
+     "note": "상업 서비스 수주잔고 1,700억 달러 이상"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF"
+    },
+    {
+     "name": "RTX (Pratt & Whitney)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:RTX"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.exec.slot_new",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.exec",
+   "name": "신형 엔진(LEAP·GTF) 정비 슬롯",
+   "spec": "OEM 네트워크와 라이선스 받은 소수 숍만 수행. LEAP Shop Visit은 2030년까지 연 25% 성장 전망, TAT 약 100일",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "없음 — 기준 단위가 CFM56이라 신형 엔진 비용은 분모 밖",
+   "makers": [
+    {
+     "name": "GE Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S104",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GE",
+     "note": "LEAP Shop Visit 2024년 기준 2030년까지 연 25% 성장 전망"
+    },
+    {
+     "name": "Safran",
+     "country": "FR",
+     "role": "main",
+     "grade": "①",
+     "source": "S111",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:SAF",
+     "note": "LEAP 인도 3Q26 535대, 9개월 1,565대(+26%)"
+    },
+    {
+     "name": "RTX (Pratt & Whitney)",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S120",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:RTX",
+     "note": "3Q26 Pratt 민수 애프터마켓 +21%(GTF 물량)"
+    },
+    {
+     "name": "MTU Aero Engines",
+     "country": "DE",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XETR:MTX",
+     "note": "GTF 프로그램 파트너"
+    },
+    {
+     "name": "StandardAero",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S110",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:SARO",
+     "note": "LEAP 라인 확대 중, 초기에는 마진 희석"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.alt",
+   "kind": "stage",
+   "parent": "sv",
+   "name": "항공 밖 경쟁 용도",
+   "spec": "같은 코어·주조품·정비 인력을 두고 항공사와 경쟁하는 수요. AI 독립성 판정에 필요한 칸",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "sv.alt.power",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "sv.alt",
+   "name": "퇴역 코어의 발전용 전환",
+   "spec": "CFM56 코어를 약 25MW 발전 터빈으로 개조해 데이터센터에 공급. 중고 부품 공급을 줄이고 엔진 가치를 받친다",
+   "qty_per_unit": "없음 — 서비스라 수량 축이 성립하지 않음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "없음 — 항공 밖 용도라 Shop Visit 비용 분모 밖",
+   "makers": [
+    {
+     "name": "FTAI Aviation",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S118",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FTAI",
+     "note": "FTAI Power. 연 100대 이상(대당 약 25MW) 목표, 첫 인도 4Q26 목표. 램프 시점은 2026년·2027년 보도가 엇갈림"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "전환이 CFM56 USM 공급과 정비 슬롯을 얼마나 잠식하나"
+   ]
+  },
+  {
+   "id": "sv.alt.igt",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "sv.alt",
+   "name": "발전용 가스터빈 주조·초합금",
+   "spec": "항공 엔진과 같은 주조 라인·초합금 용해로를 쓴다. 데이터센터 전력 수요가 항공용 물량과 경쟁",
+   "qty_per_unit": "없음 — 항공 밖 수요라 Shop Visit 단위로 셀 수 없음",
+   "price": "미측정 — 단가 원천 미확보",
+   "cost_share_pct": "없음 — 항공 밖 용도라 Shop Visit 비용 분모 밖",
+   "makers": [
+    {
+     "name": "Howmet Aerospace",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S122",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HWM",
+     "note": "터빈 고객의 2031년 용량 매진, 가스터빈 매출 +45%"
+    },
+    {
+     "name": "Carpenter Technology",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:CRS",
+     "note": "발전용 비중 확인 필요"
+    },
+    {
+     "name": "ATI",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ATI"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "후보별 발전용 가스터빈 매출 비중(10-K)"
+   ]
+  }
+ ]
+}

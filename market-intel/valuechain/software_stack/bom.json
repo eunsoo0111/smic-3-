@@ -1,0 +1,1505 @@
+{
+ "schema": "valuechain/bom@1",
+ "chain": "software_stack",
+ "product": "엔터프라이즈 소프트웨어 스택",
+ "unit_basis": "기업 소프트웨어 지출 100(범주별 비중)",
+ "asof": "2026-11-11",
+ "status": "v3_queued",
+ "approved_by": {
+  "who": "Claude(본체)",
+  "at": "2026-11-11",
+  "stage": "V0",
+  "note": "무하네스 초안 33노드에 검색으로 4노드(비인간 신원, 커머스+결제, AI 크레딧, 배치 인력) 보강 후 승인. 물리적 제품이 아니라 지출 범주 트리로 변형 적용"
+ },
+ "stage_log": [
+  {
+   "stage": "V0",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "v0_blind.json 작성 후 검색 보강, v0_diff.md"
+  },
+  {
+   "stage": "V1",
+   "at": "2026-11-11",
+   "by": "Claude(본체, 서브 없이 직접)",
+   "what": "입력 27개 메이커·실적 지표 채움. 출처 S201~S226. 범주별 지출 비중은 전부 미측정"
+  },
+  {
+   "stage": "V2",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "레포에 core/valuechain yaml이 없어 box_ref 전부 빈칸 문면"
+  },
+  {
+   "stage": "V3",
+   "at": "2026-11-11",
+   "by": "Claude(본체)",
+   "what": "GAPS.md·BOM.md. 착수 큐는 비중이 전부 대체값이라 참고용"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "stack",
+   "kind": "product",
+   "parent": null,
+   "name": "엔터프라이즈 소프트웨어 스택",
+   "spec": "기업 1곳이 업무를 소프트웨어(와 AI 에이전트)로 처리하는 데 사는 것 전체. 층마다 과금 단위(좌석/사용량/거래)가 다르다",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [],
+   "note": "총액: 2026년 세계 소프트웨어 지출 1.44조 달러(+15.1%, Gartner 4월 전망, S201). 2026년 소프트웨어 ETF와 반도체 ETF는 대체로 반대로 움직임(6/30 이후 IGV 약 +17%, SOXX 약 −22%, S202). 선행 PER 약 35배 → 20~22.7배(S203)"
+  },
+  {
+   "id": "stack.infra",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "인프라·런타임",
+   "spec": "앱과 에이전트가 도는 곳. 사용량 과금. AI Capex와 가장 가깝다",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.infra.iaas",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.infra",
+   "name": "클라우드 IaaS",
+   "spec": "컴퓨트·스토리지. 사용량 과금. GPU 임대 포함 → AI Capex 직결(주제에서 제외 대상)",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Amazon (AWS)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:AMZN"
+    },
+    {
+     "name": "Microsoft (Azure)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "Alphabet (GCP)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:GOOGL"
+    },
+    {
+     "name": "Oracle",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ORCL"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "주제에서 제외: AI Capex 직결"
+   ]
+  },
+  {
+   "id": "stack.infra.edge",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.infra",
+   "name": "엣지·CDN·네트워크",
+   "spec": "트래픽 전달·봇 관리·엣지 컴퓨트. 요청량 과금. 에이전트 트래픽이 늘면 Q 증가",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Cloudflare",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S206",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:NET",
+     "note": "3Q26 매출 +39%(사상 최고 성장률), 순매출유지율 122%"
+    },
+    {
+     "name": "Akamai",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:AKAM"
+    },
+    {
+     "name": "Fastly",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:FSLY"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "에이전트 트래픽이 매출의 몇 %인지",
+    "하이퍼스케일러 자체 엣지와의 경쟁"
+   ]
+  },
+  {
+   "id": "stack.infra.data",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.infra",
+   "name": "데이터베이스·데이터 플랫폼",
+   "spec": "운영 DB, 웨어하우스, 스트리밍. 사용량 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Snowflake",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S213",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:SNOW",
+     "note": "2Q FY27 제품 매출 14.9억 달러(+37%, 3분기 연속 가속), 순매출유지율 126%"
+    },
+    {
+     "name": "Databricks",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "MongoDB",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MDB"
+    },
+    {
+     "name": "Oracle",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ORCL"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.infra.obs",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.infra",
+   "name": "관측(옵저버빌리티)",
+   "spec": "로그·메트릭·트레이스. 수집량 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Datadog",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S212",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:DDOG",
+     "note": "3Q26 매출 약 12.0억 달러(+35%). 10-Q가 최대 고객 사용량 감소를 경고"
+    },
+    {
+     "name": "Dynatrace",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:DT"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "Datadog 최대 고객이 AI 모델 회사인지(AI 연동도)"
+   ]
+  },
+  {
+   "id": "stack.dev",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "개발·배포",
+   "spec": "코드를 만들고 배포하는 도구. AI가 코드 생산량을 늘리면 좌석은 줄고 산출물은 는다",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.dev.scm",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.dev",
+   "name": "소스·CI/CD·아티팩트 관리",
+   "spec": "저장소, 빌드, 바이너리 저장. 좌석+사용량 혼합",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Microsoft (GitHub)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "GitLab",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:GTLB"
+    },
+    {
+     "name": "JFrog",
+     "country": "IL",
+     "role": "second",
+     "grade": "①",
+     "source": "S207",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FROG",
+     "note": "3Q26 매출 1.792억 달러(+31%), 순매출유지율 124%. 코드 생산량이 늘면 바이너리 저장량 증가"
+    },
+    {
+     "name": "Atlassian",
+     "country": "AU",
+     "role": "second",
+     "grade": "①",
+     "source": "S210",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TEAM"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.dev.design",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.dev",
+   "name": "디자인·제품 협업",
+   "spec": "UI 디자인, 프로토타입. 좌석+AI 크레딧",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Figma",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S205",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:FIG",
+     "note": "3Q26 순매출유지율 131%. ARR 1만 달러 이상 고객의 65%가 주간 에이전트 사용, 80% 이상이 AI 크레딧 소비"
+    },
+    {
+     "name": "Adobe",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:ADBE"
+    },
+    {
+     "name": "Canva",
+     "country": "AU",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.dev.codegen",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.dev",
+   "name": "AI 코딩 도구",
+   "spec": "코드 생성 에이전트. 토큰·좌석 과금. 모델 회사와 직접 경쟁",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Anthropic",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "OpenAI",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "Anysphere (Cursor)",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "Microsoft (Copilot)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "주제에서 제외: 모델 회사와 직접 경쟁, 대부분 비상장"
+   ]
+  },
+  {
+   "id": "stack.sec",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "보안",
+   "spec": "공격 표면이 늘수록 지출이 는다. AI가 취약점을 더 빨리 찾으면 수요 증가",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sec.endpoint",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sec",
+   "name": "엔드포인트·XDR",
+   "spec": "단말·워크로드 보호. 단말 수 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "CrowdStrike",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S218",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:CRWD",
+     "note": "2Q FY27 순증 ARR 3.33억 달러(+51%), 기말 ARR 약 58.4억 달러(+25%, 4분기 연속 가속). 연간 순증 ARR 가이던스 +34%"
+    },
+    {
+     "name": "Microsoft",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "SentinelOne",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:S"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sec.network",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sec",
+   "name": "네트워크 보안·SASE",
+   "spec": "방화벽, 제로트러스트 접속. 사용자·대역폭 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Palo Alto Networks",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S208",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:PANW",
+     "note": "FY26 3Q 매출 30억 달러(+31%), 사상 최고 분기 보도"
+    },
+    {
+     "name": "Zscaler",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:ZS"
+    },
+    {
+     "name": "Fortinet",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:FTNT"
+    },
+    {
+     "name": "Cloudflare",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S206",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:NET"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sec.identity",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sec",
+   "name": "신원·접근 관리",
+   "spec": "사람과 기계(에이전트) 신원. 신원 수 과금 → 에이전트가 늘면 Q 증가",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Okta",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S220",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:OKTA",
+     "note": "2Q FY27 비GAAP 영업이익률 28%. 성장률은 이번 검색에서 확인 못 함"
+    },
+    {
+     "name": "Microsoft (Entra)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "SailPoint",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S219",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:SAIL"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sec.vuln",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sec",
+   "name": "취약점·앱 보안",
+   "spec": "스캔, 코드 보안. 자산 수 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Qualys",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:QLYS"
+    },
+    {
+     "name": "Tenable",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TENB"
+    },
+    {
+     "name": "Rapid7",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:RPD"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "AI가 취약점을 찾아 주면 스캐너 수요가 늘어나나 줄어드나(Mythos 이후 보안주 급락 후 급등, S208)"
+   ]
+  },
+  {
+   "id": "stack.sor",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "수평 기록 시스템",
+   "spec": "전사 데이터의 원본. 교체 비용이 큼. 과금은 대부분 좌석",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sor.erp",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sor",
+   "name": "ERP·재무",
+   "spec": "회계 원장, 구매, 재고. 좌석·모듈 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "SAP",
+     "country": "DE",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XETR:SAP"
+    },
+    {
+     "name": "Oracle",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ORCL"
+    },
+    {
+     "name": "Workday",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S222",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:WDAY"
+    },
+    {
+     "name": "Intuit",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:INTU"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sor.crm",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sor",
+   "name": "CRM·마케팅",
+   "spec": "고객 기록, 영업·마케팅 자동화. 좌석 과금 → 에이전트 대체 우려의 중심",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Salesforce",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S211",
+     "share_pct": {
+      "v": 20.0,
+      "unit": "%",
+      "asof": "2025",
+      "source": "S226",
+      "grade": "②",
+      "basis": "세계 CRM 매출 2025년(IDC, 2차 인용). 2021년 23.8%에서 하락"
+     },
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:CRM",
+     "note": "2Q FY27 매출 113억 달러(+11%). Agentforce ARR 15억 달러 초과(+240%, 정의 확대 포함)"
+    },
+    {
+     "name": "Oracle",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S226",
+     "share_pct": {
+      "v": 4.1,
+      "unit": "%",
+      "asof": "2025",
+      "source": "S226",
+      "grade": "②",
+      "basis": "세계 CRM 매출 2025년(IDC, 2차 인용)"
+     },
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ORCL"
+    },
+    {
+     "name": "HubSpot",
+     "country": "US",
+     "role": "second",
+     "grade": "②",
+     "source": "S204",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:HUBS",
+     "note": "3Q26 순매출유지율 101%(전분기比 −1%p), 연간 −2%p 전망. 좌석 최소 수량 폐지로 활성 좌석은 +34%"
+    },
+    {
+     "name": "Microsoft (Dynamics)",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sor.hcm",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sor",
+   "name": "HCM·급여",
+   "spec": "인사·급여. 직원 수 과금 → 고용이 줄면 Q 감소",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Workday",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S222",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:WDAY",
+     "note": "2Q FY27 구독 매출 24.71억 달러(+13.9%), 연간 +13% 가이던스"
+    },
+    {
+     "name": "ADP",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:ADP"
+    },
+    {
+     "name": "Paycom",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:PAYC"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "직원 수 과금이라 고용 감소에 직접 노출 — 고객사 인원 추이"
+   ]
+  },
+  {
+   "id": "stack.sor.itsm",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sor",
+   "name": "ITSM·워크플로",
+   "spec": "IT 요청·업무 흐름 자동화. 좌석+에이전트 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "ServiceNow",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S209",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:NOW",
+     "note": "3Q26 구독 매출 39.88억 달러(+21%), cRPO +20.5%. 에이전트 AI 소비량 전년比 13배 이상, AI ACV 목표 17억 달러로 상향"
+    },
+    {
+     "name": "Atlassian",
+     "country": "AU",
+     "role": "second",
+     "grade": "①",
+     "source": "S210",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TEAM",
+     "note": "1Q FY27 매출 17.72억 달러(+24%), 클라우드 +31%. 구독 ARR 성장률을 18.5%로 가이던스해 주가 하락"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.collab",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "협업·생산성",
+   "spec": "문서, 메신저, 프로젝트 관리. 순수 좌석 과금이라 AI 성공 시 가장 취약",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.collab.suite",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.collab",
+   "name": "오피스·협업 도구",
+   "spec": "문서·메일·화상·프로젝트 관리. 좌석 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Microsoft (365)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "Alphabet (Workspace)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:GOOGL"
+    },
+    {
+     "name": "monday.com",
+     "country": "IL",
+     "role": "second",
+     "grade": "①",
+     "source": "S221",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MNDY",
+     "note": "3Q26 매출 3.775억 달러(+19.1%). 순매출유지율 108%(1년 전 117%), 연말 107% 전망. 실적 후 주가 약 −9%. AI ARR 3,600만 달러"
+    },
+    {
+     "name": "Atlassian",
+     "country": "AU",
+     "role": "main",
+     "grade": "①",
+     "source": "S210",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TEAM"
+    },
+    {
+     "name": "Asana",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ASAN"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "산업 특화 기록 시스템",
+   "spec": "규제·현장 산업용. 대체재가 적고 결제가 붙는 경우가 많다",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.health",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "헬스케어·생명과학",
+   "spec": "임상·규제 문서, 영업, EHR. 좌석+모듈",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Veeva Systems",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S214",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:VEEV",
+     "note": "1Q FY27 매출 8.829억 달러(+16%). FY27 가이던스 약 36.8~36.9억 달러. 산업 특화 앱+에이전트 회사로 전환 선언"
+    },
+    {
+     "name": "Doximity",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:DOCS",
+     "note": "SMIC 2025.05 커버"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.fin",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "금융·보험 코어",
+   "spec": "은행 코어, 보험 계약·청구. 계약 규모(보험료·자산) 연동",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Guidewire",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S215",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:GWRE",
+     "note": "4Q FY26 매출 4.111억 달러(+15%)"
+    },
+    {
+     "name": "Jack Henry",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:JKHY"
+    },
+    {
+     "name": "nCino",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:NCNO"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.gov",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "공공·건설·현장",
+   "spec": "지자체 행정, 건설 관리, 현장 서비스. 계약·공사 규모 연동",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Tyler Technologies",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S216",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:TYL",
+     "note": "3Q26 SaaS 매출 +21.2%, 반복 매출 +11.0%, 분기 FCF 2.77억 달러(최고). AI 기능 포함 계약 약 300건. 2027년 가이던스는 유보"
+    },
+    {
+     "name": "Procore",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S223",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:PCOR",
+     "note": "3Q26 매출 약 4.02억 달러(+18.7%, 인수 제외 +17.1%), 유기적 cRPO +22.6%, 총매출유지율 95%. 실적 후 주가 +11%"
+    },
+    {
+     "name": "ServiceTitan",
+     "country": "US",
+     "role": "second",
+     "grade": "①",
+     "source": "S224",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TTAN",
+     "note": "2Q FY27 매출 2.928억 달러(+21%), 거래액 268억 달러(+17%), 사용량 매출 +24%. 기존 고객 작업 건수 둔화 언급"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.smb",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "매장·소상공인 운영+결제",
+   "spec": "POS, 예약, 급여 + 결제 수수료. 거래액 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Toast",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S217",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:TOST",
+     "note": "3Q26 매출 19.8억 달러(+21%), ARR 25.03억 달러(+24%), 결제액 618억 달러(+20%), 매장 약 18.9만 개. GAAP EPS 미스로 주가 하락"
+    },
+    {
+     "name": "Block (Square)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:XYZ"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.eng",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "설계·엔지니어링(CAD·PLM·EDA)",
+   "spec": "제품 설계 도구. 좌석·토큰. EDA는 AI 칩 설계와 연동(주제에서 주의)",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Autodesk",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:ADSK"
+    },
+    {
+     "name": "Dassault Systèmes",
+     "country": "FR",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XPAR:DSY"
+    },
+    {
+     "name": "PTC",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:PTC"
+    },
+    {
+     "name": "Synopsys",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:SNPS",
+     "note": "EDA는 AI 칩 설계와 연동"
+    },
+    {
+     "name": "Cadence",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:CDNS",
+     "note": "EDA는 AI 칩 설계와 연동"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.agent",
+   "kind": "stage",
+   "parent": "stack",
+   "name": "에이전트 계층",
+   "spec": "새로 생긴 층. 일의 양으로 과금",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.agent.model",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.agent",
+   "name": "기반 모델 API",
+   "spec": "토큰 과금. 비상장 모델 회사와 하이퍼스케일러 → AI Capex 직결(주제에서 제외 대상)",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "OpenAI",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "Anthropic",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    },
+    {
+     "name": "Alphabet",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:GOOGL"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "주제에서 제외: AI Capex 직결"
+   ]
+  },
+  {
+   "id": "stack.agent.platform",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.agent",
+   "name": "에이전트 플랫폼",
+   "spec": "기록 시스템 위에서 일을 수행. 대화·작업 건당 과금",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Salesforce (Agentforce)",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S211",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:CRM"
+    },
+    {
+     "name": "ServiceNow",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S209",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:NOW"
+    },
+    {
+     "name": "Microsoft",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MSFT"
+    },
+    {
+     "name": "Sierra",
+     "country": "US",
+     "role": "second",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     }
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.agent.seat",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.agent",
+   "name": "좌석 과금 에이전트",
+   "spec": "에이전트를 좌석으로 파는 모델",
+   "qty_per_unit": "없음 — 에이전트는 사람 수가 아니라 작업량으로 과금되는 방향(검증 필요)",
+   "price": "없음 — 에이전트는 사람 수가 아니라 작업량으로 과금되는 방향(검증 필요)",
+   "cost_share_pct": "없음 — 에이전트는 사람 수가 아니라 작업량으로 과금되는 방향(검증 필요)",
+   "makers": "없음 — 에이전트는 사람 수가 아니라 작업량으로 과금되는 방향(검증 필요)",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.onprem",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sor",
+   "name": "신규 온프레미스 영구 라이선스",
+   "spec": "설치형 일시불 판매",
+   "qty_per_unit": "없음 — 신규 판매는 대부분 구독으로 전환(검증 필요)",
+   "price": "없음 — 신규 판매는 대부분 구독으로 전환(검증 필요)",
+   "cost_share_pct": "없음 — 신규 판매는 대부분 구독으로 전환(검증 필요)",
+   "makers": "없음 — 신규 판매는 대부분 구독으로 전환(검증 필요)",
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.sec.nhi",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.sec",
+   "name": "비인간(에이전트·기계) 신원",
+   "spec": "사람이 아닌 신원의 발급·권한 관리. 에이전트 수에 비례. AI 실패 시 영향 작음, 성공 시 Q 급증",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "SailPoint",
+     "country": "US",
+     "role": "main",
+     "grade": "②",
+     "source": "S219",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:SAIL",
+     "note": "1Q FY27 ARR 11.63억 달러(+26%), SaaS ARR +36%. 비인간 신원이 신원 증가분의 40%, 에이전트 파이프라인 분기 중 2배. 가이던스에는 AI 기여를 크게 넣지 않음"
+    },
+    {
+     "name": "Okta",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S220",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:OKTA",
+     "note": "CEO가 에이전트를 신원이 필요한 새 인력으로 규정"
+    },
+    {
+     "name": "Palo Alto Networks (CyberArk)",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:PANW"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  },
+  {
+   "id": "stack.vert.commerce",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.vert",
+   "name": "커머스 플랫폼+결제",
+   "spec": "온라인·오프라인 판매 운영. 거래액(GMV)과 결제 침투율로 과금. 좌석과 무관",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Shopify",
+     "country": "CA",
+     "role": "main",
+     "grade": "①",
+     "source": "S225",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:SHOP",
+     "note": "3Q26 매출 37.4억 달러(+32%), GMV 1,191억 달러(6분기 연속 약 +30%), B2B GMV +74%, 결제 침투율 68% 초과. 지출 계획 탓에 주가 −7.6%"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "AI 쇼핑 에이전트가 GMV를 늘리나, 수수료를 가져가나"
+   ]
+  },
+  {
+   "id": "stack.agent.credits",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.agent",
+   "name": "좌석 위에 얹는 AI 크레딧(하이브리드 과금)",
+   "spec": "기존 좌석 요금에 사용량 크레딧을 더하는 전환 장치. 좌석 감소를 사용량으로 메우는지가 관건",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "Figma",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S205",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:FIG"
+    },
+    {
+     "name": "monday.com",
+     "country": "IL",
+     "role": "second",
+     "grade": "①",
+     "source": "S221",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:MNDY",
+     "note": "AI ARR 3,600만 달러"
+    },
+    {
+     "name": "Atlassian",
+     "country": "AU",
+     "role": "main",
+     "grade": "①",
+     "source": "S210",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:TEAM",
+     "note": "엔터프라이즈 클라우드 고객의 87% 이상이 Rovo 사용"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": [
+    "크레딧 매출이 좌석 감소분보다 큰지 회사별로(10-Q)"
+   ]
+  },
+  {
+   "id": "stack.agent.deploy",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "stack.agent",
+   "name": "AI 배치 인력(전문 서비스)",
+   "spec": "대형 AI 계약에 붙는 현장 배치·컨설팅. 구독 매출 일부가 서비스 매출로 이동",
+   "qty_per_unit": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "price": "없음 — 범주라 단가·수량 축이 성립하지 않음",
+   "cost_share_pct": "미측정 — Gartner 범주별 지출 표 미확보(총액만 확인)",
+   "makers": [
+    {
+     "name": "ServiceNow",
+     "country": "US",
+     "role": "main",
+     "grade": "①",
+     "source": "S209",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:NOW",
+     "note": "대형 AI 계약에 배치 인력을 붙이면서 단기 구독 매출·cRPO 일부가 전문 서비스로 이동"
+    },
+    {
+     "name": "Palantir",
+     "country": "US",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNAS:PLTR",
+     "note": "SMIC 2024.05 커버"
+    },
+    {
+     "name": "Accenture",
+     "country": "IE",
+     "role": "main",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 점유율 원천 미확보",
+     "box_ref": "없음 — 레포에 체인 yaml 없음",
+     "ticker": "XNYS:ACN"
+    }
+   ],
+   "box_ref": "없음 — 레포에 체인 yaml 없음",
+   "open_questions": []
+  }
+ ]
+}
