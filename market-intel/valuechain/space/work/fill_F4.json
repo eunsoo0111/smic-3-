@@ -1,0 +1,1411 @@
+{
+ "filler": "F4",
+ "nodes": [
+  {
+   "id": "space.launch.service.heavy",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.launch.service",
+   "name": "중대형 발사 서비스",
+   "spec": "LEO 8톤 이상급 궤도 발사(팰컨9·팰컨헤비·스타십·뉴글렌·벌컨·아리안6·H3·장정·주췌-3·뉴트론 등) — 재사용 1단이 표준화, 컨스텔레이션 대량 배치",
+   "qty_per_unit": {
+    "v": 325,
+    "unit": "회/년(전 세계 궤도발사 시도)",
+    "basis": "2025년 전 세계 궤도발사 시도 325회(미국 181·중국 92) — 소형 발사 포함 전체. SpaceX 팰컨 165회+스타십 5회",
+    "asof": "2025",
+    "source": "S400",
+    "grade": "②"
+   },
+   "price": {
+    "v": 2700,
+    "unit": "USD/kg(LEO)",
+    "basis": "팰컨9 LEO kg당 약 2,700달러(팰컨헤비 1,400달러) — S-1 이 인용한 NASA 자료. 팰컨9 정가 약 7,400만 달러/회(S401), 뉴트론 기본가 7,000만 달러(S406)",
+    "asof": "2026-05",
+    "source": "S405",
+    "grade": "②"
+   },
+   "cost_share_pct": {
+    "v": 2.89,
+    "unit": "%",
+    "basis": "상업 발사 매출 124억 달러(2025·SIA) ÷ 4,290억 — 소형·라이드셰어 포함 발사 전체(중대형이 대부분)",
+    "asof": "2025",
+    "source": "S439",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SpaceX(팰컨9·팰컨헤비·스타십)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 52.3,
+      "unit": "%",
+      "basis": "SpaceX 170회 ÷ 전 세계 궤도발사 시도 325회(2025, 횟수 기준 — 질량 기준은 더 높음)",
+      "asof": "2025",
+      "source": "S401",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S401",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "팰컨 165회+스타십 5회(2025). Space 부문 매출 약 41억 달러, 외부 유료 43회. 2026년 스타십 V3 첫 비행(5/22)·Flight 14 첫 매출 임무(9/28), 2026년 팰컨9 약 120회(11월 초)"
+    },
+    {
+     "name": "중국항천과기집단(CASC, 장정 시리즈)",
+     "unlisted": {
+      "parent": "중국 국무원 국유(SASAC)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "main",
+     "share_pct": {
+      "v": 28.3,
+      "unit": "%",
+      "basis": "중국 전체 92회 ÷ 325회(2025, CASC+민간 합계 — CASC 단독 아님)",
+      "asof": "2025",
+      "source": "S400",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S400",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "중국 2025년 92회 중 다수(국가 합계 점유 28.3% — CASC 단독 분할 미측정). 국유"
+    },
+    {
+     "name": "United Launch Alliance(벌컨·아틀라스V)",
+     "unlisted": {
+      "parent": "Boeing·Lockheed Martin 50:50 JV(LM=XNYS:LMT)",
+      "parent_ticker": "XNYS:BA"
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S409",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "Boeing·Lockheed 50:50 JV — 매각 미성사(2026-07). 2026년 벌컨 발사 중단으로 실적 악화, 18~22회 계획(S410) 차질"
+    },
+    {
+     "name": "Blue Origin(뉴글렌)",
+     "unlisted": {
+      "parent": "제프 베이조스 개인 소유 — 독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S411",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "NG-3(2026-04-19) 실패 — 2026년 1회. 아마존 레오 배치 주력 후보, 국가안보 인증에 성공 발사 누적 필요"
+    },
+    {
+     "name": "Arianespace / ArianeGroup(아리안6)",
+     "unlisted": {
+      "parent": "ArianeGroup(Airbus·Safran 50:50 JV, Safran=XPAR:SAF)",
+      "parent_ticker": "XPAR:AIR"
+     },
+     "country": "FR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S412",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "2026년 아리안6 6~8회 목표, A64(4부스터) 2026-02 첫 비행 — 아마존 레오 계약"
+    },
+    {
+     "name": "미쓰비시중공업(H3)",
+     "ticker": "XTKS:7011",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "H3 발사 서비스 — 2025년 말 실패 후 2026년 비행 복귀 추진(모델 지식·검증 필요)"
+    },
+    {
+     "name": "LandSpace(주췌-3)",
+     "unlisted": {
+      "parent": "독립 비상장(STAR 상장 승인·대기)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S413",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "주췌-3 1단 육상 회수 성공(2026-08-19, 중국 최초). 상하이 STAR 상장 승인(75억 위안 공모, S414) — 상장 완료 미확인"
+    },
+    {
+     "name": "Rocket Lab(뉴트론)",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S406",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "뉴트론 16회 수주·기본가 7,000만 달러, 첫 발사 2027년 이후로 연기(3Q26). 잔고 35.7억 달러"
+    },
+    {
+     "name": "Firefly Aerospace(이클립스, Northrop 공동)",
+     "ticker": "XNAS:FLY",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S416",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "이클립스 첫 발사 2027년 이후(회사 주장)"
+    },
+    {
+     "name": "한화에어로스페이스(누리호 체계종합)",
+     "ticker": "012450",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S419",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+     "note": "누리호 5차(2026-10-07) 성공 — 주운영자로 발사운용 참여, 2027년 6차는 발사책임 일부 제외 전 업무. 차세대발사체 체계종합. 상업 수주 실적은 아직 없음"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.service.heavy",
+   "open_questions": [
+    "SpaceX 질량 기준 점유율(2025 궤도 투입 질량 중 비중) — BryceTech·McDowell 질량 집계 필요",
+    "팰컨9 정가: 분석가 인용 7,400만 달러 vs 과거 공개가 6,700만~6,975만 달러 — S-1 원문 대조 필요",
+    "2026년 연초~현재 국가별 발사 횟수 — 1분기 미국 28·중국 14(S450) 외 최신 누계는 추적 사이트마다 다름",
+    "H3 2025년 말 실패 원인·2026년 복귀 비행 결과 미확인(S000)",
+    "Relativity 테란R·Stoke 노바·중국 Space Pioneer(천룡-3)·Galactic Energy(지싱-2) 첫 비행 상태 미확인",
+    "ISRO/NSIL LVM3 상업 발사(원웹·AST) 2026년 실적 미측정"
+   ],
+   "note": "로켓으로 위성을 궤도에 올려 주는 서비스. 2025년 325회로 사상 최대, SpaceX 가 횟수 절반 이상(질량은 대부분). 병목은 SpaceX 이외 대형 발사체 — 벌컨 중단·뉴글렌 실패·뉴트론 2027 연기로 아마존 레오 등 비 SpaceX 수요가 공급을 못 받는다. kg당 단가는 재사용으로 하락(팰컨9 2,700달러/kg), 스타십 V3 상업화가 다음 단계."
+  },
+  {
+   "id": "space.launch.service.small",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.launch.service",
+   "name": "소형 발사 서비스",
+   "spec": "LEO 1.5톤 이하 전용 발사(일렉트론·한빛 등) — 원하는 궤도·원하는 날짜, 극초음속 시험 발사 겸용",
+   "qty_per_unit": {
+    "v": 18,
+    "unit": "회(일렉트론, 2026년 9월까지 누계)",
+    "basis": "Rocket Lab 일렉트론 2026년 18번째 발사(통산 97번째) — 소형 전용 발사 1위 사업자 물량",
+    "asof": "2026-09",
+    "source": "S407",
+    "grade": "②"
+   },
+   "price": {
+    "v": 7.5,
+    "unit": "백만 USD/회",
+    "basis": "일렉트론 정가 약 750만 달러(kg당 약 2.5~3만 달러) — 팰컨9 라이드셰어(약 7,000달러/kg)의 약 4배",
+    "asof": "2026-07",
+    "source": "S408",
+    "grade": "③"
+   },
+   "cost_share_pct": "미측정 — SIA 상업 발사 매출 124억 달러(S439)에 포함, 소형 전용 분할 없음(Rocket Lab 발사 매출 공시를 하한으로 재면 됨)",
+   "makers": [
+    {
+     "name": "Rocket Lab(일렉트론·HASTE)",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S406",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "소형 전용 발사 사실상 독점. 계약 발사 117회(일렉트론·HASTE·뉴트론), 3Q26 매출 2.68억 달러, iQPS·Synspective 반복 고객"
+    },
+    {
+     "name": "Firefly Aerospace(알파)",
+     "ticker": "XNAS:FLY",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S415",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "2026년 알파 발사 4→3회 축소, 2026 매출 가이던스 4.2~4.5억 달러 유지"
+    },
+    {
+     "name": "Isar Aerospace(스펙트럼)",
+     "unlisted": {
+      "parent": "독립 비상장(Porsche SE 등 투자 — 모델지식)",
+      "parent_ticker": null
+     },
+     "country": "DE",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S423",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "스펙트럼 2026-09-05 노르웨이 안도야에서 궤도 배치 성공. ESA 유럽발사체챌린지 선정"
+    },
+    {
+     "name": "Rocket Factory Augsburg(RFA One)",
+     "unlisted": {
+      "parent": "OHB SE 계열(지배 지분 — 모델지식)",
+      "parent_ticker": "XETR:OHB"
+     },
+     "country": "DE",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S423",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "정지연소 중 폭발로 첫 발사 2027년 연기"
+    },
+    {
+     "name": "Skyroot Aerospace(비크람-1)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "IN",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S422",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "2026-07-18 인도 첫 민간 궤도 발사 성공, 상업 발사 2027년 목표"
+    },
+    {
+     "name": "Galactic Energy 등 중국 민간 고체 소형 발사(세레스-1)",
+     "unlisted": {
+      "parent": "독립 비상장(중국 민간)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "중국 민간 소형 고체 발사 다수 — 2026년 횟수 미측정"
+    },
+    {
+     "name": "Space One(카이로스)",
+     "unlisted": {
+      "parent": "Canon Electronics·IHI Aerospace·시미즈 등 출자(모델지식)",
+      "parent_ticker": "XTKS:7739"
+     },
+     "country": "JP",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "카이로스 궤도 도달 실패 이력 — 2026년 3차 비행 미확인"
+    },
+    {
+     "name": "Interstellar Technologies(ZERO)",
+     "unlisted": {
+      "parent": "독립 비상장(Toyota Woven 등 투자 — 모델지식)",
+      "parent_ticker": null
+     },
+     "country": "JP",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "ZERO 개발 중 — 2026년 상태 미확인"
+    },
+    {
+     "name": "이노스페이스(한빛-나노)",
+     "ticker": "462350",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S417",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "한빛-나노 첫 상업 발사(2025-12-22, 브라질 알칸타라) 이륙 약 30초 뒤 실패. 2차 발사 2026년 11월 예정(S418) — 11-12 현재 결과 미확인"
+    },
+    {
+     "name": "페리지에어로스페이스(블루웨일1)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+     "note": "해상 발사 소형 로켓 개발 — 궤도 발사 실적 없음(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.service.small",
+   "open_questions": [
+    "2025년 일렉트론 발사 횟수 — 추적원마다 18회 vs 21회(HASTE 포함 여부) 엇갈림",
+    "일렉트론 2026년 실제 단가(정가 750만 달러는 오래된 값, 인상 여부) — Rocket Lab 발사 매출 ÷ 발사 횟수로 재면 됨",
+    "한빛-나노 2차 발사(2026-11) 결과 — 확인 후 갱신",
+    "중국 민간 소형 발사(세레스·키네티카·주췌-2 등) 2026년 횟수",
+    "Agnikul(인도)·Gilmour(호주 Eris)·Orbex 상태 미확인"
+   ],
+   "note": "작은 위성 1~수기만 원하는 궤도·날짜에 올리는 전용 로켓. 라이드셰어보다 kg당 4배 비싸지만 일정·궤도 자유가 가치. 2026년 Isar·Skyroot 가 궤도 도달하며 공급자가 늘지만 물량은 Rocket Lab 1강, 미 국방 극초음속 시험(HASTE) 수요가 받쳐 준다. 한국은 이노스페이스 재발사(11월)가 분기점."
+  },
+  {
+   "id": "space.launch.service.otv",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.launch.service",
+   "name": "라이드셰어·궤도수송선(OTV)·디스펜서",
+   "spec": "합승 발사 중개, 「마지막 구간」 궤도 이동선, 위성 분리 디스펜서",
+   "qty_per_unit": {
+    "v": 27,
+    "unit": "기(Exolaunch 한 번의 Transporter 임무 배치 위성 수)",
+    "basis": "Exolaunch Transporter-13 고객 위성 27기 배치 — 라이드셰어 1회당 중개 물량 예시(연간 총량 아님)",
+    "asof": "2025-03",
+    "source": "S426",
+    "grade": "①"
+   },
+   "price": {
+    "v": 7000,
+    "unit": "USD/kg(SSO 라이드셰어)",
+    "basis": "SpaceX 라이드셰어 SSO 50kg 35만 달러 수준 — OTV(D-Orbit ION 등) 추가 시 할증",
+    "asof": "2026-02",
+    "source": "S424",
+    "grade": "③"
+   },
+   "cost_share_pct": "미측정 — SIA 상업 발사 124억 달러(S439)에 포함, OTV·디스펜서 분할 없음(Quilty·NSR 유료 자료)",
+   "makers": [
+    {
+     "name": "SpaceX(Transporter·Bandwagon 라이드셰어)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S426",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "라이드셰어 정기편 운영 — Exolaunch 등 중개사가 2028년까지 좌석 확보"
+    },
+    {
+     "name": "Exolaunch(EXOpod 디스펜서·중개)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "DE",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S426",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "라이드셰어 중개·분리장치 — Transporter-13 27기 배치, Impulse GEO 라이드셰어 협력"
+    },
+    {
+     "name": "D-Orbit(ION 위성 캐리어)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "IT",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "OTV 상업 운용 선두 — 누적 20회+ 임무(모델지식)"
+    },
+    {
+     "name": "Impulse Space(미라·헬리오스)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S425",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "시리즈D 약 8억 달러(2026), 헬리오스(LEO→GEO 킥스테이지) 첫 비행 2027년, 미라는 우주군 Victus Surgo"
+    },
+    {
+     "name": "Firefly Aerospace(엘리트라)",
+     "ticker": "XNAS:FLY",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "엘리트라 OTV 300~3,300kg 3종(모델지식)"
+    },
+    {
+     "name": "Rocket Lab(포톤 킥스테이지)",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "일렉트론 상단 포톤으로 궤도 이동(모델지식)"
+    },
+    {
+     "name": "SEOPS",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "라이드셰어 통합·디스펜서(모델지식)"
+    },
+    {
+     "name": "Momentus(비고라이드)",
+     "ticker": "XNAS:MNTS",
+     "country": "US",
+     "role": "historical",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+     "note": "OTV 상업 운용 축소 — 2026년 상장 유지 여부 미확인(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.service.otv",
+   "open_questions": [
+    "전 세계 라이드셰어 연간 탑재 위성 수·질량 — BryceTech 집계 필요",
+    "SpaceX 라이드셰어 공식 가격표(2026) 미확인 — 7,000달러/kg 은 2차 보도",
+    "D-Orbit 2026년 임무·자금조달, Momentus 상장 상태 미확인",
+    "한국 OTV 사업자 — 확인된 상장사 없음"
+   ],
+   "note": "큰 로켓에 여러 위성을 합승시키고(라이드셰어), 내려 준 뒤 원하는 궤도까지 옮겨 주는 「마지막 구간 택배」. SpaceX 정기편이 가격을 정하고, 2026년 가격은 오르는 쪽(소형 경쟁 발사체 지연). Impulse 가 GEO 직행(헬리오스) 으로 큰 판을 노린다."
+  },
+  {
+   "id": "space.launch.service.spaceport",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.launch.service",
+   "name": "발사장·발사 지원 인프라",
+   "spec": "발사대·조립동·추진제 저장·공급 설비, 레인지 안전·추적, 해상 회수선·발사 플랫폼",
+   "qty_per_unit": "미측정 — 전 세계 가동 궤도 발사장 수 집계 미확보(FAA 면허 발사장 목록·McDowell GCAT 발사장 표에서 재면 됨)",
+   "price": "미측정 — 발사장 이용료·발사대 구축비 공개 사례 미확보(나로 제2발사대 사업비는 항우연 예산서에서 재면 됨)",
+   "cost_share_pct": "미측정 — 발사장·지원 인프라 시장 규모 출처 없음(정부 예산 비중 커서 SIA 상업 매출에 안 잡힘)",
+   "makers": [
+    {
+     "name": "SpaceX(스타베이스·LC-39A·SLC-40·SLC-4E)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S401",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "자체 발사대·회수선 운영 — 팰컨 165회 소화"
+    },
+    {
+     "name": "Space Florida(케이프커내버럴 상업 발사장 관리)",
+     "unlisted": {
+      "parent": "미국 플로리다 주정부",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "플로리다 주 공기업 — 상업 발사장 인프라 개발(모델지식)"
+    },
+    {
+     "name": "Rocket Lab(LC-1 뉴질랜드·LC-2 월롭스·LC-3)",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S406",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "자체 발사장 3곳 — 일렉트론·뉴트론"
+    },
+    {
+     "name": "Andøya Space(노르웨이)",
+     "unlisted": {
+      "parent": "노르웨이 정부·Kongsberg 출자(모델지식)",
+      "parent_ticker": "XOSL:KOG"
+     },
+     "country": "NO",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S423",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "Isar 스펙트럼 발사장(2026-09 궤도 성공)"
+    },
+    {
+     "name": "HD현대중공업(나로 제2발사대)",
+     "ticker": "329180",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S420",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "누리호 발사대 설계·제작·설치(국산화 100%), 5차 발사 패드 보수, 차세대발사체 발사대 상세설계 우선협상대상자(2026-10)"
+    },
+    {
+     "name": "현대로템(추진기관 시험설비)",
+     "ticker": "064350",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S421",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "누리호 추진기관 시스템 시험설비 구축 참여 — 계약 범위·매출 비중 미확인"
+    },
+    {
+     "name": "한양이엔지(발사 설비)",
+     "ticker": "045100",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S421",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "누리호 설비 구축 참여사로 보도 — 구체 범위 미확인(반도체 배관 주력)"
+    },
+    {
+     "name": "한화에어로스페이스(발사통제·운용)",
+     "ticker": "012450",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S419",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "누리호 5차 발사통제 콘솔 대부분 운용 — 발사 지원 서비스"
+    },
+    {
+     "name": "Equatorial Launch Australia·Gilmour Space(호주)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "AU",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+     "note": "호주 아넘랜드·볼렌 발사장(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.service.spaceport",
+   "open_questions": [
+    "현대로템·한양이엔지 발사 인프라 매출 규모 — DART 사업보고서 주요 계약에서 확인 필요",
+    "차세대발사체 발사대(제3발사대) 구축 사업비·발주 일정",
+    "미국 동부 발사장 혼잡(연 100회+) 해소 투자 규모 — 우주군 예산",
+    "브라질 알칸타라(이노스페이스) 이용 조건"
+   ],
+   "note": "로켓을 세우고 연료를 넣고 쏘는 땅 위 설비(발사대·조립동·추진제 탱크·추적 레이더·회수선). 정부·대형 사업자가 직접 짓는 경우가 많다. 병목은 미국 플로리다 발사장 혼잡과 신규 발사체용 발사대 — 한국은 HD현대중공업이 차세대 발사대 설계를 따냈다."
+  },
+  {
+   "id": "space.ground.infra.gateway_antenna",
+   "kind": "input",
+   "input_type": "equipment",
+   "parent": "space.ground.infra",
+   "name": "지상국 안테나·게이트웨이 장비",
+   "spec": "3~13m 파라볼라·위상배열 지상 안테나, 모뎀·베이스밴드·업/다운 컨버터, 광학 지상국",
+   "qty_per_unit": "미측정 — 연간 게이트웨이·지상국 안테나 출하 대수 집계 없음(NSR·Analysys Mason 유료 자료)",
+   "price": "미측정 — 게이트웨이 안테나 단가 공개 사례 미확보(인텔리안테크 게이트웨이 수주 공시 ÷ 대수로 재면 됨)",
+   "cost_share_pct": {
+    "v": 9.55,
+    "unit": "%",
+    "basis": "위성 지상국 시장 409.9억 달러(2025·MarketsandMarkets, 장비+서비스) ÷ 4,290억 — 타사 추정 387~629억(9.0~14.7%), GSaaS·관제 SW 일부 겹침",
+    "asof": "2025",
+    "source": "S438",
+    "grade": "③"
+   },
+   "makers": [
+    {
+     "name": "Kratos Defense & Security(위성 지상 시스템·OpenSpace)",
+     "ticker": "XNAS:KTOS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S433",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "3Q26 매출 4.718억 달러(+35.7%), 우주·훈련 파이프라인 확대. 지상 안테나·RF·가상화 모뎀"
+    },
+    {
+     "name": "Gilat Satellite Networks",
+     "ticker": "XNAS:GILT",
+     "country": "IL",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S432",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "3Q26 매출 1.162억 달러, 2026 가이던스 4.55~4.75억으로 하향(LEO/GEO 위성 지연), Hughes Chapter 11 대손"
+    },
+    {
+     "name": "Viasat(게이트웨이·Inmarsat 지상망)",
+     "ticker": "XNAS:VSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "자체 망 게이트웨이 + 외부 판매(모델지식)"
+    },
+    {
+     "name": "ST Engineering iDirect(모뎀·허브)",
+     "ticker": "XSES:S63",
+     "country": "SG",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "VSAT 허브·모뎀(모델지식)"
+    },
+    {
+     "name": "Comtech Telecommunications",
+     "ticker": "XNAS:CMTL",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "모뎀·증폭기(모델지식)"
+    },
+    {
+     "name": "General Dynamics(SATCOM Technologies 대형 안테나)",
+     "ticker": "XNYS:GD",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S438",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "대형 지상국 안테나 — 지상국 시장 선두군으로 거명"
+    },
+    {
+     "name": "Safran(Data Systems — 지상국·텔레메트리)",
+     "ticker": "XPAR:SAF",
+     "country": "FR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "지상국 수신·텔레메트리(모델지식)"
+    },
+    {
+     "name": "인텔리안테크(게이트웨이 안테나)",
+     "ticker": "189300",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S431",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "원웹 등 LEO 게이트웨이 안테나 — 고마진 게이트웨이·평판 비중 확대(증권사), 상위 3개 고객 56.6%(S430)"
+    },
+    {
+     "name": "컨텍(지상국 구축)",
+     "ticker": "451760",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S435",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "지상국 구축(엔지니어링) 사업부 — 자체 GSaaS 망 12곳 구축"
+    },
+    {
+     "name": "CPI(Communications & Power Industries — 증폭기)",
+     "unlisted": {
+      "parent": "사모펀드 소유 비상장(모델지식)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+     "note": "지상국 고출력 증폭기(TWTA·클라이스트론)(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.infra.gateway_antenna",
+   "open_questions": [
+    "지상국 시장 규모가 조사기관마다 387~629억 달러로 1.6배 차 — 정의(장비·서비스·사용자 단말 포함 여부) 통일 필요",
+    "SIA 1,652억 달러 중 네트워크 장비 분할값(유료 본문)",
+    "스타링크·아마존 레오 게이트웨이 자체 제작(captive) 비중",
+    "광학 지상국(레이저) 공급사 — 미조사"
+   ],
+   "note": "위성과 지상망을 잇는 큰 안테나와 모뎀·증폭기. LEO 컨스텔레이션은 수백 곳 게이트웨이가 필요해 수요가 늘지만, 2026년엔 위성 발사 지연(벌컨·뉴글렌)으로 Gilat 처럼 출하가 밀리는 쪽이 생겼다. 소프트웨어 정의(가상화) 모뎀으로 전환 중."
+  },
+  {
+   "id": "space.ground.infra.gsaas",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.ground.infra",
+   "name": "지상국 서비스(GSaaS)",
+   "spec": "전 세계 지상국 네트워크를 분·패스 단위로 임대 — 위성 운영자가 지상국을 안 짓고 빌려 쓴다",
+   "qty_per_unit": {
+    "v": 28,
+    "unit": "곳(KSAT 운영 지상국 수)",
+    "basis": "세계 1위 GSaaS 사업자 KSAT 운영 지상국 28곳(2025) — 국내 컨텍 12곳 구축·8곳 가동(S435)",
+    "asof": "2025",
+    "source": "S436",
+    "grade": "①"
+   },
+   "price": "미측정 — 패스(분)당 요금 공개 가격표 미확보(AWS Ground Station 공개 분당 요금 페이지에서 재면 됨)",
+   "cost_share_pct": {
+    "v": 0.89,
+    "unit": "%",
+    "basis": "GSaaS 시장 38억 달러(2025·Market Intelo) ÷ 4,290억 — 저등급 조사, 정의 불명",
+    "asof": "2025",
+    "source": "S437",
+    "grade": "③"
+   },
+   "makers": [
+    {
+     "name": "KSAT(Kongsberg Satellite Services)",
+     "unlisted": {
+      "parent": "Kongsberg Gruppen 50%·Space Norway 50%(모델지식)",
+      "parent_ticker": "XOSL:KOG"
+     },
+     "country": "NO",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S436",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "지상국 28곳(극지 스발바르·남극 트롤) — 세계 최대 상업 지상국망, AWS 협력(2025), 하이퍼 지상망"
+    },
+    {
+     "name": "SSC(Swedish Space Corporation)",
+     "unlisted": {
+      "parent": "스웨덴 정부",
+      "parent_ticker": null
+     },
+     "country": "SE",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "스웨덴 국영 지상국망(모델지식)"
+    },
+    {
+     "name": "AWS Ground Station",
+     "ticker": "XNAS:AMZN",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "클라우드 연동 지상국 임대(모델지식)"
+    },
+    {
+     "name": "Viasat Real-Time Earth",
+     "ticker": "XNAS:VSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "GSaaS 망(모델지식)"
+    },
+    {
+     "name": "Leaf Space",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "IT",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "유럽 GSaaS 신흥(모델지식)"
+    },
+    {
+     "name": "Infostellar",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "JP",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "일본 지상국 공유(모델지식)"
+    },
+    {
+     "name": "ATLAS Space Operations",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "소프트웨어 정의 지상국망(모델지식)"
+    },
+    {
+     "name": "Microsoft Azure Orbital Ground Station",
+     "ticker": "XNAS:MSFT",
+     "country": "US",
+     "role": "historical",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "2024년 서비스 종료 발표(모델지식·검증 필요)"
+    },
+    {
+     "name": "컨텍(GSaaS)",
+     "ticker": "451760",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S435",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+     "note": "해외 지상국 12곳 구축·8곳 가동→2026년 16곳 목표, 군 정찰위성 해외 지상국 서비스 계약(2026-02), 2026E 매출 1,175억 원(증권사)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.infra.gsaas",
+   "open_questions": [
+    "GSaaS 시장 규모 출처 등급 낮음(③) — NSR·Euroconsult 값으로 교체 필요",
+    "KSAT 2025년 매출(연차보고서 본문) 미판독",
+    "컨텍 2026년 3분기 실적·GSaaS 매출 비중 — DART 분기보고서 확인",
+    "Eutelsat 텔레포트 사업 매각(EQT, 2024) 후 신설 사업자 명칭·규모"
+   ],
+   "note": "위성 운영자가 지상국을 직접 짓지 않고, 전 세계 지상국을 위성 1패스(몇 분) 단위로 빌려 쓰는 서비스. 위성 수가 늘수록(2025년 4,434기 발사, SIA) 수요가 커지고, 극지 지상국 자리는 희소하다. 클라우드 사업자 진입(AWS)과 국방 수요(정찰위성)가 변화."
+  },
+  {
+   "id": "space.ground.infra.mission_sw",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.ground.infra",
+   "name": "관제·임무·영상처리 소프트웨어",
+   "spec": "위성 관제(C2)·임무계획·궤도 결정, 영상 전처리·보정, 가상화 지상 시스템(클라우드)",
+   "qty_per_unit": "없음 — 소프트웨어는 위성·임무 단위 라이선스라 연간 물량 축이 성립하지 않음(운용 위성 수로 대리 측정 가능)",
+   "price": "미측정 — 관제 SW 라이선스·임무 단가 공개 사례 미확보",
+   "cost_share_pct": "미측정 — 관제·임무 SW 단독 시장 규모 출처 없음(지상국 시장 409.9억 달러(S438)에 일부 포함)",
+   "makers": [
+    {
+     "name": "Kratos(OpenSpace·epoch 관제)",
+     "ticker": "XNAS:KTOS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S433",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "상업 위성 관제 SW epoch 와 가상화 지상 시스템 OpenSpace — 3Q26 우주 파이프라인 확대"
+    },
+    {
+     "name": "L3Harris(지상 관제 시스템)",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "군·정부 위성 관제(모델지식)"
+    },
+    {
+     "name": "Synopsys/Ansys(STK — 궤도 해석)",
+     "ticker": "XNAS:SNPS",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "STK 궤도·임무 분석 SW — Ansys 는 2025년 Synopsys 에 인수(모델지식)"
+    },
+    {
+     "name": "Cognitive Space",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "AI 위성 임무계획(모델지식)"
+    },
+    {
+     "name": "Amergint Technologies",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "소프트웨어 정의 지상 신호처리(모델지식)"
+    },
+    {
+     "name": "GMV",
+     "unlisted": {
+      "parent": "독립 비상장(가족 소유)",
+      "parent_ticker": null
+     },
+     "country": "ES",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "유럽 관제 SW(모델지식)"
+    },
+    {
+     "name": "쎄트렉아이(지상체)",
+     "ticker": "099320",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S449",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "위성체·탑재체·지상체 일괄 — 425 군정찰위성 지상체 수주"
+    },
+    {
+     "name": "에스아이에이(SIA — 위성영상 AI 분석)",
+     "unlisted": {
+      "parent": "쎄트렉아이 자회사",
+      "parent_ticker": "099320"
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S449",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "쎄트렉아이 자회사, 영상 분석시간 30~60분→5~10분, 2027E 매출 100억 원(대신증권)"
+    },
+    {
+     "name": "컨텍(영상데이터 처리)",
+     "ticker": "451760",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S435",
+     "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+     "note": "영상데이터 처리·AI 활용 사업부"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.infra.mission_sw",
+   "open_questions": [
+    "관제·임무 SW 시장 규모 출처 없음",
+    "쎄트렉아이 지상체 매출 비중 — DART 사업보고서 부문 매출",
+    "스타링크·아마존 레오 등 대형 컨스텔레이션의 내재화(captive) 비율"
+   ],
+   "note": "위성에 명령을 보내고(관제), 촬영·통신 일정을 짜고(임무계획), 받은 영상을 보정·분석하는 소프트웨어. 위성이 수천 기로 늘며 사람 대신 자동화·AI 운용이 필수가 됐고, 하드웨어 모뎀이 소프트웨어(클라우드)로 바뀌는 중."
+  },
+  {
+   "id": "space.ground.user.terminal",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.ground.user",
+   "name": "사용자 단말(평판 안테나·해상/항공 안테나)",
+   "spec": "전자식 조향 평판 안테나(ESA), 해상 VSAT·항공기 기내 인터넷 안테나, 군용 다궤도 단말",
+   "qty_per_unit": {
+    "v": 200000,
+    "unit": "대/주(스타링크 단말 생산)",
+    "basis": "스타링크 단말 생산 2025년 말 주 17만 대 → 2026년 주 20만 대(연 약 1,000만 대) — 가입 1,030만(2026-03, S427)",
+    "asof": "2026-06",
+    "source": "S428",
+    "grade": "②"
+   },
+   "price": {
+    "v": 400,
+    "unit": "USD/대(상한, 목표)",
+    "basis": "아마존 레오 Pro 단말 400달러 미만 목표(회사 주장) — 스타링크 표준 단말 소매가는 지역별 상이(미측정)",
+    "asof": "2025-11",
+    "source": "S429",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — SIA 지상장비 1,652억 달러(S439)에 소비자 단말 포함되나 분할값 비공개(유료 본문)",
+   "makers": [
+    {
+     "name": "SpaceX(스타링크 단말)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S428",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "주 20만 대 자체 생산(텍사스 배스트롭) — 세계 최대, 가입 1,030만"
+    },
+    {
+     "name": "Amazon(레오 Nano·Pro·Ultra)",
+     "ticker": "XNAS:AMZN",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S429",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "자체 설계 단말·Ultra 는 자체 Leo 실리콘, 2026년 상용 서비스 개시 목표"
+    },
+    {
+     "name": "인텔리안테크(해상·평판·군용 단말)",
+     "ticker": "189300",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S431",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "해상 VSAT 1위권, 원웹 평판 단말, 2026E 매출 4,052억 원(증권사) — 상위 3개 고객 56.6%(S430)"
+    },
+    {
+     "name": "Viasat(항공 IFC·군용 단말)",
+     "ticker": "XNAS:VSAT",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "기내 인터넷·군 단말(모델지식)"
+    },
+    {
+     "name": "Hughes Network Systems(EchoStar)",
+     "unlisted": {
+      "parent": "EchoStar 자회사(Chapter 11)",
+      "parent_ticker": "XNAS:SATS"
+     },
+     "country": "US",
+     "role": "historical",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S432",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "Chapter 11 신청 — Gilat 이 대손 반영(3Q26). 단말 공급 축소 위험"
+    },
+    {
+     "name": "Gilat(IFC 단말·Wavestream)",
+     "ticker": "XNAS:GILT",
+     "country": "IL",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S432",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "IFC 단말 납품 일정 재조정으로 2026 가이던스 하향"
+    },
+    {
+     "name": "Kymeta(메타물질 평판 안테나)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S434",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "Osprey u8 국방부 개량 계약(2026-10), 해군 KuKa 멀티밴드"
+    },
+    {
+     "name": "ThinKom Solutions(VICTS 항공 안테나)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+     "note": "항공기 기내 인터넷 안테나(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal",
+   "open_questions": [
+    "스타링크 단말 생산량 보도 엇갈림(주 7만~20만 대, 공장·집계 기준 차이)",
+    "아마존 레오 단말 위탁생산사 미확인",
+    "Hughes Chapter 11 신청일·범위(EchoStar 공시 확인)",
+    "센서뷰(321370)·휴니드 위성 단말 매출 — 확인 못해 메이커에서 뺐다",
+    "사용자 단말 시장 규모(SIA 소비자 장비 분할값) 미측정"
+   ],
+   "note": "가정·배·비행기·군 차량에 붙는 위성 안테나. 전자식 평판(ESA)이 대세가 돼 SpaceX 가 주 20만 대를 스스로 만든다(가격 경쟁력 압도). 비 SpaceX 진영(원웹·아마존 레오·군 다궤도)이 외부 단말사 기회 — 인텔리안테크가 대표. 2026년 Hughes 파산·위성 지연이 변수."
+  },
+  {
+   "id": "space.ground.user.terminal_chip",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.ground.user",
+   "name": "단말·D2D 칩(모뎀·빔포머·RFIC)",
+   "spec": "단말용 빔포머 IC·RF 프런트엔드·모뎀 SoC, 스마트폰 위성통신(NTN) 모뎀",
+   "qty_per_unit": {
+    "v": 7500000000.0,
+    "unit": "개(누적, 2021~2026-05)",
+    "basis": "STMicro 가 2021년 이후 스타링크에 납품한 IC 칩셋 누적 75억 개(회사 주장) — 다른 보도는 RF 안테나칩 50억 개+",
+    "asof": "2026-05",
+    "source": "S441",
+    "grade": "②"
+   },
+   "price": "미측정 — 빔포머 IC·NTN 모뎀 단가 공개 자료 없음(단말 BOM 분해 리포트에서 재면 됨)",
+   "cost_share_pct": "미측정 — 단말·D2D 칩 시장 규모 출처 없음(STMicro LEO 매출 2026년 약 10억 달러(S440)가 하한 단서)",
+   "makers": [
+    {
+     "name": "STMicroelectronics(스타링크 단말 RF·빔포머)",
+     "ticker": "XNYS:STM",
+     "country": "CH",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S440",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "LEO 매출 2025년 약 6억 → 2026년 약 10억 달러, 단말이 최대 기여, 2026~2028 누적 30억+(회사 주장) — SpaceX 의존"
+    },
+    {
+     "name": "Qualcomm(NTN 모뎀)",
+     "ticker": "XNAS:QCOM",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S442",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "X105 모뎀 Rel-19 NR-NTN — 2026년 말~2027년 폰 탑재, NTN 칩 우위(Counterpoint, S444)"
+    },
+    {
+     "name": "MediaTek(NTN 모뎀)",
+     "ticker": "XTAI:2454",
+     "country": "TW",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S443",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "M90 위성 통합 5G 모뎀, 스타링크 모바일 시연(MWC 2026)"
+    },
+    {
+     "name": "Samsung Electronics(엑시노스 모뎀 NTN)",
+     "ticker": "005930",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S445",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "Rel-19 NTN 모뎀 시험 — 상용 위성 D2D 칩 공급 실적 미확인"
+    },
+    {
+     "name": "Amazon(Leo 자체 실리콘)",
+     "ticker": "XNAS:AMZN",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S429",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "레오 Ultra 단말용 자체 칩"
+    },
+    {
+     "name": "Qorvo(Anokiwave 빔포머 IC)",
+     "ticker": "XNAS:QRVO",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "2024년 Anokiwave 인수 — 위성 단말 빔포머(모델지식)"
+    },
+    {
+     "name": "Skyworks Solutions(RF 프런트엔드)",
+     "ticker": "XNAS:SWKS",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "RF 프런트엔드 — Qorvo 와 합병 추진(모델지식·검증 필요)"
+    },
+    {
+     "name": "Apple(아이폰 위성 기능 — Globalstar)",
+     "ticker": "XNAS:AAPL",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "②",
+     "source": "S444",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+     "note": "NTN 지원 스마트폰 출하 1위(Counterpoint)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.user.terminal_chip",
+   "open_questions": [
+    "ST 스타링크 칩 75억 개(IC 전체) vs 50억 개(RF 안테나칩) — 집계 대상 차이",
+    "스타링크 단말 1대당 빔포머 칩 수·단가",
+    "삼성 엑시노스 NTN 상용 탑재 모델 — 미확인",
+    "한국 RFHIC 등 위성 단말 RF 매출 — 확인 못해 메이커에서 뺐다"
+   ],
+   "note": "단말 안테나 수백 개 소자를 전자적으로 조향하는 빔포머 칩과, 스마트폰이 위성과 직접 통화하게 하는 NTN 모뎀. 스타링크 덕에 ST 의 LEO 매출이 4년 새 약 6배. 다음 변화는 폰 D2D — 2030년 스마트폰 46% 가 위성 지원 전망(S444), Rel-19 NR-NTN 모뎀이 2026년 말 나온다."
+  },
+  {
+   "id": "space.ground.user.gnss_chip",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.ground.user",
+   "name": "GNSS 수신칩·모듈·장비",
+   "spec": "스마트폰·차량·측량·농기계용 위성항법 수신 칩·고정밀(RTK) 수신기 — 지상장비 매출의 대부분",
+   "qty_per_unit": {
+    "v": 1750000000.0,
+    "unit": "대/년(GNSS 탑재 기기 출하)",
+    "basis": "전 세계 GNSS 기기 출하 2024년 17.5억 대 → 2034년 24억 대(EUSPA)",
+    "asof": "2024",
+    "source": "S446",
+    "grade": "②"
+   },
+   "price": "미측정 — GNSS 칩 ASP(스마트폰은 모뎀 SoC 통합이라 분리 단가 없음), 측량용 RTK 수신기 단가 미확보",
+   "cost_share_pct": "미측정 — SIA 지상장비(네트워크+GNSS) 1,652억 달러(S439, 4,290억의 38.5%) 중 GNSS 분할 비공개. EUSPA GNSS 기기 매출 약 820억 유로(2024, S446·2차 요약)는 정의가 달라 분자로 안 씀",
+   "makers": [
+    {
+     "name": "Qualcomm(스냅드래곤 통합 GNSS)",
+     "ticker": "XNAS:QCOM",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "스마트폰 SoC 통합 다중주파 GNSS(모델지식)"
+    },
+    {
+     "name": "Broadcom(BCM47xx 이중주파 GNSS)",
+     "ticker": "XNAS:AVGO",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "아이폰 등 단독 GNSS 칩(모델지식)"
+    },
+    {
+     "name": "MediaTek(통합 GNSS)",
+     "ticker": "XTAI:2454",
+     "country": "TW",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "중저가 스마트폰·웨어러블(모델지식)"
+    },
+    {
+     "name": "u-blox",
+     "unlisted": {
+      "parent": "Advent International(사모펀드) 소유",
+      "parent_ticker": null
+     },
+     "country": "CH",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S447",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "Advent 인수 완료(2025-11-26, CHF 135/주) 후 상장폐지 — 차량·IoT GNSS 모듈"
+    },
+    {
+     "name": "Trimble(고정밀 측위·측량)",
+     "ticker": "XNAS:TRMB",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "①",
+     "source": "S448",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "3Q26 매출 9.668억 달러(+7%), 측위 서비스 수요 둔화 언급, 2026 가이던스 39.1~39.4억 달러"
+    },
+    {
+     "name": "Hexagon(NovAtel·Autonomy & Positioning)",
+     "ticker": "XSTO:HEXA-B",
+     "country": "SE",
+     "role": "second",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "고정밀 GNSS 수신기·보정 서비스(모델지식)"
+    },
+    {
+     "name": "Garmin(소비자·항공·해양 GNSS 기기)",
+     "ticker": "XNYS:GRMN",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "아웃도어·피트니스·항공 기기(모델지식)"
+    },
+    {
+     "name": "Septentrio",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "BE",
+     "role": "qualifying",
+     "share_pct": "미측정 — 회사별 매출·물량 점유 집계 없음(BryceTech·Quilty·NSR 유료 자료에서 재면 됨)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+     "note": "고정밀 GNSS 수신기(모델지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.ground.user.gnss_chip",
+   "open_questions": [
+    "SIA 1,652억 달러 중 GNSS 장비 분할값(유료 본문) — 과거 보고서 기준 지상장비의 대부분으로 알려짐(미검증)",
+    "EUSPA 2024 설치 기반 58억 대 vs 106억 대 보도 엇갈림",
+    "GNSS 칩 업체별 출하 점유(Qualcomm·Broadcom·MediaTek) — Counterpoint·Techno Systems Research 유료",
+    "한국 상장 GNSS 칩·모듈 대안 — 텔레칩스·아이디스 확인 못함, KPS(한국형 위성항법) 수혜 기업 미조사"
+   ],
+   "note": "GPS·갈릴레오·베이더우 신호를 받아 위치를 계산하는 칩과 장비. 연 17.5억 대(폰·차·웨어러블)에 들어가는 성숙 시장이라 SoC 통합으로 칩 단가는 떨어지고, 돈은 고정밀(RTK·자율주행·농기계) 수신기와 보정 서비스로 옮겨 간다. 2025년 u-blox 비상장화, 2026년 Trimble 은 측위 수요 둔화를 언급."
+  }
+ ]
+}

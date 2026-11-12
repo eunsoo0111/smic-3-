@@ -1,0 +1,1432 @@
+{
+ "filler": "F2",
+ "nodes": [
+  {
+   "id": "space.sat.payload.phased_array",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "통신 탑재체: 위상배열 안테나·디지털 프로세서",
+   "spec": "능동 위상배열(AESA) 안테나·빔포밍 IC·디지털 투명 프로세서/재생 중계 ASIC — Ku/Ka/E밴드, D2D 용 대형 전개 안테나 포함",
+   "qty_per_unit": {
+    "v": 4434,
+    "unit": "기/년(발사된 상업 제작 위성)",
+    "basis": "2025년 전 세계 발사 위성 수(SIA) — 통신 위성 대부분이 위상배열 탑재",
+    "asof": "2025",
+    "source": "S200",
+    "grade": "②"
+   },
+   "price": "미측정 — 위성 탑재 위상배열 단가는 비공개(SpaceX 내재화). Filtronic SpaceX E밴드 6,250만 달러 수주는 총액만 공개 — 수량 미공개",
+   "cost_share_pct": "미측정 — 위상배열·디지털 프로세서만 떼어 낸 시장 규모 자료 없음. 상위 '위성 탑재체' 전체가 63.1억 달러(2025, MarketsandMarkets; S210)=1.47% 이나 EO·항법 포함",
+   "makers": [
+    {
+     "name": "SpaceX(Starlink 자체 위상배열·빔포머)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "Starlink 위성 위상배열·E밴드 백홀·광단말 내재화. 2026-06 나스닥 상장(SPCX)"
+    },
+    {
+     "name": "Filtronic",
+     "ticker": "XLON:FTC",
+     "country": "UK",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S209",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "SpaceX 에 E밴드 GaN 송수신 모듈(Cerus 계열) 공급 — FY2026 SpaceX 6,250만 달러 최대 수주, 최대 고객 비중 68%(S209)"
+    },
+    {
+     "name": "Qorvo(Anokiwave)",
+     "ticker": "XNAS:QRVO",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S240",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "실리콘 Ku/Ka 빔포머 IC — 2024 Anokiwave 인수(S240). 주로 지상 평판 단말·항공기용, 위성 탑재 채택은 미확인"
+    },
+    {
+     "name": "Analog Devices",
+     "ticker": "XNAS:ADI",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "빔포머·RF 프런트엔드·고속 데이터컨버터(디지털 페이로드용)"
+    },
+    {
+     "name": "Renesas Electronics",
+     "ticker": "XTKS:6723",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "Ka/Ku 빔포머 IC(구 IDT) — 위성통신 단말·탑재용"
+    },
+    {
+     "name": "MDA Space(AURORA)",
+     "ticker": "XTSE:MDA",
+     "country": "CA",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S211",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "소프트웨어 정의 디지털 위상배열 위성 AURORA — Globalstar 차세대 50기+ 계약, EchoStar D2D 2025-09 해지(S211)"
+    },
+    {
+     "name": "Thales Alenia Space",
+     "unlisted": {
+      "parent": "Thales 67%·Leonardo 33% 합작",
+      "parent_ticker": "XPAR:HO"
+     },
+     "country": "FR/IT",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S201",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "디지털 투명 프로세서·재구성형 탑재체(Space Inspire). 프로젝트 브로모 합병 대상(S201)"
+    },
+    {
+     "name": "CesiumAstro",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "소형위성용 능동 위상배열·SDR 탑재체 스타트업"
+    },
+    {
+     "name": "SWISSto12",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "CH",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "3D 프린팅 RF·안테나, 소형 GEO(HummingSat)"
+    },
+    {
+     "name": "센서뷰",
+     "ticker": "321370",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+     "note": "한국 상장 — RF 케이블·안테나 부품. 위성 탑재 위상배열 납품 실적 미확인"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.phased_array",
+   "open_questions": [
+    "위성 탑재 위상배열(우주용) 시장 규모와 지상 단말 시장 구분 자료 없음",
+    "Filtronic 6,250만 달러 계약의 납품 수량·기간(FY2027부터 인도)",
+    "SpaceX 빔포머 IC 파운드리/설계 협력사(ST·GlobalFoundries 설) 미검증"
+   ],
+   "note": "쉬운 설명: 안테나를 움직이지 않고 수백~수천 개 소자의 위상을 바꿔 전파 빔을 전자적으로 조종하는 통신 탑재체의 핵심. 변화: LEO 대량생산·D2D 로 디지털 빔포밍 전환 가속, SpaceX 가 내재화해 외부 시장은 작고 E밴드 GaN(Filtronic) 같은 틈새 공급이 병목."
+  },
+  {
+   "id": "space.sat.payload.rf",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "RF 부품(증폭기·필터·도파관)",
+   "spec": "진행파관 증폭기(TWTA)·GaN 고체 증폭기(SSPA)·저잡음 증폭기·필터·멀티플렉서·도파관·RF 커넥터",
+   "qty_per_unit": "미측정 — 위성당 TWTA·SSPA·필터 개수는 탑재체 설계별 상이(GEO HTS 수십~100개+ TWTA, LEO 는 SSPA 내장). 공개 집계 없음",
+   "price": "미측정 — 우주 TWTA 단가 비공개(고객별 계약)",
+   "cost_share_pct": "미측정 — 우주 TWTA 시장 추정치가 3.9억~12.8억 달러로 엇갈림(S235, ③). RF 부품 전체 집계 없음",
+   "makers": [
+    {
+     "name": "Thales(Thales Electron Devices)",
+     "ticker": "XPAR:HO",
+     "country": "FR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "우주 TWT 세계 최대 공급사(회사 주장)·EPC·SSPA"
+    },
+    {
+     "name": "Stellant Systems",
+     "unlisted": {
+      "parent": "Arlington Capital Partners(PE) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S234",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "구 L3Harris Electron Devices — 미국 유일 우주 인증 TWT 제조(회사 주장, S234)"
+    },
+    {
+     "name": "Teledyne(Teledyne e2v·Defense Electronics)",
+     "ticker": "XNYS:TDY",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "우주용 RF·마이크로파 부품, 고신뢰 반도체"
+    },
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "탑재체 RF 서브시스템·안테나(TWT 사업은 2020 매각)"
+    },
+    {
+     "name": "MACOM",
+     "ticker": "XNAS:MTSI",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "GaN·GaAs RF 반도체, 위성 탑재 MMIC"
+    },
+    {
+     "name": "Qorvo",
+     "ticker": "XNAS:QRVO",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "GaN MMIC·필터"
+    },
+    {
+     "name": "Honeywell Aerospace",
+     "ticker": "XNAS:HON",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "RF·안테나·우주 전장"
+    },
+    {
+     "name": "Filtronic",
+     "ticker": "XLON:FTC",
+     "country": "UK",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S209",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "GaN E밴드 증폭기·송수신 모듈 — SpaceX 최대 고객(S209)"
+    },
+    {
+     "name": "RFHIC",
+     "ticker": "218410",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S233",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "GaN 증폭기·송수신모듈(레이더·위성통신 지상단말). 위성 탑재 공급은 미확인 — 76억 원 차량 위성단말 GaN SSPA 과제(S233)"
+    },
+    {
+     "name": "제노코",
+     "ticker": "361390",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+     "note": "위성 X밴드 송신기(차세대중형위성 1~3호 납품 보도) — 영상 전송 RF"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.rf",
+   "open_questions": [
+    "우주 TWTA 시장 규모 조사사 간 3배 차이",
+    "GaN SSPA 가 TWTA 를 대체하는 비율(LEO·GEO 별)",
+    "웨이비스·AP위성 위성 RF 납품 여부 미확인"
+   ],
+   "note": "쉬운 설명: 우주에서 받은 약한 신호를 키우고(증폭기) 잡음을 걸러(필터) 다시 지구로 쏘는 무선 부품. 변화: GEO 는 여전히 진행파관(TWT) 소수 독과점(Thales·Stellant), LEO 대량생산은 GaN 반도체 SSPA 로 이동, E밴드 고주파 GaN 이 새 병목."
+  },
+  {
+   "id": "space.sat.payload.oisl",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "광학 위성간 링크(레이저 통신 단말)",
+   "spec": "위성끼리 레이저로 100Mbps~100Gbps 통신 — SDA 표준 단말, 망원경·정밀 지향기구·광증폭기",
+   "qty_per_unit": {
+    "v": [
+     3,
+     6
+    ],
+    "unit": "개/위성",
+    "basis": "Starlink V2 Mini 3개(S207)·V3 6개(S208); SDA T1 Tracking 설계 4개(실제 3개 발사, S206)",
+    "asof": "2026",
+    "source": "S207",
+    "grade": "②"
+   },
+   "price": "미측정 — SDA·상업 단말 단가 비공개. 시장조사 '800만~1,500만 달러/단말'(Market Intelo)은 근거 없어 미채택",
+   "cost_share_pct": {
+    "v": 14.27,
+    "unit": "%",
+    "basis": "OISL 시스템 시장 6.122억 달러(2025, Global Market Insights; S205) ÷ 4,290억. SpaceX 내재 생산분은 빠졌을 가능성",
+    "asof": "2025",
+    "source": "S205",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SpaceX(Starlink 레이저)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S207",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "Starlink 위성당 3~6개 내재 생산, 2026년 외부 판매(Starlink Mini Laser — Starcloud·Muon Space; S207)"
+    },
+    {
+     "name": "Tesat-Spacecom",
+     "unlisted": {
+      "parent": "Airbus Defence and Space 100% 자회사",
+      "parent_ticker": "XPAR:AIR"
+     },
+     "country": "DE",
+     "role": "main",
+     "share_pct": {
+      "v": 66.7,
+      "unit": "%",
+      "basis": "SDA T1 Tracking 한 궤도면 납품 단말 63개 중 42개(2025)",
+      "asof": "2026-04",
+      "source": "S206",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S206",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "SDA T1 Tracking 한 궤도면 42개 납품(CACI 21개; S206), Telesat Lightspeed 792개 수주(모델 지식)"
+    },
+    {
+     "name": "CACI International",
+     "ticker": "XNYS:CACI",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 33.3,
+      "unit": "%",
+      "basis": "SDA T1 Tracking 한 궤도면 납품 단말 63개 중 21개(2025)",
+      "asof": "2026-04",
+      "source": "S206",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S206",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "SDA 인증 단말(CrossBeam), 플로리다 증설로 연 수백 대 목표(회사 주장) — T1 궤도면 21개"
+    },
+    {
+     "name": "Mynaric",
+     "unlisted": {
+      "parent": "Rocket Lab 100% 자회사(2026-04 인수)",
+      "parent_ticker": "XNAS:RKLB"
+     },
+     "country": "DE",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S202",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "CONDOR Mk3 — 2026-04-14 Rocket Lab 인수 완료(1.553억 달러), Rocket Lab SDA 36기 위성에 탑재(S202)"
+    },
+    {
+     "name": "Skyloom",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S206",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "SDA 인증 4사 중 하나(S206) — 생산능력 미공개"
+    },
+    {
+     "name": "Kepler Communications",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "CA",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "자체 광 데이터 중계 위성망용 단말(SDA 표준 호환)"
+    },
+    {
+     "name": "NEC",
+     "ticker": "XTKS:6701",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "일본 광 위성간 통신·JAXA LUCAS 계열"
+    },
+    {
+     "name": "Warpspace",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "JP",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "광 데이터 중계 스타트업"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "위성 광통신 단말 연구개발 — 양산 납품 실적 미확인"
+    },
+    {
+     "name": "컨텍",
+     "ticker": "451760",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+     "note": "지상국 서비스 — 광학 지상국(OGS) 구축. 우주 단말이 아닌 지상측"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.oisl",
+   "open_questions": [
+    "단말 단가(SDA 표준 단말 대당 가격) 공개 자료 없음",
+    "Tesat 실제 연 생산량(회사 소개 '월 100대' 2차 자료, 미검증)",
+    "OISL 시장 규모 조사사별 0.5~32억 달러로 정의 차 큼"
+   ],
+   "note": "쉬운 설명: 위성끼리 레이저로 데이터를 주고받는 '우주 광케이블' 단말. 망원경·정밀 지향 기구가 수천 km 떨어진 상대를 겨눈다. 변화: SDA PWSA 에서 단말 공급 부족이 최대 병목(위성당 4개→3개, S206), Mynaric 이 Rocket Lab 에 흡수(S202), SpaceX 가 외부 판매 시작(S207)."
+  },
+  {
+   "id": "space.sat.payload.eo_optical",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "전자광학(EO) 탑재체",
+   "spec": "반사 망원경(SiC·제로듀어 거울)·초점면 배열(CMOS/TDI CCD)·초분광 센서 — 해상도 0.3~3m",
+   "qty_per_unit": {
+    "v": 650,
+    "unit": "기/년(EO 위성)",
+    "basis": "Novaspace — 2035년까지 10년간 EO 위성 6,500기 이상(연평균 약 650기, 단순 평균)",
+    "asof": "2026-08",
+    "source": "S227",
+    "grade": "②"
+   },
+   "price": "미측정 — 광학 탑재체 단가 비공개(0.3m 급 대형은 수억 달러, 초소형 큐브샛 카메라는 수십만 달러 — 범위 근거 없음)",
+   "cost_share_pct": "미측정 — EO '위성' 제조 매출은 10년 1,559억 달러(연 ~156억, Novaspace S227)이나 탑재체만 떼어 낸 수치 없음",
+   "makers": [
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "미 정부 고해상도 광학 탑재체(정찰), 상업 EO 카메라"
+    },
+    {
+     "name": "Airbus Defence and Space",
+     "ticker": "XPAR:AIR",
+     "country": "FR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "Pléiades Neo 등 광학 위성·탑재체"
+    },
+    {
+     "name": "Thales Alenia Space",
+     "unlisted": {
+      "parent": "Thales 67%·Leonardo 33% 합작",
+      "parent_ticker": "XPAR:HO"
+     },
+     "country": "FR/IT",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "광학 관측 탑재체·초분광. 브로모 합병 대상(S201)"
+    },
+    {
+     "name": "Safran Reosc",
+     "unlisted": {
+      "parent": "Safran 100% 자회사",
+      "parent_ticker": "XPAR:SAF"
+     },
+     "country": "FR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "대형 망원경 거울 연마·광학계"
+    },
+    {
+     "name": "Teledyne(e2v·DALSA)",
+     "ticker": "XNYS:TDY",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "우주용 CMOS/CCD·TDI 영상센서"
+    },
+    {
+     "name": "Lanteris(구 Maxar Space Systems)",
+     "unlisted": {
+      "parent": "Intuitive Machines 100%",
+      "parent_ticker": "XNAS:LUNR"
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S204",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "WorldView Legion 계열 위성 버스·광학 통합 — 2026-01 Intuitive Machines 인수(S204)"
+    },
+    {
+     "name": "쎄트렉아이",
+     "ticker": "099320",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S228",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "한국 상장 — 고해상도 광학 탑재체·위성(SpaceEye 시리즈, 차세대중형위성 등), 2026 매출 2,441억 원 전망(S228)"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+     "note": "EO/IR 탑재체·초소형 위성 개발 — 한화 계열(한화에어로스페이스)이 쎄트렉아이 최대주주(모델 지식)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.eo_optical",
+   "open_questions": [
+    "그린광학(2025-11 코스닥 상장, S244) 위성 광학계 실납품 근거 없어 메이커 행 제외 — 티커·납품 확인 필요",
+    "텔레픽스(비상장) 광학 탑재체 납품 실적",
+    "EO 탑재체 시장 규모 자료 없음"
+   ],
+   "note": "쉬운 설명: 위성에 실린 망원경+디지털 카메라. 큰 거울을 수 nm 정밀도로 깎고 우주의 온도 변화에도 초점이 흔들리지 않게 해야 한다. 변화: 국방 수요로 EO 위성 수 증가(10년 6,500기, S227), 가치가 버스에서 탑재체로 이동."
+  },
+  {
+   "id": "space.sat.payload.sar",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "합성개구레이더(SAR) 탑재체",
+   "spec": "X/C/L밴드 능동 레이더 안테나·고출력 송수신 모듈 — 밤·구름 관통 관측",
+   "qty_per_unit": {
+    "v": 50,
+    "unit": "기/년(ICEYE 단일 회사 생산)",
+    "basis": "ICEYE 현재 연 약 50기 생산, 2028 100기 목표(회사 주장) — 세계 합계 아님",
+    "asof": "2026-03",
+    "source": "S214",
+    "grade": "②"
+   },
+   "price": "미측정 — SAR 위성/탑재체 단가 비공개. 한화시스템 초소형 SAR 군집 3,349.7억 원(S218)은 위성 수 미공개라 단가 산출 불가",
+   "cost_share_pct": {
+    "v": 0.648,
+    "unit": "%",
+    "basis": "SAR 위성 시장 27.8억 달러(2025, GII/360iResearch; S217) ÷ 4,290억 — 위성 전체(탑재체+버스) 기준",
+    "asof": "2025",
+    "source": "S217",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "ICEYE",
+     "unlisted": {
+      "parent": "독립 비상장(2026 기업가치 100억 유로+)",
+      "parent_ticker": null
+     },
+     "country": "FI",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S215",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "소형 X밴드 SAR 위성 세계 최다 운용(70기+), 2025 매출 2.5억 유로+·잔고 15억 유로(S215), NRO RCA 수주(S216)"
+    },
+    {
+     "name": "Capella Space",
+     "unlisted": {
+      "parent": "IonQ 100% 자회사",
+      "parent_ticker": "XNYS:IONQ"
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S216",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "X밴드 SAR — 2025-07 IonQ 인수 완료(S243), NRO RCA 수주(S216)"
+    },
+    {
+     "name": "Umbra",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S216",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "고해상도 X밴드 SAR, NRO RCA 수주(S216)"
+    },
+    {
+     "name": "Airbus Defence and Space",
+     "ticker": "XPAR:AIR",
+     "country": "DE",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "TerraSAR-X/PAZ 계열 대형 SAR"
+    },
+    {
+     "name": "Thales Alenia Space",
+     "unlisted": {
+      "parent": "Thales 67%·Leonardo 33% 합작",
+      "parent_ticker": "XPAR:HO"
+     },
+     "country": "IT",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "COSMO-SkyMed·Sentinel-1 SAR 탑재체"
+    },
+    {
+     "name": "MDA Space",
+     "ticker": "XTSE:MDA",
+     "country": "CA",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "RADARSAT·CHORUS C/X밴드 SAR"
+    },
+    {
+     "name": "Synspective",
+     "ticker": "XTKS:290A",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "소형 SAR StriX — 도쿄 그로스 상장"
+    },
+    {
+     "name": "iQPS",
+     "ticker": "XTKS:5595",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "소형 X밴드 SAR QPS-SAR — 도쿄 그로스 상장"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S218",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "425 사업 SAR 탑재체 4기 공급(S219), 초소형 SAR 군집위성 우선협상대상자 3,349.7억 원(S218)"
+    },
+    {
+     "name": "루미르",
+     "ticker": "474170",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S242",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+     "note": "SAR 위성 제작·영상 서비스(LumirX) — 코스닥(S242)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.sar",
+   "open_questions": [
+    "세계 SAR 위성 연간 발사 수 집계(SIA·Novaspace 유료)",
+    "한화시스템 초소형 SAR 계약 위성 수·납기(본계약 시 공시)",
+    "Synspective 티커(290A) 재확인 필요"
+   ],
+   "note": "쉬운 설명: 전파를 쏘고 반사파를 합성해 밤·구름 속에서도 지상을 찍는 레이더 카메라. 고출력 송수신 모듈과 큰 안테나가 어려움. 변화: 국방 수요 폭증으로 ICEYE 연 매출 4배 목표(S214), 한국은 425 완료 후 초소형 SAR 군집(1.42조 원)으로 이동(S218)."
+  },
+  {
+   "id": "space.sat.payload.ir",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "적외선 센서(미사일 경보·추적)",
+   "spec": "단·중파 적외선 초점면 배열(HgCdTe 등)·극저온 냉각기 — OPIR·극초음속 추적(HBTSS)·골든돔",
+   "qty_per_unit": {
+    "v": 72,
+    "unit": "기(SDA T3 Tracking 계약 위성)",
+    "basis": "SDA Tranche 3 Tracking Layer 4사×18기(2025-12, 2029 발사; S220) — 연 물량 아님, 계약 물량",
+    "asof": "2025-12",
+    "source": "S220",
+    "grade": "②"
+   },
+   "price": {
+    "v": 48.6,
+    "unit": "백만 USD/기(위성+운용)",
+    "basis": "T3 Tracking 약 35억 달러 ÷ 72기(S220) — 버스·적외선 탑재체·운용 포함 단순 평균",
+    "asof": "2025-12",
+    "source": "S220",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — 우주 적외선 탑재체 시장 규모 자료 없음(OPIR·SDA 예산으로 위에서 재야 함)",
+   "makers": [
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S221",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "SDA 전 트랜치 Tracking 참여, T3 8.43억+AMDT3 9.55억 달러(S220·S221), HBTSS 센서"
+    },
+    {
+     "name": "Northrop Grumman",
+     "ticker": "XNYS:NOC",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S220",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "Next-Gen OPIR 극궤도, T3 Tracking 18기 7.64억 달러(S220)"
+    },
+    {
+     "name": "Lockheed Martin",
+     "ticker": "XNYS:LMT",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S220",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "Next-Gen OPIR GEO, T3 Tracking 18기 11억 달러(S220)"
+    },
+    {
+     "name": "RTX(Raytheon)",
+     "ticker": "XNYS:RTX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "OPIR·FORGE 적외선 탑재체"
+    },
+    {
+     "name": "Rocket Lab",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S220",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "T3 Tracking 18기 8.05억 달러 프라임(S220) — 적외선 센서는 외부 조달"
+    },
+    {
+     "name": "Sierra Space",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S221",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "AMDT3 7.98억 달러(S221)"
+    },
+    {
+     "name": "Leonardo DRS",
+     "ticker": "XNAS:DRS",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "적외선 초점면 배열(HgCdTe)·센서"
+    },
+    {
+     "name": "Teledyne(FLIR·Imaging)",
+     "ticker": "XNYS:TDY",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "HgCdTe 초점면 배열(우주 천문·국방)"
+    },
+    {
+     "name": "Millennium Space Systems",
+     "unlisted": {
+      "parent": "Boeing 100% 자회사",
+      "parent_ticker": "XNYS:BA"
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "FOO Fighter·MEO 미사일 추적 위성"
+    },
+    {
+     "name": "아이쓰리시스템",
+     "ticker": "214430",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S222",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+     "note": "적외선 검출기(냉각형·비냉각형) — 2D 다채널 중적외선 검출기 '우주 신기술' 선정(2026-04), 우주 매출 10% 미만(S222). 위성 실납품 공시 미확인"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.ir",
+   "open_questions": [
+    "적외선 탑재체만의 가격(위성 가격에서 분리)",
+    "HgCdTe 검출기 공급 병목(Teledyne·DRS 외 공급처)",
+    "아이쓰리시스템 위성 탑재 실납품 여부(DART 단일판매 공시로 확인)"
+   ],
+   "note": "쉬운 설명: 미사일 엔진의 열을 우주에서 잡아내는 열화상 카메라. 극저온으로 식혀야 하고 검출기(HgCdTe) 제조가 어렵다. 변화: 골든돔으로 SDA Tracking 발주 급증(T3 35억+AMDT3 17.5억 달러, S220·S221) — 검출기·냉각기가 병목 후보."
+  },
+  {
+   "id": "space.sat.payload.gnss_clock",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.sat.payload",
+   "name": "항법 탑재체·원자시계",
+   "spec": "루비듐·수소메이저 원자시계, L밴드 항법 신호 발생기 — GPS·갈릴레오·KPS",
+   "qty_per_unit": {
+    "v": 4,
+    "unit": "개/위성(원자시계)",
+    "basis": "갈릴레오 위성당 루비듐 2 + 수동형 수소메이저 2(S223)",
+    "asof": "2018",
+    "source": "S223",
+    "grade": "②"
+   },
+   "price": "미측정 — 우주용 원자시계 단가 비공개(갈릴레오 2세대 첫 12기 계약 2,600만 유로는 여러 기 묶음, S223)",
+   "cost_share_pct": "미측정 — 우주용 원자시계·항법 탑재체 시장 규모 자료 없음(각국 GNSS 예산으로 재야 함)",
+   "makers": [
+    {
+     "name": "Safran(구 Orolia·Spectratime)",
+     "ticker": "XPAR:SAF",
+     "country": "FR/CH",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S223",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "갈릴레오 루비듐·수동형 수소메이저(S223)"
+    },
+    {
+     "name": "Frequency Electronics",
+     "ticker": "XNAS:FEIM",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S224",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "GPS III/IIIF 우주 인증 루비듐(회사 주장, S224)"
+    },
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "GPS III 항법 탑재체(NAVSTAR) 공급"
+    },
+    {
+     "name": "Excelitas Technologies",
+     "unlisted": {
+      "parent": "AEA Investors(PE) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "GPS 용 루비듐 원자시계(구 PerkinElmer 계열)"
+    },
+    {
+     "name": "Microchip Technology",
+     "ticker": "XNAS:MCHP",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "칩 규모 원자시계(CSAC)·우주 시간 장비"
+    },
+    {
+     "name": "Leonardo",
+     "ticker": "XMIL:LDO",
+     "country": "IT",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "갈릴레오 수동형 수소메이저"
+    },
+    {
+     "name": "AccuBeat",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "IL",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "소형 루비듐 원자시계(우주용)"
+    },
+    {
+     "name": "LIG넥스원",
+     "ticker": "079550",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S226",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "KPS 참여(위성탑재체·항법장비 기술 확보 언급, S226) — 계약 범위·금액 미확인. 2026년 LIG D&A 로 사명 변경 보도"
+    },
+    {
+     "name": "AP위성",
+     "ticker": "211270",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+     "note": "차세대중형위성·천리안·KPS 등 탑재 컴퓨터 — 원자시계 아님"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.payload.gnss_clock",
+   "open_questions": [
+    "KPS 항법 탑재체 주관사·원자시계 국산화 여부(우주항공청 공고)",
+    "KPS 1호기 2029-09 지연(S225) — 이후 일정",
+    "우주 원자시계 세계 연 생산량"
+   ],
+   "note": "쉬운 설명: 위성이 '지금 몇 시인지'를 10억 분의 1초 단위로 방송하면 수신기가 거리를 계산해 위치를 안다 — 그 시계가 원자시계. 변화: 공급사가 손꼽을 만큼 적고 인증에 오래 걸려 신규 GNSS(KPS)가 일정 지연(S225); LEO PNT 로 소형 시계 수요 신규."
+  },
+  {
+   "id": "space.sat.ait.prime",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.sat.ait",
+   "name": "위성 체계종합(프라임·양산형 버스 메이커)",
+   "spec": "대형 GEO·국방 프라임, LEO 양산(일 수 기~수십 기) 수직계열, 소형위성 버스 전문 메이커 — 버스+탑재체 통합·AIT·궤도 인도",
+   "qty_per_unit": {
+    "v": 4434,
+    "unit": "기/년(발사된 상업 제작 위성)",
+    "basis": "2025년 전 세계 발사 위성 수(SIA) — 통신 위성 대부분이 위상배열 탑재",
+    "asof": "2025",
+    "source": "S200",
+    "grade": "②"
+   },
+   "price": {
+    "v": 4.6,
+    "unit": "백만 USD/기(평균)",
+    "basis": "2025 위성 제조 매출 204억 달러 ÷ 4,434기(S200) — Starlink 저가 위성이 평균을 끌어내림, GEO 대형은 수억 달러",
+    "asof": "2025",
+    "source": "S200",
+    "grade": "②"
+   },
+   "cost_share_pct": {
+    "v": 4.76,
+    "unit": "%",
+    "basis": "위성 제조 매출 204억 달러(2025, SIA SSIR 2026; S200) ÷ 4,290억",
+    "asof": "2025",
+    "source": "S200",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SpaceX",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "Starlink 자체 위성 수직계열 — 발사 위성 대부분. 2026-06 나스닥 상장"
+    },
+    {
+     "name": "Airbus Defence and Space",
+     "ticker": "XPAR:AIR",
+     "country": "FR/DE",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S213",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "OneWeb Gen2 440기(S213)·IRIS² 플랫폼, 브로모 합병 35%(S201)"
+    },
+    {
+     "name": "Thales Alenia Space",
+     "unlisted": {
+      "parent": "Thales 67%·Leonardo 33% 합작",
+      "parent_ticker": "XPAR:HO"
+     },
+     "country": "FR/IT",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S201",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "GEO·탑재체·IRIS², 브로모 합병(2027 이후 종결, S201)"
+    },
+    {
+     "name": "Lockheed Martin Space",
+     "ticker": "XNYS:LMT",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S236",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "GPS III·OPIR·SDA, Space 부문 2025 매출 약 130억 달러(S236), Terran Orbital 인수(2024)"
+    },
+    {
+     "name": "Northrop Grumman",
+     "ticker": "XNYS:NOC",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "국방 위성·SDA Tracking/Transport"
+    },
+    {
+     "name": "Boeing(BSS·Millennium)",
+     "ticker": "XNYS:BA",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "GEO·WGS·Millennium 소형 국방"
+    },
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "SDA Tracking·국방 소형위성"
+    },
+    {
+     "name": "Lanteris(구 Maxar Space Systems)",
+     "unlisted": {
+      "parent": "Intuitive Machines 100%",
+      "parent_ticker": "XNAS:LUNR"
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S204",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "GEO·WorldView 계열 버스 — 2026-01-13 Intuitive Machines 인수 완료 8억 달러(S204)"
+    },
+    {
+     "name": "York Space Systems",
+     "ticker": "XNYS:YSS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S203",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "SDA Transport/Tracking 버스 — 2026-01-29 NYSE 상장(YSS), 6.29억 달러 조달(S203)"
+    },
+    {
+     "name": "Rocket Lab",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S239",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "SDA T2 Transport·T3 Tracking 프라임, Q3 2026 잔고 35.7억 달러(S239)"
+    },
+    {
+     "name": "MDA Space",
+     "ticker": "XTSE:MDA",
+     "country": "CA",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "①",
+     "source": "S211",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "AURORA 디지털 위성, Q3 2026 잔고 39.5억 캐나다달러(S211), Blue Canyon 6.2억 달러 인수 계약(S212)"
+    },
+    {
+     "name": "Apex",
+     "unlisted": {
+      "parent": "독립 비상장(기업가치 23억 달러)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S237",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "양산형 소형 버스, 연 200기+ 능력(S237)"
+    },
+    {
+     "name": "K2 Space",
+     "unlisted": {
+      "parent": "독립 비상장(기업가치 68억 달러)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S238",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "대형 고출력 버스, 연 100기 공장·SES 28기(S238)"
+    },
+    {
+     "name": "OHB",
+     "ticker": "XETR:OHB",
+     "country": "DE",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "갈릴레오·소형 GEO, 브로모 반대(S201)"
+    },
+    {
+     "name": "China Spacesat(CAST 계열)",
+     "ticker": "XSHG:600118",
+     "country": "CN",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "중국 국영 위성 제조(CASC 산하) — 궈왕 등"
+    },
+    {
+     "name": "GalaxySpace",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "중국 상업 LEO 통신위성"
+    },
+    {
+     "name": "한국항공우주산업(KAI)",
+     "ticker": "047810",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "차세대중형위성·425 SAR 위성 버스 체계종합"
+    },
+    {
+     "name": "쎄트렉아이",
+     "ticker": "099320",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S228",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "소형·중형 지구관측 위성 체계종합(수출)"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S218",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "초소형 SAR 군집 우선협상(S218), 425 SAR 탑재체"
+    },
+    {
+     "name": "나라스페이스테크놀로지",
+     "ticker": "478340",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S241",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+     "note": "초소형위성 버스·체계 — 2025-12 코스닥 상장(S241)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.ait.prime",
+   "open_questions": [
+    "SpaceX 내부 제작 위성 가치가 SIA 제조 매출 204억 달러에 포함되는지(내재화 산정 방식)",
+    "메이커별 제조 매출 점유율(SIA 는 국가별만 공개: 미국 47%)",
+    "Blue Canyon 인수 종결(2026 말 예정), 브로모 EC 승인",
+    "나라스페이스 티커 478340 거래소 재확인"
+   ],
+   "note": "쉬운 설명: 버스와 탑재체를 모아 하나의 위성으로 조립·시험하고 궤도까지 책임지는 '완성차 회사'. 변화: 위성 수는 늘었지만 제조 매출은 204억 달러로 정체(단가 하락, S200) — LEO 양산형(SpaceX·Apex·York·K2)이 가치 이동, 유럽은 브로모 합병, 미국은 인수합병(Lanteris→LUNR, BCT→MDA, Mynaric→RKLB)."
+  },
+  {
+   "id": "space.sat.ait.test",
+   "kind": "input",
+   "input_type": "equipment",
+   "parent": "space.sat.ait",
+   "name": "환경시험 설비·서비스",
+   "spec": "열진공 챔버(TVAC)·진동·음향·충격·전자파(EMC) 시험, 방사선 조사 시험",
+   "qty_per_unit": "미측정 — 위성 1기당 시험 일수·챔버 가동률 공개 자료 없음(진동·음향·TVAC·EMC 각 1회 이상, 대량생산 LEO 는 표본 시험)",
+   "price": "미측정 — 시험 서비스 단가(챔버 일당) 비공개",
+   "cost_share_pct": {
+    "v": [
+     0.98,
+     1.91
+    ],
+    "unit": "%",
+    "basis": "우주 환경모사 시험 42억 달러(S230)~우주 시험 서비스 82억 달러(S231, 2025) ÷ 4,290억 — 두 출처 모두 저신뢰",
+    "asof": "2025",
+    "source": "S230",
+    "grade": "③"
+   },
+   "makers": [
+    {
+     "name": "Element U.S. Space & Defense(구 NTS)",
+     "unlisted": {
+      "parent": "Element Materials Technology(Temasek 소유)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S229",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "TVAC·진동·음향·EMC 독립 시험소 — 2026-06 TVAC 증설(S229)"
+    },
+    {
+     "name": "Airbus Defence and Space(자체 AIT 센터)",
+     "ticker": "XPAR:AIR",
+     "country": "FR/DE",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "툴루즈·프리드리히스하펜 자체 시험 설비"
+    },
+    {
+     "name": "IABG",
+     "unlisted": {
+      "parent": "독립 비상장(민간 컨소시엄)",
+      "parent_ticker": null
+     },
+     "country": "DE",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "유럽 대형 우주 환경시험 센터(오토브룬)"
+    },
+    {
+     "name": "Thermotron·Weiss Technik(장비)",
+     "unlisted": {
+      "parent": "Weiss Technik 은 Schunk Group 소유(비상장)",
+      "parent_ticker": null
+     },
+     "country": "US/DE",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "환경 시험 챔버 장비"
+    },
+    {
+     "name": "Dynamic Environmental Systems·Spectral Dynamics(진동기)",
+     "unlisted": {
+      "parent": "비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "진동·충격 시험기"
+    },
+    {
+     "name": "한국항공우주산업(KAI) 우주센터",
+     "ticker": "047810",
+     "country": "KR",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "사천 위성 조립·시험동(자체 체계종합용)"
+    },
+    {
+     "name": "한국항공우주연구원 위성시험동",
+     "unlisted": {
+      "parent": "정부출연연구기관(과기정통부 산하)",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "국가 위성 환경시험 설비(대전) — 민간 개방"
+    },
+    {
+     "name": "큐알티",
+     "ticker": "405100",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 메이커별 점유율 공개 자료 없음(Novaspace·BryceTech 유료 DB 에서 재야 함)",
+     "grade": "②",
+     "source": "S232",
+     "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+     "note": "반도체 신뢰성·우주 방사선 조사·업스크리닝, AS/EN9100 인증(2026-10, 국내 민간 시험소 최초) — 우주 매출 미공개(S232)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.sat.ait.test",
+   "open_questions": [
+    "우주 시험 시장 규모 신뢰할 출처 없음(42억~82억 달러 저신뢰)",
+    "LEO 양산에서 시험 생략·표본화로 외주 수요가 줄어드는지",
+    "에이치시티(전자파 시험) 우주 매출 여부 미확인"
+   ],
+   "note": "쉬운 설명: 발사 때 흔들림·소음, 우주의 진공·극한 온도, 전파 간섭을 지상에서 미리 재현해 고장 없을지 확인하는 시험. 변화: SDA·국방 소형위성 급증으로 미국 독립 시험소가 챔버 증설(S229), 한국은 큐알티가 방사선·부품 신뢰성 시험으로 진입(S232)."
+  }
+ ]
+}

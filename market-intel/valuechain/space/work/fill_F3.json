@@ -1,0 +1,961 @@
+{
+ "filler": "F3",
+ "nodes": [
+  {
+   "id": "space.launch.vehicle.liquid_engine",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.launch.vehicle",
+   "name": "액체 로켓 엔진",
+   "spec": "터보펌프·연소기·노즐·밸브. 케로신(RP-1)/메탄/수소 + 액체산소. 3D 프린팅 연소기, 다단연소·가스발생기 사이클",
+   "qty_per_unit": {
+    "v": 325,
+    "unit": "회/년(궤도 발사 — 엔진 수요의 축)",
+    "basis": "2025년 전 세계 궤도 발사 횟수(SIA). 엔진 수 = 발사 × 단별 엔진 수(F9 10기·스타십 39기 등) — 재사용분 제외 신규 생산 수는 미측정",
+    "asof": "2025",
+    "source": "S300",
+    "grade": "②"
+   },
+   "price": {
+    "v": [
+     0.25,
+     100
+    ],
+    "unit": "백만 USD/기",
+    "basis": "하단: SpaceX Raptor 양산 목표 약 25만 달러(보도·회사 목표) / 상단: NASA RS-25 18기 17.9억 달러(2020 계약, 기당 약 1억). OIG 는 24기 평균 약 1.45억",
+    "asof": "2026",
+    "source": "S313",
+    "grade": "②"
+   },
+   "cost_share_pct": {
+    "v": [
+     0.92,
+     3.19
+    ],
+    "unit": "%",
+    "basis": "로켓엔진 시장 39.6억(TBRC 2025)~137억 달러(Fortune BI 2025) ÷ 4,290억 — 리서치사 정의 차(미사일 포함 여부)로 3배 차. 상한은 상업 발사 매출 124억(SIA, 2.89%)보다 커서 과대 의심",
+    "asof": "2025",
+    "source": "S310",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SpaceX(Merlin·Raptor)",
+     "ticker": "XNAS:SPCX",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S315",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "Falcon 9 Merlin 1D·스타십 Raptor 3 전량 내재화. Raptor 누적 600기+ (2026-04). 2026-06-12 나스닥 상장"
+    },
+    {
+     "name": "Blue Origin(BE-4·BE-3U)",
+     "unlisted": {
+      "parent": "독립 비상장(제프 베이조스 소유)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S341",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "BE-4 를 New Glenn(9x4 는 9기)과 ULA Vulcan(2기)에 공급 — 외판 대형 메탄엔진 사실상 유일. 회사 주장: 2026 생산률 2배"
+    },
+    {
+     "name": "L3Harris(RS-25)",
+     "ticker": "XNYS:LHX",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S302",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "SLS 코어단 RS-25 — 2026 Rocketdyne 매각에서 제외돼 L3Harris 잔류"
+    },
+    {
+     "name": "Rocketdyne(RL10·AR1 등, 구 Aerojet Rocketdyne 액체엔진)",
+     "unlisted": {
+      "parent": "AE Industrial Partners 60% · L3Harris 40%",
+      "parent_ticker": "XNYS:LHX"
+     },
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S301",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "RL10(Centaur V·SLS 상단) — 2026-01 AE Industrial 60%/L3Harris 40% 로 분할 발표, 2026-08-04 종결 보도(S303, 확인 필요)"
+    },
+    {
+     "name": "ArianeGroup(Vulcain 2.1·Vinci·Prometheus)",
+     "unlisted": {
+      "parent": "Airbus·Safran 50:50 합작",
+      "parent_ticker": "XPAR:AIR"
+     },
+     "country": "프랑스·독일",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "Ariane 6 코어·상단 엔진. Prometheus 재사용 메탄엔진 개발"
+    },
+    {
+     "name": "미쓰비시중공업(LE-9·LE-5B)",
+     "ticker": "XTKS:7011",
+     "country": "일본",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "H3 1단 LE-9(엔진 제조는 MHI, 터보펌프 IHI)"
+    },
+    {
+     "name": "CASC/AALPT(YF-100·YF-77 등)",
+     "unlisted": {
+      "parent": "중국항천과기집단(국유)",
+      "parent_ticker": null
+     },
+     "country": "중국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "창정 시리즈 엔진 — 국영 내재화. 2025 중국 발사 다수"
+    },
+    {
+     "name": "Rocket Lab(Rutherford·Archimedes)",
+     "ticker": "XNAS:RKLB",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S343",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "Electron 3D프린팅 Rutherford, Neutron Archimedes — Neutron 2026 데뷔 불확실"
+    },
+    {
+     "name": "Firefly Aerospace(Reaver·Miranda)",
+     "ticker": "XNAS:FLY",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S342",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "Alpha Reaver 4기, Eclipse(Northrop 공동) Miranda 7기 — Eclipse 2027"
+    },
+    {
+     "name": "Ursa Major(Hadley·Draper)",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "외판형 엔진 스타트업 — 극초음속 시험기(Stratolaunch) 납품, 최근 고체모터로 무게중심 이동"
+    },
+    {
+     "name": "한화에어로스페이스(75톤·7톤 엔진, 차세대발사체)",
+     "ticker": "012450",
+     "country": "한국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S318",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "누리호 엔진 6기 제작·조립, 5차(2026-10-07) 주운영자. 순천 제조센터 준공, 2029 자체 발사체(S319)"
+    },
+    {
+     "name": "비츠로넥스텍",
+     "ticker": "488900",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S308",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "누리호 1·2·3단 엔진 연소기·가스발생기·극저온 배관 — 우주발사체 매출 비중 55%. 2025-11 코스닥 상장(모회사 비츠로테크 042370)"
+    },
+    {
+     "name": "이노스페이스(하이브리드·메탄)",
+     "ticker": "462350",
+     "country": "한국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S324",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+     "note": "한빛-나노 1단 25톤 하이브리드·2단 3톤 메탄 자체 제작. 2025-12 첫 발사 실패, 2026-11 재도전 계획(S323)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.liquid_engine",
+   "open_questions": [
+    "엔진 시장 규모가 리서치사마다 39.6억~186억 달러로 갈림 — 상업 발사 매출 124억보다 큰 값은 미사일·정부 포함 의심",
+    "엔진 신규 생산 대수(연) — Raptor·Merlin·BE-4 연 생산 대수 공시 없음",
+    "Rocketdyne 거래 종결일(2026-08-04) 1차 확인 필요",
+    "BE-4 외판 단가(800만~2,000만 달러 보도) 1차 출처 없음 — 값으로 안 씀",
+    "터보펌프 국내 협력사(에스앤에이치 등) 확인 못함"
+   ],
+   "note": "쉬운 설명: 연료와 산소를 태워 로켓을 밀어 올리는 심장 — 터보펌프·연소기·노즐. 변화: 케로신→메탄 전환(Raptor·BE-4·Prometheus), 3D 프린팅·재사용으로 단가가 1억 달러대(RS-25)에서 수십만 달러대(Raptor 목표)로 붕괴 중. 대부분 발사사 내재화(captive), 외판 시장은 BE-4·RL10·RS-25 정도."
+  },
+  {
+   "id": "space.launch.vehicle.srm",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.launch.vehicle",
+   "name": "고체 로켓 모터·부스터",
+   "spec": "복합 추진제(AP/HTPB/알루미늄)·모터 케이스(탄소섬유)·노즐 — 부스터·상단·미사일과 공용 라인",
+   "qty_per_unit": {
+    "v": [
+     2,
+     4
+    ],
+    "unit": "기/발사(Ariane 6·Vulcan 부스터 수)",
+    "basis": "Ariane 62/64 는 P120C 2·4기, Vulcan 은 GEM 63XL 0·2·4·6기 — 연 총 생산 대수는 미측정",
+    "asof": "2026",
+    "source": "S338",
+    "grade": "①"
+   },
+   "price": "미측정 — GEM 63XL·P120C·SLS 부스터 기당 가격 공시 없음(NASA OIG 부스터 계약 보고서·ESA 계약가로 역산 가능)",
+   "cost_share_pct": "미측정 — 우주 발사용 고체모터만 떼어낸 시장 규모 출처 없음(미사일과 같은 라인)",
+   "makers": [
+    {
+     "name": "Northrop Grumman(GEM 63/63XL, SLS 5세그먼트 부스터, BOLE)",
+     "ticker": "XNYS:NOC",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S312",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "Atlas V·Vulcan GEM, SLS 부스터 — 2026-02 Vulcan GEM 63XL 이상으로 NSSL 비행 중단, 4월 신형 노즐 시험"
+    },
+    {
+     "name": "L3Harris(구 Aerojet 고체모터)",
+     "ticker": "XNYS:LHX",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S346",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "미사일 고체모터(스탠더드·GMLRS 등) — Missile Solutions 부문 잔류, 우주용은 소량"
+    },
+    {
+     "name": "Avio / Europropulsion(P120C·P160C)",
+     "ticker": "XMIL:AVIO",
+     "country": "이탈리아",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S339",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "Ariane 6 부스터·Vega C 1단. P160C 2029년까지 2억 유로+ 계약, 2026-02 Ariane 64(4부스터) 첫 비행"
+    },
+    {
+     "name": "ArianeGroup(Europropulsion 50%)",
+     "unlisted": {
+      "parent": "Airbus·Safran 50:50",
+      "parent_ticker": "XPAR:AIR"
+     },
+     "country": "프랑스",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "P120C 공동(Avio 50:50 JV)"
+    },
+    {
+     "name": "IHI Aerospace(SRB-3·엡실론)",
+     "unlisted": {
+      "parent": "IHI 100% 자회사",
+      "parent_ticker": "XTKS:7013"
+     },
+     "country": "일본",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "H3 SRB-3, 엡실론 고체발사체"
+    },
+    {
+     "name": "Anduril(고체모터)",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S305",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "미시시피 공장 2026말 연 6,000기 목표(회사 주장, 전술 모터) — 미사일 중심"
+    },
+    {
+     "name": "Ursa Major(고체모터·3D프린팅)",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S340",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "2026 해군 고체모터 1.37억 달러 수주(CAAM·NMM)"
+    },
+    {
+     "name": "X-Bow Systems",
+     "unlisted": {
+      "parent": "독립 비상장(VC)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S306",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "신규 고체모터 — 저율 생산 단계"
+    },
+    {
+     "name": "Karman Space & Defense",
+     "ticker": "XNYS:KRMN",
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S311",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "고체모터 케이스·노즐·분리 시스템 등 하위 부품 — FQ3 2026 매출 +66%, 수주잔고 17억 달러"
+    },
+    {
+     "name": "AMPAC(과염소산암모늄 산화제)",
+     "unlisted": {
+      "parent": "NewMarket 100% 자회사",
+      "parent_ticker": "XNYS:NEU"
+     },
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S337",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "AP 북미 사실상 유일 — 1억 달러 증설(+50%, 2026 완공 예정). 고체모터 전체 병목"
+    },
+    {
+     "name": "한화에어로스페이스(고체 추진기관)",
+     "ticker": "012450",
+     "country": "한국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+     "note": "국방 고체모터 + ADD 고체연료 우주발사체 추진기관 참여(검증 필요) — ADD 4단 시험 2026-06 연기(S345)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.srm",
+   "open_questions": [
+    "ADD 고체 우주발사체 체계·모터 제작사(한화에어로·LIG D&A) 1차 확인 못함",
+    "Vulcan GEM 63XL 조사 종결·NSSL 재개 시점",
+    "AMPAC 증설 실제 완공 여부(2026)",
+    "발사체용 vs 미사일용 고체모터 매출 분리 수치 없음"
+   ],
+   "note": "쉬운 설명: 고체 연료를 통째로 채운 '불꽃놀이형' 부스터 — 이륙 때 추력을 보탠다. 변화: 미사일 증산이 같은 라인·같은 AP 산화제를 쓰며 경쟁 — AP 는 AMPAC 한 곳 병목(S306·S337). 2026-02 Vulcan 부스터 이상으로 NG 품질 이슈."
+  },
+  {
+   "id": "space.launch.vehicle.tank_structure",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.launch.vehicle",
+   "name": "추진제 탱크·동체 구조",
+   "spec": "알루미늄-리튬 합금 마찰교반용접(FSW)·스테인리스(스타십)·탄소복합재 탱크, 단간부·엔진부",
+   "qty_per_unit": "미측정 — 연간 탱크·동체 생산 수는 발사 325회(S300) × 단 수에서 재사용 기체분을 뺀 값이나 기체별 신규 제작 수 공시 없음",
+   "price": "미측정 — 탱크·동체 단가 공개 계약 없음",
+   "cost_share_pct": "미측정 — 발사체 구조물 시장 규모 출처 없음",
+   "makers": [
+    {
+     "name": "SpaceX(스테인리스 스타십·Al-Li Falcon)",
+     "ticker": "XNAS:SPCX",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "탱크·동체 전량 자체 제작(스타베이스·호손)"
+    },
+    {
+     "name": "ULA(Vulcan 코어·Centaur V)",
+     "unlisted": {
+      "parent": "Boeing·Lockheed Martin 50:50",
+      "parent_ticker": "XNYS:LMT"
+     },
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "디케이터 공장 자체 제작 — 소유구조 변경설 확인 필요"
+    },
+    {
+     "name": "MT Aerospace(Ariane 6 탱크·구조)",
+     "unlisted": {
+      "parent": "OHB SE 자회사",
+      "parent_ticker": "XETR:OHB"
+     },
+     "country": "독일",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "Ariane 6 상단 탱크·돔·구조 부품"
+    },
+    {
+     "name": "Rocket Lab(탄소복합 탱크)",
+     "ticker": "XNAS:RKLB",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "Electron·Neutron 탄소복합재 동체·탱크 자체"
+    },
+    {
+     "name": "Janicki Industries",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "대형 복합재 구조(SLS·발사체 부품 외주)"
+    },
+    {
+     "name": "한국항공우주산업(KAI)",
+     "ticker": "047810",
+     "country": "한국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S322",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "누리호 1단 추진제탱크(2016~) 제작·체계 총조립 — 6차부터 단 조립은 한화 순천센터로 이동 보도"
+    },
+    {
+     "name": "두원중공업",
+     "unlisted": {
+      "parent": "두원그룹(비상장)",
+      "parent_ticker": null
+     },
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S321",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "누리호 탱크·동체 구조체 참여"
+    },
+    {
+     "name": "이노컴",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S321",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "누리호 복합재 구조체"
+    },
+    {
+     "name": "켄코아에어로스페이스",
+     "ticker": "274090",
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S320",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+     "note": "미국 법인이 SpaceX·Blue Origin 향 정밀 구조 부품 가공 — 1Q26 매출 +73%(리서치)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.tank_structure",
+   "open_questions": [
+    "ULA 매각설 진행 여부",
+    "켄코아 SpaceX 향 매출 비중 공시 확인",
+    "한국화이바(누리호 구조물 참여 보도) 역할 확인"
+   ],
+   "note": "쉬운 설명: 연료·산화제를 담는 거대한 통 겸 로켓 몸통 — 가볍고 극저온에 버텨야 한다. 변화: Al-Li 마찰교반용접 → 스테인리스(스타십)·탄소복합재로 분화, 대부분 발사사 내재화. 한국은 누리호 단 조립이 KAI→한화 순천으로 이전 중(S319)."
+  },
+  {
+   "id": "space.launch.vehicle.superalloy",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "space.launch.vehicle",
+   "name": "특수합금·단조·주조",
+   "spec": "니켈 초합금(인코넬)·니오븀(C-103)·티타늄·구리합금(GRCop) — 엔진·노즐·배관, 정밀 단조·주조·금속 3D 프린팅 분말",
+   "qty_per_unit": "미측정 — 발사체용 초합금 연간 톤수 공개 없음(세아 SST 연 6,000t 는 항공 포함 생산능력, S316)",
+   "price": "미측정 — 발사체용 초합금 kg 단가 공시 없음(스피어 공시도 금액만)",
+   "cost_share_pct": "미측정 — 우주 발사용 특수합금 시장 규모 출처 없음",
+   "makers": [
+    {
+     "name": "ATI",
+     "ticker": "XNYS:ATI",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S332",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "니켈 초합금·티타늄 — 3Q26 매출 +26%, 수주잔고 43억 달러. 우주 비중 미공개"
+    },
+    {
+     "name": "Carpenter Technology",
+     "ticker": "XNYS:CRS",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S333",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "니켈·코발트 초합금 바·분말 — FQ3 2026 항공·방산 +17%"
+    },
+    {
+     "name": "Howmet Aerospace",
+     "ticker": "XNYS:HWM",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "초합금 정밀주조·단조(엔진 부품)"
+    },
+    {
+     "name": "Precision Castparts(PCC/SMC)",
+     "unlisted": {
+      "parent": "Berkshire Hathaway 100%",
+      "parent_ticker": "XNYS:BRK.A"
+     },
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "Special Metals 인코넬 원조 — 주조·단조"
+    },
+    {
+     "name": "Haynes International",
+     "unlisted": {
+      "parent": "Acerinox 100%",
+      "parent_ticker": "XMAD:ACX"
+     },
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "니켈·코발트 합금판(Haynes 230·282) — 2024 Acerinox 인수"
+    },
+    {
+     "name": "스피어",
+     "ticker": "347700",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S304",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "SpaceX(추정) 향 니켈·슈퍼얼로이 10년 공급(2035말), 수요예측 10.54억 달러·2026 확정 5,548만 달러 — 유통·가공형"
+    },
+    {
+     "name": "에이치브이엠",
+     "ticker": "295310",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S307",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "SpaceX 엔진용 특수금속(진공용해) 2023~ 공급"
+    },
+    {
+     "name": "세아베스틸지주(세아창원특수강·SST)",
+     "ticker": "001430",
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S316",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "세아창원특수강 SpaceX 거래 「전해짐」(S317), 미국 SST 특수합금 연 6,000t 2026 가동"
+    },
+    {
+     "name": "켄코아(California Metal & Supply)",
+     "ticker": "274090",
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S320",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+     "note": "미국 자회사 CMS 가 SpaceX·NASA 등에 티타늄·초합금 원소재 유통"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.superalloy",
+   "open_questions": [
+    "스피어 고객사 실명(공시상 비공개) 확인",
+    "에이치브이엠 SpaceX 매출 비중 공시 확인",
+    "세아 SST 가동·SpaceX 인증 실제 여부",
+    "니오븀 C-103·GRCop 공급사(ATI·NASA 라이선스) 확인 못함",
+    "금속 3D 프린팅 장비(Velo3D 는 2025 상장폐지·Arrayed Additive 인수 보도, EOS·Nikon SLM) 시장 수치 없음"
+   ],
+   "note": "쉬운 설명: 3,000도 불꽃과 초고압을 견디는 엔진용 니켈·니오븀·구리 합금. 변화: 항공 엔진 수요+SpaceX 증산으로 초합금 업체 수주잔고 최대(ATI 43억, S332), 한국 스피어·에이치브이엠이 SpaceX 공급망 진입 — 10년 공급계약(S304)."
+  },
+  {
+   "id": "space.launch.vehicle.fairing",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.launch.vehicle",
+   "name": "페어링·분리장치",
+   "spec": "탄소복합재 페어링, 단분리·위성분리 장치(파이로·비화약식), 위성 어댑터",
+   "qty_per_unit": {
+    "v": 27,
+    "unit": "기(계약 물량, 다년)",
+    "basis": "Ariane 6 FM16~42 페어링 27기 장기계약(2026-07, 2026말 시작)",
+    "asof": "2026-07-08",
+    "source": "S326",
+    "grade": "①"
+   },
+   "price": "미측정 — 페어링 단가 미공개(Falcon 9 페어링 약 600만 달러는 머스크 발언 — 1차 출처 없음)",
+   "cost_share_pct": "미측정 — 페어링·분리장치 시장 규모 출처 없음",
+   "makers": [
+    {
+     "name": "Beyond Gravity(구 RUAG Space)",
+     "unlisted": {
+      "parent": "RUAG International(스위스 연방 소유) — 의회 매각 금지",
+      "parent_ticker": null
+     },
+     "country": "스위스",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S326",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "Ariane 6·Vega C·Vulcan 페어링(Vulcan 단독, S327), 분리장치 — 2026-07 Ariane 6 27기 사상 최대 수주"
+    },
+    {
+     "name": "SpaceX(복합재 페어링 회수·재사용)",
+     "ticker": "XNAS:SPCX",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "Falcon 페어링 자체 제작·해상 회수 재사용"
+    },
+    {
+     "name": "Karman Space & Defense",
+     "ticker": "XNYS:KRMN",
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S311",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "페어링 구조·단분리·위성분리 시스템 등 — FQ3 2026 수주잔고 17억 달러(방산 주도)"
+    },
+    {
+     "name": "Ensign-Bickford Aerospace & Defense",
+     "unlisted": {
+      "parent": "독립 비상장(가족 소유)",
+      "parent_ticker": null
+     },
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "화공식 분리 볼트·선형 절단 장약"
+    },
+    {
+     "name": "Rocket Lab(분리 시스템)",
+     "ticker": "XNAS:RKLB",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "Neutron '하이햇' 일체형 페어링 자체"
+    },
+    {
+     "name": "한국항공우주산업(KAI)",
+     "ticker": "047810",
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S322",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+     "note": "누리호 체계 총조립(페어링 장착 포함) — 페어링 자체 제작사는 확인 못함"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.fairing",
+   "open_questions": [
+    "누리호 페어링 제작사(한국화이바설) 1차 확인 못함",
+    "누리호 분리장치(화공품) 공급사 — 한화·풍산 가능성, 근거 없음",
+    "대한항공은 소형발사체 수요기업 MOU 로만 확인 — 페어링 근거 없음"
+   ],
+   "note": "쉬운 설명: 위성을 대기 마찰·열에서 지켜주는 코 덮개와 단·위성을 떼어내는 장치. 변화: SpaceX 는 회수 재사용, 유럽은 Beyond Gravity 독점 공급(Ariane 6 27기 수주). 한국 상장 대안 미확인 — 「한국 상장 대안 없음(확인된 것)」."
+  },
+  {
+   "id": "space.launch.vehicle.avionics",
+   "kind": "input",
+   "input_type": "component",
+   "parent": "space.launch.vehicle",
+   "name": "발사체 항전·유도항법제어(GNC)",
+   "spec": "비행 컴퓨터·관성항법장치(INS)·텔레메트리·비행종단시스템(FTS)·추력벡터제어 구동기",
+   "qty_per_unit": {
+    "v": 325,
+    "unit": "세트/년(발사 1회당 항전 1세트, 재사용 시 감소)",
+    "basis": "2025년 궤도 발사 횟수(SIA) — 재사용 1단 항전은 재비행",
+    "asof": "2025",
+    "source": "S300",
+    "grade": "②"
+   },
+   "price": "미측정 — 발사체 항전 세트 단가 공개 없음",
+   "cost_share_pct": {
+    "v": 0.9,
+    "unit": "%",
+    "basis": "발사체 항전 시장 38.6억 달러(Mordor 2025) ÷ 4,290억 — 상업 발사 매출 124억의 31% 에 해당해 과대 의심",
+    "asof": "2025",
+    "source": "S331",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SpaceX(자체 비행 컴퓨터·자율 FTS)",
+     "ticker": "XNAS:SPCX",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "상용 부품 3중 중복 비행컴퓨터·자율비행종단 내재화"
+    },
+    {
+     "name": "Honeywell Aerospace",
+     "ticker": "XNAS:HON",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "관성항법(링레이저자이로)·CAES 인수로 우주 RF/전자 확대"
+    },
+    {
+     "name": "Northrop Grumman",
+     "ticker": "XNYS:NOC",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "관성항법장치·발사체 항전(Minotaur·Pegasus)"
+    },
+    {
+     "name": "Safran Electronics & Defense",
+     "ticker": "XPAR:SAF",
+     "country": "프랑스",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "Ariane 6 관성항법(SIGAL 등)"
+    },
+    {
+     "name": "L3Harris(텔레메트리·FTS)",
+     "ticker": "XNYS:LHX",
+     "country": "미국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "원격측정 송신기·비행종단 수신기"
+    },
+    {
+     "name": "덕산넵코어스",
+     "ticker": "266690",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S328",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "나로호·누리호 위성항법(GPS) 수신기 — 2026-09-30 코스닥 상장(S329), 덕산하이메탈 계열"
+    },
+    {
+     "name": "파이버프로",
+     "ticker": "368770",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S330",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "누리호 항법장치(FOG IMU/INS) 공급"
+    },
+    {
+     "name": "단암시스템즈",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "누리호 전자탑재(원격측정·통신) 개발 참여"
+    },
+    {
+     "name": "한화에어로스페이스(유도제어·전자)",
+     "ticker": "012450",
+     "country": "한국",
+     "role": "second",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S321",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+     "note": "누리호 유도제어·전자 참여사로 '한화' 기재(계열사 구분 확인 필요)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.avionics",
+   "open_questions": [
+    "제노코(361390) 발사체 항전 근거 없음 — 위성 쪽만 확인",
+    "누리호 탑재컴퓨터(스페이스솔루션·시스코어 — 비상장) 역할 상세",
+    "발사체 항전 시장 규모 Mordor 외 교차 출처 없음"
+   ],
+   "note": "쉬운 설명: 로켓의 두뇌와 눈 — 비행 컴퓨터, 관성항법, 원격측정, 궤도 이탈 시 자폭시키는 비행종단장치. 변화: 상용 부품·자율 FTS 로 원가 하락, 재사용으로 세트 수요 감소, 소형발사체 다수 등장으로 외판 수요 증가."
+  },
+  {
+   "id": "space.launch.vehicle.propellant",
+   "kind": "input",
+   "input_type": "material",
+   "parent": "space.launch.vehicle",
+   "name": "추진제·산업가스",
+   "spec": "액체산소·액화메탄·RP-1·액체수소·헬륨(가압)·질소 — 발사 1회당 수백~수천 톤",
+   "qty_per_unit": {
+    "v": 325,
+    "unit": "회/년(발사 1회당 수백~수천 t 충전)",
+    "basis": "2025년 궤도 발사 325회(SIA) — 톤수 = 발사체별 충전량(F9 약 500t, 스타십 약 4,600t: 모델 지식) × 횟수",
+    "asof": "2025",
+    "source": "S300",
+    "grade": "②"
+   },
+   "price": "미측정 — 액체산소·메탄·헬륨 계약가 비공개(헬륨 현물은 2026-03 카타르 피해 후 약 2배, S325)",
+   "cost_share_pct": "미측정 — 발사용 추진제·산업가스 시장 규모 출처 없음(발사비의 1% 미만 수준이라는 통념은 근거 미확보)",
+   "makers": [
+    {
+     "name": "Linde",
+     "ticker": "XNAS:LIN",
+     "country": "영국·미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S335",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+     "note": "발사용 산업가스 장기계약 2건, 플로리다 Mims 증설(2027)·텍사스 브라운즈빌 ASU(2026, 액체산소·질소 — 스타베이스 인근)"
+    },
+    {
+     "name": "Air Liquide",
+     "ticker": "XPAR:AI",
+     "country": "프랑스",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "①",
+     "source": "S336",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+     "note": "KSC 질소 배관·케이프 ASU, 기아나 쿠루 발사장 가스"
+    },
+    {
+     "name": "Air Products",
+     "ticker": "XNYS:APD",
+     "country": "미국",
+     "role": "main",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+     "note": "NASA 액체수소 공급(SLS·Centaur)"
+    },
+    {
+     "name": "SpaceX(스타베이스 자체 액화·메탄)",
+     "ticker": "XNAS:SPCX",
+     "country": "미국",
+     "role": "captive",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+     "note": "스타베이스 자체 산소 플랜트·메탄 액화 구축"
+    },
+    {
+     "name": "한양이엔지",
+     "ticker": "045100",
+     "country": "한국",
+     "role": "qualifying",
+     "share_pct": "미측정 — 이 칸 단위 점유율 공개 통계 없음(BryceTech·Novaspace 발사체별 집계로 잴 수 있음)",
+     "grade": "②",
+     "source": "S344",
+     "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+     "note": "누리호 발사대 추진제 공급설비 설계·구축·운용지원(가스 자체가 아니라 설비)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.launch.vehicle.propellant",
+   "open_questions": [
+    "헬륨 2026-11 현재 가격·발사사 영향 — 3월 이후 자료 없음",
+    "하이록코리아(013030) 발사체 밸브 근거 못 찾음",
+    "케로신 RP-1 공급사(정유사) 확인 못함",
+    "Falcon 9 1회 헬륨 = 세계 일일 생산 14~18% 주장 검증 불가"
+   ],
+   "note": "쉬운 설명: 로켓 연료(메탄·케로신·수소)와 산화제(액체산소), 탱크를 누르는 헬륨·질소. 변화: 2026-03 이란 전쟁으로 카타르 헬륨 공급 1/3 중단·현물 2배(S325) — 발사사는 우선 배정 전망. 메탄 전환으로 LNG·액화설비 수요, Linde 발사장 인근 ASU 증설."
+  }
+ ]
+}
