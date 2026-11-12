@@ -1,0 +1,1395 @@
+{
+ "filler": "F5",
+ "nodes": [
+  {
+   "id": "space.service.comm.broadband",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.comm",
+   "name": "위성 광대역 인터넷(LEO·GEO)",
+   "spec": "가정·기업·해상·항공·정부용 인터넷. LEO 메가컨스텔레이션(스타링크·카이퍼/레오·원웹·궈왕) vs GEO 대용량 위성",
+   "qty_per_unit": {
+    "v": ">1,000만",
+    "unit": "명(가입자, 연말)",
+    "basis": "전 세계 위성 광대역 가입자 2025년 1,000만 명 돌파(+62% YoY, SIA). 스타링크 단독 3Q26 소비자 1,360만(S502)",
+    "asof": "2025",
+    "source": "S500",
+    "grade": "②"
+   },
+   "price": {
+    "v": 69,
+    "unit": "USD/월(소비자 ARPU)",
+    "basis": "스타링크 3Q26 소비자 월 ARPU(전년 83달러, 2024 연 91·2025 81) — 저가 요금·신흥국 비중 확대로 하락",
+    "asof": "2026-09-30",
+    "source": "S503",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — SIA 2026 은 광대역 매출 성장률(+16%)만 공개, 달러 규모는 유료 본문. 하한 참고: 스타링크 2025 Connectivity 113.9억 달러(S504) ÷ 4,290억 = 2.7%(기업·정부 포함이라 광대역 정의와 다를 수 있음)",
+   "makers": [
+    {
+     "name": "SpaceX Starlink",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S502",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "LEO 광대역 세계 1위 — 3Q26 소비자 1,360만·Connectivity 52억 달러(+69%), 기업·정부 +91%, 위성 약 11,100기; ARPU 69달러로 하락(S503)"
+    },
+    {
+     "name": "Amazon Leo(구 Project Kuiper)",
+     "ticker": "XNAS:AMZN",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S505",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "2026-07 기준 396기 — 상용 개시 '2026년 하반기' 목표, 가격 미발표; 기업 프리뷰만 운영. 11월 현재 상용 개시 확인 못 함. FCC 1,618기 마일스톤 24개월 연장"
+    },
+    {
+     "name": "Eutelsat OneWeb",
+     "ticker": "XPAR:ETL",
+     "country": "FR/UK",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S516",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "LEO 매출 1Q FY27 7,090만 유로(+30.1%), 연 +30%+ 가이던스; 비디오 -17.8%로 전체 -2.4%. IRIS² 참여(S550)"
+    },
+    {
+     "name": "SES(인텔샛 통합)",
+     "ticker": "XPAR:SESG",
+     "country": "LU",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S515",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "GEO+MEO(O3b mPOWER) — 3Q26 매출 8.70억 유로(동일기준 +4.2%), Networks(모빌리티·정부) 견인, 2026 보합 가이던스"
+    },
+    {
+     "name": "Viasat(Inmarsat 포함)",
+     "ticker": "XNAS:VSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S514",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "GEO 대용량 — FY27 2Q 매출 +3%, 해상 -8%, 항공 기내연결 일부 고객 이탈로 FY28 감소 예상, 고정 광대역 가입자 10만"
+    },
+    {
+     "name": "EchoStar(Hughes)",
+     "ticker": "XNAS:SATS",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S523",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "GEO 가정용(HughesNet) — 3Q26 보도자료 없이 10-Q 만 제출, 무선 18.2만 순감; 주파수 매각(S512·S513) 후 구조조정"
+    },
+    {
+     "name": "Telesat(Lightspeed)",
+     "ticker": "XNAS:TSAT",
+     "country": "CA",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S517",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "Lightspeed LEO 상용 2028년으로 지연, LEO 수주잔고 C$56억(캐나다 정부 위주), 3Q26 매출 -20%"
+    },
+    {
+     "name": "중국위성네트워크그룹(궈왕 Guowang)",
+     "unlisted": {
+      "parent": "중국 국무원 국자위 소유 국영",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S520",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "국영 LEO 광대역 — 2026-10 222기, 2026년 310·2027년 900기 계획"
+    },
+    {
+     "name": "上海垣信(SSST, 첸판 Qianfan/千帆)",
+     "unlisted": {
+      "parent": "상하이시 정부 계열 비상장",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S520",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "상하이시 계열 LEO — 251기(작동 233), 2026년 143기 발사"
+    },
+    {
+     "name": "KT SAT",
+     "unlisted": {
+      "parent": "KT 100% 자회사",
+      "parent_ticker": "030200"
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S518",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "무궁화 GEO 운영 + 스타링크·원웹 국내 리셀러(해양 XWAVE-ONE 등)"
+    },
+    {
+     "name": "SK텔링크",
+     "unlisted": {
+      "parent": "SK텔레콤 자회사",
+      "parent_ticker": "017670"
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S518",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "스타링크 국내 공식 리셀러(해운·정부)"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S519",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+     "note": "원웹 국내 공급 협정 승인(2025-05) — 원웹 지분 투자·국내 유통; 위성 광대역 매출 규모는 미공개"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.comm.broadband",
+   "open_questions": [
+    "SIA 광대역 매출 달러 규모(유료 본문) — 2025 위성서비스 1,050억 중 광대역 몫",
+    "스타링크 가입자 1,030만(S-1, 2025)과 SIA '1,000만+' 정의 차(스타링크가 사실상 전부인지)",
+    "Amazon Leo 상용 개시 날짜·가격(2026-11 현재 미확인)",
+    "LG유플러스 스타링크 계약 여부 미확인",
+    "SpaceX 2027 1Q 매출 가이던스 330~370억은 AI 부문 포함 — 스타링크 단독 가이던스 없음"
+   ],
+   "note": "쉬운 설명: 하늘의 위성을 통해 집·배·비행기·군에 인터넷을 파는 사업. 변화: LEO(스타링크)가 시장을 거의 독식하며 +69% 성장, ARPU는 83→69달러로 하락(물량↑·단가↓). GEO 운영자(SES·Viasat·Eutelsat GEO·Telesat GEO)는 정체·감소, Amazon Leo 는 상용 지연. FCC EPFD 개편(S541)이 LEO 용량을 더 키운다."
+  },
+  {
+   "id": "space.service.comm.d2d",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.comm",
+   "name": "휴대폰 직접 연결(D2D·D2C)",
+   "spec": "개조 없는 스마트폰이 위성과 직접 통신 — 문자→음성→데이터. 이통사 주파수 임차형 vs 위성 전용 주파수(MSS)형",
+   "qty_per_unit": {
+    "v": 12,
+    "unit": "기(AST 블루버드 궤도 운용 위성)",
+    "basis": "AST SpaceMobile 3Q26 궤도 운용 블루버드 12기(1~6·8~13), 2027년 중반 약 45기 목표. 스타링크 D2C 1세대는 650기+(S521)",
+    "asof": "2026-11-10",
+    "source": "S508",
+    "grade": "①"
+   },
+   "price": "미측정 — D2D 소매가(T-Satellite 등 월 요금)와 이통사-위성사 매출 분배 구조 공개 원천 미확보",
+   "cost_share_pct": "미측정 — D2D 시장 규모 신뢰할 만한 집계 없음(AST 2026 매출 가이던스 1.5~2억 달러가 상장 순수 사업자 최대치)",
+   "makers": [
+    {
+     "name": "SpaceX(Starlink Mobile·T-Mobile T-Satellite)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S521",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "2026-03 'Starlink Mobile' 개명, 1세대 650기+ 문자·저속 데이터; EchoStar AWS-4·H블록 65MHz 170억 달러 인수(FCC 승인, 2027 종결 예정 S513)로 자체 주파수 확보 → V2 위성 1.5만 기 목표"
+    },
+    {
+     "name": "AST SpaceMobile",
+     "ticker": "XNAS:ASTS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S508",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "광대역 D2D — 3Q26 매출 4,230만 달러(+187% 보도), 2026 가이던스 1.5~2억(S509), 2026 베타·2027 상용, 위성 12기→45기, 월 6기 생산; AT&T·Verizon·Vodafone 파트너; 순손실 1.32억"
+    },
+    {
+     "name": "Globalstar(Apple 위성 SOS)",
+     "ticker": "XNAS:GSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S507",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "아이폰 긴급 SOS 망 — 아마존이 주당 90달러(약 116억 달러) 인수 합의(S506), FCC 면허 이전 승인(10월), 2027 종결; 3Q26 매출 7,090만"
+    },
+    {
+     "name": "Amazon Leo(Apple 계약)",
+     "ticker": "XNAS:AMZN",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S506",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "Globalstar 인수와 별도로 Apple 과 아이폰·애플워치 위성 기능 제공 계약 — D2D 진입"
+    },
+    {
+     "name": "Iridium(NTN Direct)",
+     "ticker": "XNAS:IRDM",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S511",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "L밴드 NB-NTN 휴대폰 직접 메시징 추진; Rocket Lab 이 주당 54달러(EV 80억) 인수 합의, 2027 중반 종결"
+    },
+    {
+     "name": "Skylo Technologies",
+     "unlisted": {
+      "parent": "독립 비상장(벤처 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S522",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "자체 위성 없이 MSS 주파수·기존 위성 임차로 픽셀·갤럭시 위성 문자 제공 — 2026-07 한국 진출 검토"
+    },
+    {
+     "name": "Lynk Global",
+     "unlisted": {
+      "parent": "독립 비상장(SES 투자 보도 — 확인 필요)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+     "note": "소형 D2D 위성 운영 — SES 투자·합병 진행 여부는 이번에 확인 못 함"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.comm.d2d",
+   "open_questions": [
+    "SpaceX-EchoStar 주파수 대금 170억 vs 196억 달러(보도 상충) — 10-Q 대조",
+    "T-Satellite 유료 가입자 수 비공개(T-Mobile CEO '기대 이하')",
+    "한국 이통 3사 D2D 상용 계약 없음 — Skylo 진출 검토만(S522)",
+    "Lynk-SES 합병 여부"
+   ],
+   "note": "쉬운 설명: 개조 없는 스마트폰이 기지국 대신 위성과 바로 문자·통화·데이터를 주고받게 하는 서비스. 변화: 2026년 SpaceX 의 EchoStar 주파수 인수, 아마존의 Globalstar 인수, Rocket Lab 의 Iridium 인수로 '주파수 가진 위성사'가 통째로 팔리는 해. 병목은 주파수와 대형 안테나 위성 발사(AST 블루버드 7 발사 실패)."
+  },
+  {
+   "id": "space.service.comm.iot",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.comm",
+   "name": "위성 IoT·협대역 통신",
+   "spec": "L밴드 협대역 음성·데이터, 자산 추적·원격 검침·해상 안전(GMDSS)·항공 안전 통신",
+   "qty_per_unit": {
+    "v": 216,
+    "unit": "만 회선(Iridium 상용 IoT 가입자)",
+    "basis": "Iridium 3Q26 상용 IoT 데이터 가입자 216만(+9%), 총 과금 가입자 269.6만 — 업계 최대 단일 사업자",
+    "asof": "2026-09-30",
+    "source": "S510",
+    "grade": "①"
+   },
+   "price": "미측정 — IoT 회선당 월 ARPU 공개치 이번에 미확보(Iridium 10-Q 의 IoT ARPU 로 재면 됨)",
+   "cost_share_pct": "미측정 — 위성 IoT·MSS 시장 규모 SIA 세부 분해 유료, 신뢰할 만한 공개 집계 없음",
+   "makers": [
+    {
+     "name": "Iridium",
+     "ticker": "XNAS:IRDM",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S510",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "L밴드 66기 LEO — 3Q26 매출 2.457억(+8%, Aireon 인수 효과), IoT 216만(+9%), 미 국방 EMSS 2027-03까지; Rocket Lab 인수(EV 80억, S511) 진행"
+    },
+    {
+     "name": "Viasat(Inmarsat L밴드·GMDSS)",
+     "ticker": "XNAS:VSAT",
+     "country": "US/UK",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S514",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "해상·항공 안전 통신 L밴드 — 해상 매출 -8%(선박 수 감소)"
+    },
+    {
+     "name": "Globalstar",
+     "ticker": "XNAS:GSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S507",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "상용 IoT 서비스 매출 증가가 도매 용량 감소를 일부 상쇄; 아마존 인수 진행"
+    },
+    {
+     "name": "ORBCOMM",
+     "unlisted": {
+      "parent": "GI Partners(사모) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "자산 추적·AIS IoT — 2021 GI Partners 인수로 비상장"
+    },
+    {
+     "name": "Kinéis",
+     "unlisted": {
+      "parent": "CNES·CLS 등 출자 비상장",
+      "parent_ticker": null
+     },
+     "country": "FR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "25기 나노위성 IoT 군집(CNES·CLS 계열)"
+    },
+    {
+     "name": "Sateliot",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "ES",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "5G NB-IoT NTN 위성 스타트업"
+    },
+    {
+     "name": "Skylo Technologies",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S522",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+     "note": "NB-NTN 기반 IoT·휴대폰 메시징(위성 임차형)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.comm.iot",
+   "open_questions": [
+    "위성 IoT 시장 규모·ARPU",
+    "한국 상장 위성 IoT 운영자 없음(KT SAT 해양 서비스는 광대역 중심)"
+   ],
+   "note": "쉬운 설명: 배·트럭·가축·계량기처럼 기지국이 없는 곳의 작은 기기가 위성으로 위치·상태 데이터를 몇 바이트씩 보내는 서비스. 변화: 회선은 +9% 꾸준히 늘지만 단가가 낮아 매출은 한 자릿수 성장; 5G NTN 표준화로 D2D 와 경계가 흐려지고 운영자가 인수 대상(Iridium→Rocket Lab, Globalstar→Amazon)이 됐다."
+  },
+  {
+   "id": "space.service.comm.video",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.comm",
+   "name": "위성방송·영상 분배(구산업)",
+   "spec": "DTH 위성TV·방송 중계 — 가입자 감소 중인 캐시카우, GEO 운영자 매출의 뿌리",
+   "qty_per_unit": "미측정 — 세계 DTH 위성TV 가입자 합계 공개 집계 미확보(운영자별 10-Q·IR 합산 필요)",
+   "price": "미측정 — DTH 가구당 ARPU 공개 비교 원천 미확보",
+   "cost_share_pct": {
+    "v": 16.9,
+    "unit": "%",
+    "basis": "위성TV 매출 724억 달러(2024년, SIA 2025 SSIR) ÷ 4,290억(2025 우주경제) × 100 — 분자 연도가 1년 앞섬(2025년 TV 수치는 유료 본문), 2024 -6% 추세면 2025 는 더 낮다",
+    "asof": "2024",
+    "source": "S501",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "SES",
+     "ticker": "XPAR:SESG",
+     "country": "LU",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S515",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "Media(매출 36%) 9M 동일기준 -6.8%, 3Q 는 보합 — 유럽 DTH 중계의 핵심"
+    },
+    {
+     "name": "Eutelsat",
+     "ticker": "XPAR:ETL",
+     "country": "FR",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S516",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "비디오 1.10억 유로(동일기준 -17.8%), 여전히 매출의 40%"
+    },
+    {
+     "name": "DirecTV",
+     "unlisted": {
+      "parent": "TPG(사모) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "미국 DTH 최대 — 2025 TPG 가 AT&T 잔여 지분 인수로 비상장"
+    },
+    {
+     "name": "EchoStar(DISH TV)",
+     "ticker": "XNAS:SATS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S523",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "미국 DTH 2위 — 3Q26 Pay-TV 가입자 공시 미확인(10-Q 만 제출); 2025-3Q Pay-TV 약 717만"
+    },
+    {
+     "name": "Sky Perfect JSAT",
+     "ticker": "XTKS:9412",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "일본 위성 방송 플랫폼+위성 운영"
+    },
+    {
+     "name": "Telesat(GEO)",
+     "ticker": "XNAS:TSAT",
+     "country": "CA",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S517",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "방송 매출 -26%(계약 미갱신)"
+    },
+    {
+     "name": "KT스카이라이프",
+     "ticker": "053210",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S547",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+     "note": "국내 유일 위성방송 — 3Q26 본체 영업이익 -45%(자회사 ENA·HCN 개선이 상쇄)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.comm.video",
+   "open_questions": [
+    "SIA 2025년 위성TV 매출(2026 SSIR 유료 본문) — 724억(2024) 이후 값",
+    "KT스카이라이프 3Q26 매출·위성 가입자 수(DART 분기보고서로 확인)"
+   ],
+   "note": "쉬운 설명: 정지궤도 위성으로 TV 채널을 집 접시 안테나에 뿌리는 사업 — 위성서비스 매출의 2/3를 차지하는 '구산업'. 변화: 스트리밍에 밀려 매년 -6~-18% 감소, GEO 운영자가 이 현금으로 LEO·국방으로 전환 중. 성장 후보 없음."
+  },
+  {
+   "id": "space.service.comm.milsat",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.comm",
+   "name": "정부·국방 위성통신·우주 국방 체계",
+   "spec": "군 전용·상용 임차 통신, 미 우주개발청(SDA) 확산형 전투우주구조(PWSA), 골든돔 우주 기반 요격·추적",
+   "qty_per_unit": {
+    "v": 108,
+    "unit": "기(SDA 트란쉐3 추적층 발주 위성)",
+    "basis": "SDA T3 추적층 72기(2025-12) + AMDT3 36기(2026-07) = 108기 — 전송층 T3 는 미발주/미확인",
+    "asof": "2026-07-14",
+    "source": "S524",
+    "grade": "②"
+   },
+   "price": {
+    "v": [
+     42,
+     61
+    ],
+    "unit": "백만 USD/기(계약액 ÷ 기수)",
+    "basis": "SDA T3 추적층 사별 계약액 ÷ 18기: Northrop 7.64억→4,240만, Lockheed 11억→6,110만(지상·운영 포함 계약가)",
+    "asof": "2025-12-19",
+    "source": "S524",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — 정부·국방 위성통신·우주 국방 체계는 '서비스 매출' 단일 시장 집계 없음(정부 우주 예산은 SIA 4,290억의 별도 축)",
+   "makers": [
+    {
+     "name": "Lockheed Martin",
+     "ticker": "XNYS:LMT",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 31.3,
+      "unit": "%",
+      "basis": "SDA T3 추적층 계약액 35.1억 달러 중(2025-12)",
+      "asof": "2025-12-19",
+      "source": "S524",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S524",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "SDA T3 추적층 11억 달러·18기(사격통제 능력), 골든돔 SBI 참여(S526)"
+    },
+    {
+     "name": "L3Harris",
+     "ticker": "XNYS:LHX",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 24.0,
+      "unit": "%",
+      "basis": "SDA T3 추적층 계약액 35.1억 달러 중(2025-12)",
+      "asof": "2025-12-19",
+      "source": "S524",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S525",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "T3 추적층 8.43억 + AMDT3 9.55억 — 2026 SDA 최대 수혜"
+    },
+    {
+     "name": "Rocket Lab",
+     "ticker": "XNAS:RKLB",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 22.9,
+      "unit": "%",
+      "basis": "SDA T3 추적층 계약액 35.1억 달러 중(2025-12)",
+      "asof": "2025-12-19",
+      "source": "S524",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S524",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "T3 추적층 8.05억·18기; Iridium 인수(S511)로 국방 통신 서비스까지 수직계열"
+    },
+    {
+     "name": "Northrop Grumman",
+     "ticker": "XNYS:NOC",
+     "country": "US",
+     "role": "main",
+     "share_pct": {
+      "v": 21.8,
+      "unit": "%",
+      "basis": "SDA T3 추적층 계약액 35.1억 달러 중(2025-12)",
+      "asof": "2025-12-19",
+      "source": "S524",
+      "grade": "②"
+     },
+     "grade": "②",
+     "source": "S524",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "T3 추적층 7.64억 — PWSA 누적 150기(T1~T3 추적·전송)"
+    },
+    {
+     "name": "Sierra Space",
+     "unlisted": {
+      "parent": "독립 비상장(Sierra Nevada Corp. 계열)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S525",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "AMDT3 7.98억 달러(골든돔 가속 추적)"
+    },
+    {
+     "name": "York Space Systems",
+     "ticker": "XNYS:YSS",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S527",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "SDA 전송층 버스 — 2Q26 매출 +10%, 잔고 5.92억(-8% QoQ), 2026 가이던스 5.7→3.9억 하향(IDIQ 전환·공급망 지연)"
+    },
+    {
+     "name": "SpaceX(Starshield)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S526",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "골든돔 SBI 시제 수주(12개사 32억 달러 중); 스타링크 기업·정부 매출 +91%(S502)"
+    },
+    {
+     "name": "Viasat(DAT)",
+     "ticker": "XNAS:VSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S514",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "국방·첨단기술 3.655억(+20%), 전술 네트워크 +31%, 연 DAT 수주 약 20억 기대"
+    },
+    {
+     "name": "Anduril",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S526",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "골든돔 SBI 시제 수주"
+    },
+    {
+     "name": "한국항공우주산업(KAI)",
+     "ticker": "047810",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S528",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "425사업 2~5호 총괄(5호 2025-11 발사로 완료), 초소형 SAR 군집 'K 모델' 경쟁"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S528",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "425 SAR 탑재체·데이터링크, 초소형 SAR 'H 모델' 체계종합 경쟁"
+    },
+    {
+     "name": "LIG넥스원",
+     "ticker": "079550",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "군 위성통신체계 지상·단말 — 2026 우주 국방 매출 규모 미확인"
+    },
+    {
+     "name": "쎄트렉아이",
+     "ticker": "099320",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S536",
+     "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+     "note": "국내 위성 체계 — 3Q26 매출 +11.4%·영업익 +235.6%, 군 초소형 위성 참여 여부 이번에 미확인"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.comm.milsat",
+   "open_questions": [
+    "SDA T3 전송층 수주자(이번 검색에서 미확인)",
+    "골든돔 SBI 12개사 전체 명단(1차 자료 미확보)",
+    "York 3Q26 실적(ALL.SPACE 반영 잔고) 미확보",
+    "한국 초소형 SAR 군집 체계개발 최종 낙찰(KAI vs 한화시스템)"
+   ],
+   "note": "쉬운 설명: 군과 정부가 쓰는 위성 통신망과 미사일 추적·요격 위성 체계. 변화: 골든돔(250억 달러 선배정)과 SDA 확산형 구조로 수백 기 단위 발주가 이어지고, 상용사(SpaceX·Rocket Lab·L3Harris)가 몫을 키운다. 위험: 골든돔 책임자가 SBI는 비용 때문에 빠질 수 있다고 함(S526), York 가이던스 하향처럼 IDIQ 전환 시 매출 이연."
+  },
+  {
+   "id": "space.service.data.eo_data",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.data",
+   "name": "지구관측 영상·데이터 판매",
+   "spec": "광학·SAR·초분광·RF 신호탐지 위성을 운영해 영상·구독을 정부(국방·정보)와 민간에 판매",
+   "qty_per_unit": "미측정 — 운용 중 상업 EO 위성 수·판매 영상 면적 집계 미확보(SIA: 원격탐사 위성 2016 대비 +47%만 공개)",
+   "price": "미측정 — 영상 단가(USD/km²)·구독가 공개 원천 미확보",
+   "cost_share_pct": {
+    "v": 0.51,
+    "unit": "%",
+    "basis": "상업 EO 데이터 시장 22억 달러(2024, Novaspace) ÷ 4,290억 × 100 — VAS 32억은 analytics 칸; 분자 2024년",
+    "asof": "2024",
+    "source": "S535",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "Planet Labs",
+     "ticker": "XNYS:PL",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S529",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "광학 일일 촬영 — FY27 2Q 매출 1.161억(+58%), 백로그 8.15억(1Q 9.06억, +72%), FY27 가이던스 4.30~4.41억 — 폭발 성장 후보"
+    },
+    {
+     "name": "Vantor(구 Maxar Intelligence)",
+     "unlisted": {
+      "parent": "Advent International(사모) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S546",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "WorldView Legion 6기+기존 4기 — 미 정부 최대 고해상도 공급자, 2025-10 사명 변경"
+    },
+    {
+     "name": "BlackSky",
+     "ticker": "XNYS:BKSY",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S530",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "3Q26 매출 4,280만(+118%), adj. EBITDA 마진 29.9%, Gen-3 수요로 가이던스 상향 — 폭발 성장 후보"
+    },
+    {
+     "name": "ICEYE",
+     "unlisted": {
+      "parent": "독립 비상장(General Atlantic 등)",
+      "parent_ticker": null
+     },
+     "country": "FI",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S532",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "SAR 세계 1위 — 2025 매출 2.5억 유로+(2배+), 잔고 15억 유로, 기업가치 100억 유로+; IPO 는 '목표 아님'"
+    },
+    {
+     "name": "HawkEye 360",
+     "ticker": "XNYS:HAWK",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S531",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "RF 신호 탐지 — 2026 NYSE 상장(26달러, 4.16억 조달), 2025 매출 1.177억"
+    },
+    {
+     "name": "Spire Global",
+     "ticker": "XNYS:SPIR",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S534",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "RF·기상 데이터 — 3Q26 매출 1,800만(+42%, 해상 제외 +77%), RPO 1.754억"
+    },
+    {
+     "name": "Synspective",
+     "ticker": "XTKS:290A",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S533",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "소형 SAR — 방위성 컨스텔레이션 수주로 잔고 1,243.9억 엔(전기말 대비 5배), 2Q 매출 +27.4% — 잔고 기준 폭발 후보"
+    },
+    {
+     "name": "iQPS(QPS연구소)",
+     "ticker": "XTKS:5595",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "소형 SAR — 방위성 컨스텔레이션 참여 여부·실적 이번에 미확인"
+    },
+    {
+     "name": "Airbus Defence and Space(Pléiades Neo)",
+     "ticker": "XPAR:AIR",
+     "country": "FR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "유럽 광학·SAR 영상"
+    },
+    {
+     "name": "Capella Space",
+     "unlisted": {
+      "parent": "IonQ 자회사",
+      "parent_ticker": "XNYS:IONQ"
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "SAR — IonQ 인수(2025)로 상장사 자회사"
+    },
+    {
+     "name": "Satellogic",
+     "ticker": "XNAS:SATL",
+     "country": "AR/US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "서브미터 광학 — 2026 실적 이번에 미확인"
+    },
+    {
+     "name": "쎄트렉아이(SIIS)",
+     "ticker": "099320",
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S536",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "자회사 SIIS 가 KOMPSAT·SpaceEye 영상 판매 — 3Q26 연결 매출 561.9억(+11.4%), 영업익 +235.6%"
+    },
+    {
+     "name": "나라스페이스테크놀로지",
+     "ticker": "478340",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S538",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "초소형 EO 위성·데이터 — 2025-12 코스닥 상장, 2031년까지 84기 계획"
+    },
+    {
+     "name": "루미르",
+     "ticker": "474170",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S537",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+     "note": "SAR 위성(LumirX)·탑재체 — 2Q26 매출 42억(+110.6%)·적자 지속, 데이터 판매는 아직 계획 단계"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.data.eo_data",
+   "open_questions": [
+    "Planet 백로그 1Q 9.06억 → 2Q 8.15억(정의 차인지 감소인지)",
+    "BlackSky 3Q26 백로그(10-Q 각주)",
+    "ICEYE 2026 매출 목표 5억 vs 10억 유로 보도 상충",
+    "나라스페이스 종목코드 478340 거래소 원문 미대조",
+    "iQPS·Satellogic 2026 실적"
+   ],
+   "note": "쉬운 설명: 위성으로 땅을 찍은 사진·레이더 영상·전파 신호를 정부와 기업에 파는 사업. 변화: 국방 수요(65%+)가 폭발 — Planet +58%·BlackSky +118%·ICEYE 2배·Synspective 잔고 5배. 우크라이나·대만 이후 '주권 EO' 발주가 공급(위성 수)보다 빠르다."
+  },
+  {
+   "id": "space.service.data.analytics",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.data",
+   "name": "위성 데이터 분석·AI 인사이트",
+   "spec": "영상 위에 AI 를 얹어 변화탐지·해양감시·농업·보험·금융 인사이트로 파는 소프트웨어 층",
+   "qty_per_unit": "없음 — 소프트웨어·분석 층이라 물량 축이 성립하지 않음(구독·계약 수로만 셀 수 있음)",
+   "price": "미측정 — 분석 구독·플랫폼 단가 공개 원천 미확보",
+   "cost_share_pct": {
+    "v": 0.75,
+    "unit": "%",
+    "basis": "EO 부가가치서비스(VAS) 시장 32억 달러(2024, Novaspace) ÷ 4,290억 × 100 — 분자 2024년",
+    "asof": "2024",
+    "source": "S535",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "Vantor(Tensorglobe)",
+     "unlisted": {
+      "parent": "Advent International(사모) 소유",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S546",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "영상 공급자→공간 AI 플랫폼으로 전환(Tensorglobe)"
+    },
+    {
+     "name": "Planet Labs",
+     "ticker": "XNYS:PL",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S529",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "데이터+AI 솔루션 구독 — 매출 +58%"
+    },
+    {
+     "name": "BlackSky(Spectra AI)",
+     "ticker": "XNYS:BKSY",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S530",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "우주 정보·AI 서비스 매출 3,270만(분기 사상 최대)"
+    },
+    {
+     "name": "Palantir",
+     "ticker": "XNAS:PLTR",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "미 국방 Maven 등 위성 영상 위 AI 표적화 소프트웨어 — 위성 매출 비중 미미"
+    },
+    {
+     "name": "Privateer(Orbital Insight 인수)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "지리공간 분석"
+    },
+    {
+     "name": "EarthDaily(Descartes Labs 인수)",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "CA",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "농업·자원 분석"
+    },
+    {
+     "name": "SI Analytics(SIA)",
+     "unlisted": {
+      "parent": "쎄트렉아이 계열(지분율 확인 필요)",
+      "parent_ticker": "099320"
+     },
+     "country": "KR",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "쎄트렉아이 계열 위성영상 AI 분석 — 국방·정부 고객"
+    },
+    {
+     "name": "한컴인스페이스",
+     "unlisted": {
+      "parent": "한글과컴퓨터 계열",
+      "parent_ticker": "030520"
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+     "note": "드론·위성 영상 분석 — 상장 여부 확인 못 함"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.data.analytics",
+   "open_questions": [
+    "VAS 32억 달러에 EO 운영자 자체 분석 매출이 얼마나 겹치는지",
+    "SIA·한컴인스페이스 지분·상장 여부",
+    "Palantir 위성 관련 매출 미공개"
+   ],
+   "note": "쉬운 설명: 위성 영상 위에 AI를 얹어 '이 항구에 배가 몇 척', '이 밭 수확량' 같은 답으로 파는 소프트웨어. 변화: 영상 운영자가 직접 분석까지 묶어 팔면서(Vantor·Planet·BlackSky) 독립 분석사는 인수·통합되는 중. 성장은 운영자 쪽에 몰린다."
+  },
+  {
+   "id": "space.service.data.pnt",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.data",
+   "name": "항법·시각(PNT) 서비스·대체 항법",
+   "spec": "GNSS 보강·정밀측위 구독, GPS 교란 대비 LEO 대체 PNT",
+   "qty_per_unit": {
+    "v": 258,
+    "unit": "기(Xona Pulsar 계획 군집)",
+    "basis": "LEO 대체 PNT 최대 상용 군집 계획 — 양산형 첫 6기 2026-10 발사, 2027 상용",
+    "asof": "2026-10-22",
+    "source": "S539",
+    "grade": "②"
+   },
+   "price": "미측정 — 정밀측위·대체 PNT 구독 단가 공개 원천 미확보",
+   "cost_share_pct": "미측정 — PNT '서비스' 시장 규모 출처 없음(SIA GNSS 는 지상장비 1,652억에 포함, LEO PNT 시장 추정은 0.7억~1.5억 달러로 상충해 채택 안 함)",
+   "makers": [
+    {
+     "name": "Xona Space Systems",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S539",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "LEO PNT 'Pulsar' — 시리즈D 2.5억 달러(가치 24.5억), 2027년 말 연 50기 생산"
+    },
+    {
+     "name": "Iridium(PNT)",
+     "ticker": "XNAS:IRDM",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S510",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "STL(위성 시각·위치) GPS 백업 — PNT 매출 별도 공개 없음"
+    },
+    {
+     "name": "Trimble",
+     "ticker": "XNAS:TRMB",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "RTX 등 GNSS 보정 구독"
+    },
+    {
+     "name": "Hexagon",
+     "ticker": "XSTO:HEXA-B",
+     "country": "SE",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "NovAtel·TerraStar 보정 서비스"
+    },
+    {
+     "name": "TrustPoint",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "LEO PNT 스타트업"
+    },
+    {
+     "name": "한국항공우주산업(KAI)",
+     "ticker": "047810",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S540",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "KPS(3.7조 원·8기) — 1호기 2029-09 발사 목표; KAI 는 위성 본체 기여 주장, 역할 배분은 공식 확인 못 함"
+    },
+    {
+     "name": "LIG넥스원",
+     "ticker": "079550",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+     "note": "KPS 참여(회사 보도자료 언급, 역할 미상)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.data.pnt",
+   "open_questions": [
+    "KPS 본체·탑재체 업체별 계약(우주청 발표)",
+    "Iridium PNT 매출",
+    "LEO PNT 시장 규모 상충"
+   ],
+   "note": "쉬운 설명: 위치·시각 신호를 주는 서비스(GPS 같은) — GPS 가 전파 교란(재밍·스푸핑)에 약해 LEO 위성으로 더 강한 신호를 주는 대체 항법이 뜬다. 변화: 중동·우크라이나 GPS 교란으로 수요 급증, Xona 가치 24.5억으로 자금이 몰리지만 상용 매출은 2027년부터."
+  },
+  {
+   "id": "space.service.enabler.spectrum",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.enabler",
+   "name": "주파수·궤도 자원(면허)",
+   "spec": "ITU 등록·각국 면허(FCC 등), MSS·AWS 대역 거래, 궤도 슬롯·EPFD 규칙",
+   "qty_per_unit": {
+    "v": 115,
+    "unit": "MHz(2026년 EchoStar 매각 대역 합)",
+    "basis": "SpaceX 65MHz(AWS-4·H블록·AWS-3) + AT&T 50MHz(600MHz 20·3.45GHz 30), FCC 2026-05-12 승인",
+    "asof": "2026-05-12",
+    "source": "S513",
+    "grade": "②"
+   },
+   "price": {
+    "v": [
+     170,
+     196
+    ],
+    "unit": "억 USD(SpaceX-EchoStar 거래)",
+    "basis": "SpaceX 가 EchoStar 위성·지상 겸용 주파수 65MHz 에 지불 — 보도별 170억/196억; AT&T 몫 230억은 2026-07 종결(S512)",
+    "asof": "2026-07-28",
+    "source": "S513",
+    "grade": "②"
+   },
+   "cost_share_pct": "없음 — 주파수·궤도 면허는 연간 매출 시장이 아니라 일회성 자산 거래(우주경제 4,290억 분해 축에 없음)",
+   "makers": [
+    {
+     "name": "EchoStar",
+     "ticker": "XNAS:SATS",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S512",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "판매자 — AT&T 230억(종결)·SpaceX 170억(2027 종결 예정) 주파수 매각, 24억 달러 에스크로 조건"
+    },
+    {
+     "name": "SpaceX",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S513",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "구매자 — MSS+지상 겸용 대역 확보로 D2D V2, 지상 구축 의무 면제"
+    },
+    {
+     "name": "AT&T",
+     "ticker": "XNYS:T",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S512",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "구매자(지상 이동통신용) — 600MHz·3.45GHz"
+    },
+    {
+     "name": "Globalstar(Band 53/n53·L·S MSS)",
+     "ticker": "XNAS:GSAT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S507",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "MSS 주파수 보유 — 아마존이 116억 달러에 인수(FCC 면허 이전 승인)"
+    },
+    {
+     "name": "Iridium(L밴드)",
+     "ticker": "XNAS:IRDM",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "①",
+     "source": "S511",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "L밴드 MSS — Rocket Lab 인수 EV 80억의 핵심 자산"
+    },
+    {
+     "name": "Ligado Networks",
+     "unlisted": {
+      "parent": "독립 비상장(채권단)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "L밴드 MSS — 파산 절차 중 AST SpaceMobile 와 주파수 이용 계약(2025, 진행 미확인)"
+    },
+    {
+     "name": "SES(C밴드 정리)",
+     "ticker": "XPAR:SESG",
+     "country": "LU",
+     "role": "qualifying",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+     "note": "인텔샛과 함께 미국 C밴드 정리 보상금 수령 이력"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.enabler.spectrum",
+   "open_questions": [
+    "SpaceX-EchoStar 170억 vs 196억",
+    "FCC EPFD 개편(S541)이 ITU WRC-27 에 반영될지 — 의제에 없음",
+    "한국: 주파수는 정부 할당 — 한국 상장사 해당 없음"
+   ],
+   "note": "쉬운 설명: 위성이 쓸 전파 대역과 궤도 자리를 쓸 권리(면허). 없으면 위성을 띄워도 서비스를 못 판다. 변화: 2026년 FCC 가 EPFD 한도를 풀어(S541) LEO 용량 최대 7배, 동시에 MSS 주파수 보유사가 170억~230억 달러에 팔려 '주파수 = D2D 입장권' 가격이 확인됐다."
+  },
+  {
+   "id": "space.service.enabler.insurance",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.service.enabler",
+   "name": "우주 보험",
+   "spec": "발사·궤도상 보험, 제3자 배상 — 연 보험료 수억 달러대의 작은 시장, 대형 사고 한 번에 적자",
+   "qty_per_unit": "미측정 — 연간 보험 가입 위성·발사 건수 공개 집계 미확보(Seradata 유료 DB)",
+   "price": {
+    "v": 12,
+    "unit": "%(보험가액 대비 요율)",
+    "basis": "국내 다목적실용위성 3A호 발사+궤도보험 요율 약 12%(과거 20%) — 2018년 국내 사례, 현재 서구 요율은 하반기 인하 압력(S544)",
+    "asof": "2018",
+    "source": "S549",
+    "grade": "②"
+   },
+   "cost_share_pct": {
+    "v": 0.157,
+    "unit": "%",
+    "basis": "2025년 전 세계 우주보험료 약 6.75억 달러(Space Intel Report 초기 추정) ÷ 4,290억 × 100; 2024년은 5.8억(S548)",
+    "asof": "2025",
+    "source": "S542",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "Lloyd's 신디케이트(런던 시장)",
+     "unlisted": {
+      "parent": "Lloyd's of London 시장(개별 신디케이트 소유 다양)",
+      "parent_ticker": null
+     },
+     "country": "UK",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "우주보험 주력 시장 — 개별 신디케이트 몫 미측정"
+    },
+    {
+     "name": "Munich Re",
+     "ticker": "XETR:MUV2",
+     "country": "DE",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "우주 원·재보험 주요 인수자"
+    },
+    {
+     "name": "AXA XL",
+     "ticker": "XPAR:CS",
+     "country": "FR",
+     "role": "main",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "우주 인수 주요사"
+    },
+    {
+     "name": "Swiss Re",
+     "ticker": "XSWX:SREN",
+     "country": "CH",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "우주 인수 노출 축소 보도"
+    },
+    {
+     "name": "HDI Global(Talanx)",
+     "ticker": "XETR:TLX",
+     "country": "DE",
+     "role": "historical",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S544",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "2026-05-19 우주보험 철수"
+    },
+    {
+     "name": "Arthur J. Gallagher(브로커)",
+     "ticker": "XNYS:AJG",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "②",
+     "source": "S543",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "주요 우주보험 브로커 — 2025 손해율 15%→75%(SpainSat) 집계"
+    },
+    {
+     "name": "Marsh McLennan(브로커)",
+     "ticker": "XNYS:MMC",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 운영자별 점유율 공개 집계 없음(SIA·Novaspace·Analysys Mason 유료 본문으로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+     "note": "우주보험 중개"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.service.enabler.insurance",
+   "open_questions": [
+    "2025 보험료 6.75억은 초기 단일 추정 — 확정치",
+    "한국 손보사 개별 인수 몫 미확인(우주청: 국내 인수 비율 낮고 해외 재보험 의존, S545) — 한국 상장 대안 없음",
+    "LEO 군집 대부분 무보험(자가보험) 비중"
+   ],
+   "note": "쉬운 설명: 로켓 폭발·위성 고장 때 돈을 물어주는 보험. 연 보험료 6~7억 달러로 아주 작아 대형 사고 한 번(SpainSat 약 4억 달러)에 1년 이익이 날아간다. 변화: 대형 GEO 발주 감소로 2026 보험료 물량 축소, 신규 인수자 7,000만 달러 유입으로 요율은 하락 — 성장 후보 없음."
+  }
+ ]
+}

@@ -17,7 +17,7 @@ sys.path.insert(0, str(HERE))
 import check_bom as cb  # noqa: E402
 
 CAND = re.compile(r"^없음 — 새 박스 후보:\s*([a-z0-9_.]+)")
-CHAIN_OF = {"semi.front": "semi_krx_subchains", "semi.back": "semi_krx_subchains", "semi.fab": "semi_krx_subchains",
+CHAIN_OF = {"space.": "space", "semi.front": "semi_krx_subchains", "semi.back": "semi_krx_subchains", "semi.fab": "semi_krx_subchains",
             "semi.equip": "memory", "semi.pkg": "memory", "semi.material": "memory", "semi.design": "memory"}
 
 

@@ -1,0 +1,987 @@
+{
+ "filler": "F6",
+ "nodes": [
+  {
+   "id": "space.inspace.ssa",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "우주상황인식(SSA)·우주교통관리",
+   "spec": "레이더·망원경으로 위성·잔해 추적, 충돌 경보·회피 기동 조율 — 위성 1.5만 기 시대의 교통관제",
+   "qty_per_unit": {
+    "v": 11000,
+    "unit": "기(TraCSS 파일럿이 충돌 조율하는 위성 수)",
+    "basis": "미 상무부 TraCSS 파일럿 — 사용자 62곳·위성 11,000기 이상(2026-07)",
+    "asof": "2026-07-17",
+    "source": "S604",
+    "grade": "②"
+   },
+   "price": {
+    "v": 20.7,
+    "unit": "백만 USD/레이더 1식 계약",
+    "basis": "LeoLabs 개조형 Scout 컨테이너 레이더 1식 미 우주군 계약(2026-08) — 데이터 구독 단가는 비공개",
+    "asof": "2026-08-26",
+    "source": "S602",
+    "grade": "①"
+   },
+   "cost_share_pct": {
+    "v": 0.4,
+    "unit": "%",
+    "basis": "SSA 시장 17.3억 달러(2025, MarketsandMarkets) ÷ 4,290억 달러 × 100 — 조사사별 15~22억 달러",
+    "asof": "2025",
+    "source": "S601",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "LeoLabs",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S602",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "지상 위상배열 레이더망 + 궤도 카탈로그 데이터 구독(미 우주군·상무부·위성 운영사). 2026-08 우주군 2,070만 달러 레이더 계약, 2026-11 국방부 OSC 최대 1.5억 달러 조건부 대출(S603) — 실제 매출 찍히는 회사"
+    },
+    {
+     "name": "Slingshot Aerospace",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "광학 망원경망·SSA 소프트웨어(Seradata 인수), 미 우주군 계약 — 2026년 새 계약은 검색에서 확인 못 함"
+    },
+    {
+     "name": "ExoAnalytic Solutions",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "정지궤도(GEO) 광학 추적망 최대 사업자 — 정부·보험사 고객"
+    },
+    {
+     "name": "COMSPOC",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "궤도 결정·충돌 분석 소프트웨어(미 정부·운영사)"
+    },
+    {
+     "name": "Kayhan Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "충돌 회피 조율 소프트웨어(Pathfinder) — 운영사 구독"
+    },
+    {
+     "name": "NorthStar Earth & Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "CA",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "우주 기반 SSA 위성 — 실증 단계"
+    },
+    {
+     "name": "Digantara",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "IN",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "우주 기반 SSA 위성·카탈로그 — 실증 단계"
+    },
+    {
+     "name": "Electro Optic Systems(EOS Space Systems)",
+     "ticker": "XASX:EOS",
+     "country": "AU",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "레이저 거리측정·광학 우주 추적 — 주력은 방산 원격무장, 우주 매출 비중 작음(검증 필요)"
+    },
+    {
+     "name": "한화시스템",
+     "ticker": "272210",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S605",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "한국천문연구원과 국가 우주상황인식시스템(K-SSA) 민간 체계개발 계약(2026-09) — 우주감시위성 광학카메라·AI 지상체계. 금액 미공개"
+    },
+    {
+     "name": "스페이스맵(SpaceMap)",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+     "note": "AI 우주교통관리 소프트웨어 스타트업(비상장) — 매출 규모 미확인"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.ssa",
+   "open_questions": [
+    "상업 SSA 업체별 매출·점유율 공개 자료 없음(LeoLabs·Slingshot 모두 비상장)",
+    "SSA 시장 규모 조사사별 15억~22억 달러로 어긋남(S601 외 Astute·Fortune) — 정부 자체 감시망(Space Fence 등) 포함 여부 차이",
+    "TraCSS FY2027 예산 최종 확정 여부(예산안 OSC 1,100만 달러, TraCSS 항목 없음) 미확인",
+    "LIG넥스원(079550) 우주감시 레이더 사업은 검색으로 확인 못 함 — 메이커에서 뺌"
+   ],
+   "note": "쉬운 설명: 하늘의 교통경찰 — 레이더·망원경으로 위성과 쓰레기를 추적해 충돌 경보를 낸다. 변화: 위성 1.1만 기 이상이 미 상무부 TraCSS 파일럿에 들어왔지만 FY2027 예산안이 우주상업국 예산을 -80% 깎아 민간 무료 서비스 존폐가 걸렸다(S604) → 상업 데이터 구매(유료화)로 이동. 실제 매출: LeoLabs·Slingshot·ExoAnalytic(비상장, 정부 계약 중심). 실증: NorthStar·Digantara 등 우주 기반 감시."
+  },
+  {
+   "id": "space.inspace.servicing",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "궤도상 서비스(수명연장·급유·잔해 제거)",
+   "spec": "도킹해 연료 보급·자세 유지·견인, 고장 위성·잔해 제거(ADR), 궤도상 조립",
+   "qty_per_unit": {
+    "v": 3,
+    "unit": "기(2026년 발사된 궤도상 서비스 기체)",
+    "basis": "2026년 발사 — Northrop MRV(+MEP 3기, 07-21), Katalyst LINK(07-03, 실패 S608), Starfish Otter(10-01, S609)",
+    "asof": "2026-10-01",
+    "source": "S607",
+    "grade": "②"
+   },
+   "price": {
+    "v": 52.5,
+    "unit": "백만 USD/계약",
+    "basis": "미 우주군→Starfish Space 저궤도 군집 위성 폐기 서비스 계약(2026-01) — 임무당 단가는 비공개",
+    "asof": "2026-01-21",
+    "source": "S610",
+    "grade": "②"
+   },
+   "cost_share_pct": {
+    "v": [
+     0.07,
+     0.42
+    ],
+    "unit": "%",
+    "basis": "하한: Novaspace 10년 누적 30억 달러 ≈ 연 3억 달러(S612) ÷ 4,290억; 상한: Meticulous 2025년 18억 달러(S613) ÷ 4,290억 — 정의 차이로 6배 벌어짐",
+    "asof": "2026",
+    "source": "S612",
+    "grade": "②"
+   },
+   "makers": [
+    {
+     "name": "Northrop Grumman(SpaceLogistics)",
+     "ticker": "XNYS:NOC",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S607",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "MEV-1·2 로 GEO 수명연장 실매출(Intelsat). 2026-07-21 로봇팔 MRV + MEP 3기 발사(Intelsat 2·Optus 1) — 업계에서 유일하게 반복 매출이 찍히는 사업"
+    },
+    {
+     "name": "Astroscale",
+     "ticker": "XTKS:186A",
+     "country": "JP",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S611",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "잔해 제거·수명연장·점검(ADRAS-J2, ELSA-M, 영국·미국 법인). FY2027 1Q 매출 11.96억 엔(-4.4%), 수주잔고 363.5억 엔; FY2027 매출 가이던스 70~90억 엔. ELSA-M·ADRAS-J2 는 Isar Spectrum 발사 계약 — 매출은 정부 개발비 중심(실증)"
+    },
+    {
+     "name": "Starfish Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S609",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "소형 도킹 서비스 기체 Otter — 2026-10-01 첫 실크기 발사(NASA 잔해 점검), 우주군 5,250만 달러 폐기 서비스(S610). 실증 단계"
+    },
+    {
+     "name": "Katalyst Space Technologies",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S608",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "NASA Swift 재부양(LINK) 2026-08 실패 — 도킹 전 자세 안정화 불가"
+    },
+    {
+     "name": "ClearSpace",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "CH",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "잔해 포획 제거(ESA·영국 우주청 과제) — 실증 전"
+    },
+    {
+     "name": "Orbit Fab",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "궤도 급유 포트(RAFTI)·연료 탱커 — 실증 단계"
+    },
+    {
+     "name": "Impulse Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S626",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "궤도수송기(Mira·Helios) — NASA VADR 수송 주문(약 13억 달러 6건 중 일부, S626) 수주"
+    },
+    {
+     "name": "MDA Space",
+     "ticker": "XTSE:MDA",
+     "country": "CA",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "우주 로봇팔(Canadarm3)·궤도상 서비스 로봇 부품, Starlab 지분 파트너(S616)"
+    },
+    {
+     "name": "워커린스페이스",
+     "unlisted": {
+      "parent": "독립 비상장(국내 스타트업)",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S615",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "국내 유일 궤도상 서비싱 전문(회사 주장) — VEROS-1 운영, 2026 스케일업팁스"
+    },
+    {
+     "name": "KAIST 인공위성연구소(ADR-SAT)",
+     "unlisted": {
+      "parent": "국가 연구기관(KAIST)",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S614",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+     "note": "우주청 우주물체 능동제어위성 — 2027 누리호 6차, 로봇팔 포획·재진입 실증"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.servicing",
+   "open_questions": [
+    "시장 규모가 조사사별로 6배 차이(Novaspace 연 약 3억 vs Meticulous 18억 달러)",
+    "Northrop SpaceLogistics 매출 별도 공시 없음 — MEV 계약 단가(연 약 1,300만 달러 보도)는 출처 미확보",
+    "Astroscale 단신 원문(TSE) 대조 필요 — S611 은 요약 페이지",
+    "MRV 첫 MEP 장착 시점(2027?) 미확인"
+   ],
+   "note": "쉬운 설명: 우주 정비소 — 연료가 떨어진 위성에 붙어 수명을 늘리거나 고장 위성·잔해를 끌어내린다. 변화: 2026년 Northrop MRV 발사(MEP 30기 장착 가능), Starfish Otter 첫 비행, 반면 Katalyst Swift 구조 실패로 도킹 기술 리스크 재확인. 실제 매출: Northrop(MEV) 하나. 실증: Astroscale·Starfish·ClearSpace·Orbit Fab(정부 개발비가 매출 대부분)."
+  },
+  {
+   "id": "space.inspace.station",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "상업 우주정거장·유인 수송",
+   "spec": "ISS(2030년 퇴역) 후계 민간 정거장, 유인·화물 수송선, 우주복",
+   "qty_per_unit": {
+    "v": 2,
+    "unit": "개(운영 중 유인 정거장)",
+    "basis": "ISS(2030년 퇴역 예정)·중국 톈궁 — 상업 정거장은 0개(Haven-1 2027-1Q로 연기 S618)",
+    "asof": "2026",
+    "source": "S000",
+    "grade": "③"
+   },
+   "price": "미측정 — 민간 우주인 좌석·정거장 임대 단가 비공개(Axiom·NASA 임무 주문 계약서 공개분으로 재야 함). 참고: NASA CLD 최종 RFP 최소 보장 1억·상한 340.6억 달러(S617)",
+   "cost_share_pct": "미측정 — 상업 정거장 시장 규모 출처 없음(아직 매출 0; NASA ISS 운영비를 대체 수요로 볼지 정의 필요)",
+   "makers": [
+    {
+     "name": "Axiom Space",
+     "unlisted": {
+      "parent": "독립 비상장(보령 등 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S620",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "민간 우주인 ISS 임무(Ax-5 2026-01 서명·2027-01 이후 발사), 첫 모듈 2027~2028, 우주복 AxEMU — 임무 매출은 있음, 정거장은 실증 전"
+    },
+    {
+     "name": "Voyager Technologies(Starlab)",
+     "ticker": "XNYS:VOYG",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S616",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Starlab 지분 61%(MDA 등 파트너), 예약 약 7억 달러·Starlab 매출 0. 3Q26 전사 매출 8,870만 달러(+124% YoY, Astrobotic 포함), 수주잔고 7.42억 달러 — 매출은 방산·달 사업에서"
+    },
+    {
+     "name": "Blue Origin(Orbital Reef)",
+     "unlisted": {
+      "parent": "Jeff Bezos 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S617",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Orbital Reef(Sierra Space 파트너) — NASA CLD 1단계 funded SAA, 2026-12-08 CLD 최종 입찰"
+    },
+    {
+     "name": "Vast",
+     "unlisted": {
+      "parent": "Jed McCaleb 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S618",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Haven-1 단일 모듈 정거장 — 2026 중반 → 2027-1Q 발사로 연기, Haven-2 로 CLD 입찰"
+    },
+    {
+     "name": "Sierra Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S619",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Dream Chaser 화물 우주선(ISS 도킹 빼고 2026년 말 자유비행 시연), LIFE 팽창형 모듈"
+    },
+    {
+     "name": "SpaceX",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Crew Dragon — 미국 유일 운항 유인 수송선, ISS 디오비트 차량(USDV) 계약 — 실제 매출 찍히는 회사"
+    },
+    {
+     "name": "Boeing(Starliner)",
+     "ticker": "XNYS:BA",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S622",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "Starliner-1 화물 전용 무인 비행 2026-12~2027-01 — 유인 운항 미재개"
+    },
+    {
+     "name": "중국 유인우주공정판공실(톈궁)",
+     "unlisted": {
+      "parent": "중국 국가(CMSA·CASC)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "captive",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "톈궁 정거장 상주 운영·선저우/톈저우 수송"
+    },
+    {
+     "name": "보령",
+     "ticker": "003850",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S621",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+     "note": "2022년 말 Axiom 지분 투자(약 5,000만~6,000만 달러 보도), 합작사 브랙스스페이스 — 우주 연구 인프라 국내 사업권, 사업화 목표 2030년(매출 0)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.station",
+   "open_questions": [
+    "상업 정거장 시장 규모·단가 공개 수치 없음",
+    "NASA CLD 2단계 선정(2027 봄) 결과 — 몇 곳이 얼마 받을지",
+    "Dream Chaser 2026년 말 첫 비행 실제 일정 미확인",
+    "Axiom 2026년 투자 유치 금액 보도 엇갈림(3.5억 vs 5.25억 달러)"
+   ],
+   "note": "쉬운 설명: ISS(2030 퇴역)를 이을 민간 우주정거장과 사람을 실어 나르는 우주선. 변화: NASA 가 CLD 를 funded SAA 에서 최소 1억·상한 340.6억 달러 계약으로 바꿔 2026-10 최종 RFP, 2027 봄 선정(S617·S616). Vast Haven-1 2027 로 연기. 실제 매출: SpaceX(Dragon)·Axiom(민간 임무)뿐. 실증: Starlab·Orbital Reef·Haven·Dream Chaser(정거장 매출 0)."
+  },
+  {
+   "id": "space.inspace.lunar",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "달 착륙선·심우주 수송",
+   "spec": "NASA CLPS 상업 달 화물, 아르테미스 유인 착륙선(HLS), 달 통신·항법 중계",
+   "qty_per_unit": "미측정 — 2026년 서방 상업 달 착륙 시도 0회로 보임(IM-3·Griffin-1 2027 연기, Blue Moon MK1 미착륙 S628) — 창어 7 발사 여부 미확인",
+   "price": {
+    "v": [
+     149,
+     177
+    ],
+    "unit": "백만 USD/CLPS 달 화물 임무",
+    "basis": "하한: Astrobotic NASA 착륙 2회 2.98억 달러 ÷ 2(S616); 상한: Firefly Blue Ghost M4 1.767억 달러(S625)",
+    "asof": "2025-07",
+    "source": "S625",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — 달 경제 연 시장 규모 출처 없음(NASA CLPS 상한 42억·CLPS 2 상한 100억 달러는 10년 IDIQ 상한이라 연 시장 아님, S626)",
+   "makers": [
+    {
+     "name": "Intuitive Machines",
+     "ticker": "XNAS:LUNR",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S623",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "Nova-C 착륙선·달 통신 중계(NSN)·Lanteris(구 Maxar 위성) 인수(2026-01). 2Q26 매출 2.06억 달러(약 4배), 수주잔고 17.6억 달러, 2026 가이던스 9억~10억 달러; 첫 달 중계 위성은 IM-3(2027-1Q) — 매출 대부분은 Lanteris 위성 제조"
+    },
+    {
+     "name": "Firefly Aerospace",
+     "ticker": "XNAS:FLY",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S624",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "Blue Ghost(2025 달 착륙 성공)·Elytra 궤도선. 3Q26 매출 1.107억 달러(+259%), 수주잔고 17억 달러, 2026 가이던스 4.40~4.50억 — 실제 매출 찍히는 회사"
+    },
+    {
+     "name": "Astrobotic(Voyager 자회사)",
+     "unlisted": {
+      "parent": "Voyager Technologies 100%(2026-07 인수)",
+      "parent_ticker": "XNYS:VOYG"
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S616",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "Griffin-1 남극 착륙선 2027-01 이후, NASA 착륙 2회 2.98억 달러; 3Q26 Voyager 매출 중 3,100만 달러, 2027 매출 1.5~2억 달러 전망(회사 주장)"
+    },
+    {
+     "name": "ispace",
+     "ticker": "XTKS:9348",
+     "country": "JP",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S629",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "FY2026/3 매출 33.07억 엔(-26%), Mission 3(미국 CLPS) 2027 이후 연기 — ispace-U.S. 는 CLPS 2 선정(S626)"
+    },
+    {
+     "name": "Blue Origin(Blue Moon)",
+     "unlisted": {
+      "parent": "Jeff Bezos 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S628",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "Blue Moon MK1 화물 착륙선 열진공 시험 완료·달 착륙 미실증, MK2 HLS(아르테미스); CLPS 2 선정·PROMISE 원자력 로버 9,400만 달러(S626)"
+    },
+    {
+     "name": "SpaceX(Starship HLS)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S626",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "아르테미스 유인 착륙선(HLS) — 아르테미스 3 은 2027 지구 궤도 도킹 시험으로 변경(S627); CLPS 2 선정·지월 통신 시연 별도 수주"
+    },
+    {
+     "name": "Lockheed Martin",
+     "ticker": "XNYS:LMT",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S626",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "Orion 유인 캡슐(아르테미스 2 성공 2026-04, S627), CLPS 2 선정"
+    },
+    {
+     "name": "Northrop Grumman",
+     "ticker": "XNYS:NOC",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S626",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "CLPS 2 선정, Gateway HALO 모듈"
+    },
+    {
+     "name": "중국 CNSA·CAST(창어)",
+     "unlisted": {
+      "parent": "중국 국가(CASC)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "captive",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S630",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "창어 7호 2026 하반기 발사 계획(남극), 2030 유인 착륙 목표"
+    },
+    {
+     "name": "한화에어로스페이스",
+     "ticker": "012450",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S631",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+     "note": "항우연 달 착륙선(2032) 추진시스템 1,033억 원 수주(2025-12), 궤도수송선 비행모델 주관(2029 누리호 8차로 달 전이궤도 투입, S632)"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.lunar",
+   "open_questions": [
+    "2026년 실제 달 착륙 시도 횟수(창어 7·Blue Ghost 2 발사 여부) 미확인",
+    "Intuitive Machines 3Q26(2026-11-12 발표 예정) 숫자 미반영 — 2Q 까지만",
+    "Blue Ghost Mission 2 일정 미확인",
+    "ispace Mission 3 연기 시점 보도 엇갈림(2027/2028/2030)"
+   ],
+   "note": "쉬운 설명: 달까지 화물·사람을 내려놓는 착륙선과 달 통신 중계. 변화: 아르테미스 2 유인 근접비행 성공(2026-04), 아르테미스 3 은 2027 지구 궤도 시험으로 바뀌고 착륙은 4호(2028)로(S627); NASA CLPS 2(상한 100억 달러, 8곳) 2026-11-07 출범(S626). 실제 매출: Firefly·Intuitive Machines(매출 대부분 위성·방산), Astrobotic(Voyager 안). 실증: Blue Moon MK1·ispace·Griffin(2026 착륙 0회)."
+  },
+  {
+   "id": "space.inspace.manufacturing",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "우주 제조·재진입 캡슐",
+   "spec": "미세중력 의약품 결정·광섬유·반도체 소재 생산, 지구 귀환 캡슐, 극초음속 재진입 시험",
+   "qty_per_unit": {
+    "v": 2,
+    "unit": "회(Varda 캡슐 지구 회수, 2026-01~07)",
+    "basis": "Varda W-5(2026-01-29)·W-6(2026-05-18) 호주 Koonibba 회수 — 다른 업체 2026 회수 성공 0",
+    "asof": "2026-07-29",
+    "source": "S633",
+    "grade": "②"
+   },
+   "price": "미측정 — 캡슐 임무 단가 비공개(Varda 미 공군 4,800만 달러 다회 계약은 회당 단가 미분리)",
+   "cost_share_pct": "미측정 — 우주 제조·재진입 시장 규모 신뢰할 출처 없음(재진입 업체 현황표에도 총액 없음, S633)",
+   "makers": [
+    {
+     "name": "Varda Space Industries",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "W 시리즈 재진입 캡슐 — W-1~W-6 반복 회수, 매출은 미 공군·국방 극초음속 재진입 시험이 주력(의약품 제조는 미증명). 2026-01 시리즈 D 2.51억 달러(S634)"
+    },
+    {
+     "name": "Redwire",
+     "ticker": "XNYS:RDW",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S635",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "ISS 미세중력 제조 장비(PIL-BOX 의약 결정)·우주 구조물·방산(Edge Autonomy). 3Q26 매출 1.090억 달러(+5.4%), 수주잔고 6.197억 달러 — 우주 제조는 매출 일부"
+    },
+    {
+     "name": "SpaceX(Dragon·Starfall)",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "Dragon 화물 회수 독점급, 소형 회수 캡슐 Starfall 2026-06-23 발사 — Varda 가격 압박 가능"
+    },
+    {
+     "name": "Sierra Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "Dream Chaser 자유비행 시험 2026년 말 목표 — 활주로 귀환 화물"
+    },
+    {
+     "name": "Space Forge",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "GB",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "ForgeStar-1(2025-06 발사, 궤도 플라즈마 반도체 결정 성장) — 회수 미실증"
+    },
+    {
+     "name": "Inversion Space",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "Arc 재진입기 개발 중, Ray(2025-01) 재진입 미완"
+    },
+    {
+     "name": "Outpost",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "첫 궤도 재진입 2027 예정"
+    },
+    {
+     "name": "The Exploration Company",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "DE/FR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "Nyx 캡슐 — 2025-06 시연 착수 전 통신 두절, 회수 미검증"
+    },
+    {
+     "name": "ATMOS Space Cargo",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "DE",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "PHOENIX 1(2025-04) 궤도·재진입 1회"
+    },
+    {
+     "name": "ElevationSpace",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "JP",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S633",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "AOBA(약 220kg) 회수 위성 — Isar Spectrum 발사 예정, 비행 0"
+    },
+    {
+     "name": "보령",
+     "ticker": "003850",
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S621",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "우주 생명과학 R&D 인프라 사업(브랙스스페이스·Axiom), 독일우주청 MOU — 매출 0"
+    },
+    {
+     "name": "스페이스린텍",
+     "unlisted": {
+      "parent": "독립 비상장(국내 스타트업)",
+      "parent_ticker": null
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+     "note": "미세중력 단백질 결정 실험·회수 캡슐 개발(비상장) — 매출 미확인"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.manufacturing",
+   "open_questions": [
+    "Varda 매출·임무 단가 비공개",
+    "2026년 하반기 Varda W-7 이후 회수 횟수 미확인",
+    "ElevationSpace·스페이스린텍 2026 비행 일정 미확인"
+   ],
+   "note": "쉬운 설명: 무중력에서 약 결정·광섬유·반도체 소재를 만들고 캡슐로 지구에 가져온다. 변화: Varda 가 2026년 W-5·W-6 를 연달아 회수해 '정기 회수'를 처음 보였고, SpaceX Starfall 이 같은 시장에 들어옴(S633). 실제 매출: Varda(대부분 국방 극초음속 시험)·Redwire(ISS 장비)·SpaceX(Dragon). 실증: Space Forge·Inversion·Outpost·ElevationSpace(회수 0)."
+  },
+  {
+   "id": "space.inspace.compute",
+   "kind": "input",
+   "input_type": "service_ip",
+   "parent": "space.inspace",
+   "name": "궤도 데이터센터·우주 컴퓨팅",
+   "spec": "태양광이 24시간 드는 궤도에 AI 연산 위성을 띄운다 — 전력·방열·발사 단가가 관건",
+   "qty_per_unit": {
+    "v": 1000000,
+    "unit": "기(FCC 신청 위성 수, 승인 아님)",
+    "basis": "SpaceX Orbital Data Center system 신청 최대 100만 기(500~2,000km, 2026-01-30 신청·FCC 접수 공고)",
+    "asof": "2026-02-04",
+    "source": "S636",
+    "grade": "①"
+   },
+   "price": {
+    "v": [
+     1500,
+     2900
+    ],
+    "unit": "USD/kg(현재 저궤도 발사 단가)",
+    "basis": "Google 추정 — 궤도 데이터센터 경제성은 약 200달러/kg 필요(2035 무렵), 현재 1,500~2,900달러/kg",
+    "asof": "2026-10-01",
+    "source": "S638",
+    "grade": "②"
+   },
+   "cost_share_pct": "미측정 — 상업 매출 사실상 0(Starcloud 2026-04 기준 공개 매출 없음, S637) — 시장 규모 조사 수치는 전망치뿐",
+   "makers": [
+    {
+     "name": "SpaceX",
+     "ticker": "XNAS:SPCX",
+     "country": "US",
+     "role": "main",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "①",
+     "source": "S636",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "FCC 에 최대 100만 기 「Orbital Data Center」 신청(2026-01) — 투자설명서상 첫 AI 연산 위성 2028 이후(보도). 발사·위성 제조 모두 내재화"
+    },
+    {
+     "name": "Starcloud",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S637",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "Starcloud-1(2025-11, H100) 궤도 AI 학습 첫 시연, Starcloud-2 2027; 2026-08 2.5억 달러(가치 23억 달러, Nvidia 투자) — 매출 없음, 실증"
+    },
+    {
+     "name": "Alphabet(Google Project Suncatcher)",
+     "ticker": "XNAS:GOOGL",
+     "country": "US",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S638",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "TPU 4개 시제 위성 2026-10-01 발사·정상 교신, 2027 레이저 링크 2기 — 실증"
+    },
+    {
+     "name": "Planet Labs",
+     "ticker": "XNYS:PL",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S638",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "Suncatcher 시제 위성 공동 제작(버스·운용) — 위성 제작 매출 수혜 가능"
+    },
+    {
+     "name": "Nvidia",
+     "ticker": "XNAS:NVDA",
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S637",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "우주용 Space-1 Vera Rubin 모듈(Starcloud 협업), Starcloud 지분 투자"
+    },
+    {
+     "name": "ADA Space(国星宇航)",
+     "unlisted": {
+      "parent": "독립 비상장(홍콩 상장 신청 중)",
+      "parent_ticker": null
+     },
+     "country": "CN",
+     "role": "second",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S639",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "「삼체 컴퓨팅 컨스텔레이션」 12기(2025-05, 저장성연구소 공동), 목표 2,800기 — 홍콩 IPO 3번째 신청(2026-05)"
+    },
+    {
+     "name": "Blue Origin",
+     "unlisted": {
+      "parent": "Jeff Bezos 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "궤도 데이터센터 구상 공개 — 하드웨어 일정 미확인"
+    },
+    {
+     "name": "Axiom Space(ODC 노드)",
+     "unlisted": {
+      "parent": "독립 비상장(VC 투자)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "③",
+     "source": "S000",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "궤도 데이터센터 노드 실증 계획 — 실증 전"
+    },
+    {
+     "name": "KT SAT",
+     "unlisted": {
+      "parent": "KT 자회사",
+      "parent_ticker": "030200"
+     },
+     "country": "KR",
+     "role": "qualifying",
+     "share_pct": "미측정 — 사업자별 점유율 공개 자료 없음(신생 시장, 회사 공시·Novaspace/BryceTech 조사로 재야 함)",
+     "grade": "②",
+     "source": "S640",
+     "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+     "note": "한국형 우주 데이터센터 내부 아키텍처 설계(회사 주장), 2028-11 누리호 7차 첫 궤도 실증 계획 참여"
+    }
+   ],
+   "box_ref": "없음 — 새 박스 후보: space.inspace.compute",
+   "open_questions": [
+    "궤도 컴퓨팅 매출을 실제로 올리는 회사 없음 — 수혜 부품(대형 태양전지 어레이·라디에이터·레이저 링크) 매출 분리 불가",
+    "SpaceX FCC 신청 승인 여부·첫 위성 시점(2027~2028) 미확인",
+    "Starcloud-2 일정 보도 엇갈림(2026-10 vs 2027)",
+    "한국 2027 우주 데이터센터 예산 21억 원뿐 — 실증 예산(140억 원) 확보 미정"
+   ],
+   "note": "쉬운 설명: 해가 24시간 드는 궤도에 AI 서버 위성을 띄워 전력·냉각 문제를 푸는 구상. 변화: 2026년 SpaceX 100만 기 FCC 신청, Google Suncatcher 시제기 발사, Starcloud 23억 달러 가치 투자 — 그러나 방열·발사 단가(현재 1,500~2,900달러/kg vs 필요 200달러/kg)가 병목(S638). 실제 매출: 없음(돈은 발사·위성 제작사로 — SpaceX·Planet). 실증: 전원."
+  }
+ ]
+}
