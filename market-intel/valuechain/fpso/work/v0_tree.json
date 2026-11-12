@@ -1,0 +1,292 @@
+{
+ "chain": "fpso",
+ "note": "V0 승인 트리(메이커·값 없음)",
+ "nodes": [
+  {
+   "id": "fpso",
+   "kind": "product",
+   "parent": null,
+   "name": "FPSO 1척 — 심해 유전용 부유식 원유 생산·저장·하역 설비",
+   "spec": "원유 10만~25만 배럴/일 처리, 원유 약 200만 배럴 저장. 해저 유정에서 올라온 원유·가스·물을 배 위에서 분리하고, 가스·물은 다시 땅속에 넣고, 원유는 저장했다가 셔틀 유조선에 넘긴다. 한 자리에 20~30년 묶여 있다. 고객은 석유회사(ExxonMobil·Petrobras·Shell·TotalEnergies·Equinor)"
+  },
+  {
+   "id": "fpso.find",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "1. 유전 찾기·평가 — FPSO 이전 단계",
+   "spec": "해저 지층을 음파로 찍고(탄성파), 시추선이 수심 2,000m 아래 땅을 뚫어 기름이 있는지 확인하고, 생산용 우물을 미리 뚫어 둔다. FPSO는 우물이 준비된 뒤에 온다"
+  },
+  {
+   "id": "fpso.find.seismic",
+   "kind": "input",
+   "parent": "fpso.find",
+   "name": "해저 탄성파 탐사",
+   "spec": "배가 음파를 쏘고 해저에 센서(OBN)를 깔아 지층 영상을 만든다. 데이터를 여러 석유회사에 파는 멀티클라이언트 모델",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.find.drilling",
+   "kind": "input",
+   "parent": "fpso.find",
+   "name": "심해 시추선(드릴십·반잠수식)",
+   "spec": "유정 하나에 수십 일. 일일 용선료(day rate)로 빌린다",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.find.well_services",
+   "kind": "input",
+   "parent": "fpso.find",
+   "name": "유정 시험·완결 서비스",
+   "spec": "뚫은 우물에서 실제로 기름이 얼마나 나오는지 시험하고, 생산용으로 마감(완결)한다",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.find.octg",
+   "kind": "input",
+   "parent": "fpso.find",
+   "name": "유정용 강관(OCTG)",
+   "spec": "우물 벽을 받치는 이음매 없는 고압 강관. 심해는 고급 사양",
+   "input_type": "material"
+  },
+  {
+   "id": "fpso.decide",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "2. 개발 결정 — 설계(FEED)·투자 결정(FID)·계약 방식",
+   "spec": "석유회사가 FPSO 업체 1~2곳에 기본 설계(FEED)를 맡기고, 투자 결정(FID)을 내리면 그중 한 곳과 건조 계약을 맺는다. FEED를 따낸 곳이 본계약을 가져갈 확률이 높다. 계약은 ① 리스(업체가 소유하고 하루 얼마씩 받음) ② 판매+운영(석유회사가 사고 업체는 운영만) 두 가지"
+  },
+  {
+   "id": "fpso.decide.feed",
+   "kind": "input",
+   "parent": "fpso.decide",
+   "name": "기본 설계(FEED)",
+   "spec": "처리 용량·가스 처리 방식·선체 크기를 정하는 설계. 본계약의 입장권",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.decide.financing",
+   "kind": "input",
+   "parent": "fpso.decide",
+   "name": "프로젝트 금융·특수목적법인(SPC) 지분",
+   "spec": "리스형이면 FPSO 업체가 배를 소유하는 SPC를 세우고 은행 대출(비소구)과 파트너 지분으로 건조비를 댄다. MODEC은 SPC 지분을 보통 25~35%만 갖는다(S002)",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.build",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "3. 건조(EPCI) — 설계·조달·건조·설치",
+   "spec": "FPSO 업체가 총괄한다. 선체는 조선소에서, 상부 설비 모듈은 여러 야드에서 만들어 한 야드에서 합친다(통합). 3~4년 걸린다. 대개 정액(lump-sum) 계약이라 원가가 넘치면 업체가 손실을 떠안는다(MODEC 2021년 순손실 $363M, S016)"
+  },
+  {
+   "id": "fpso.build.hull",
+   "kind": "stage",
+   "parent": "fpso.build",
+   "name": "3-1. 선체 — 떠 있는 기름 탱크",
+   "spec": "VLCC(초대형 유조선) 크기의 배. 예전엔 헌 유조선을 개조했지만 지금 대형은 표준 신조 선체를 미리 지어 둔다(SBM Fast4Ward, S003). 엔진이 없어 스스로 못 간다 — 예인선이 끌고 간다"
+  },
+  {
+   "id": "fpso.build.hull.yard",
+   "kind": "input",
+   "parent": "fpso.build.hull",
+   "name": "선체 건조 조선소",
+   "spec": "신조 선체 또는 VLCC 개조. 지금 대형 FPSO 선체는 대부분 중국 야드",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.build.hull.standard",
+   "kind": "input",
+   "parent": "fpso.build.hull",
+   "name": "표준 선체 설계(IP)",
+   "spec": "같은 설계 선체를 반복 건조해 공기를 줄이는 방식. 수주 전에 선체를 미리 발주해 두기도 한다(투기적 발주)",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.build.topsides",
+   "kind": "stage",
+   "parent": "fpso.build",
+   "name": "3-2. 상부 설비 — 배 위의 정유 공장",
+   "spec": "갑판 위에 올리는 모듈 15~25개: 원유·가스·물 분리, 가스 압축·재주입, 해수 처리·주입, 발전. FPSO 원가의 가장 큰 몫이고 기술 난도가 여기 있다"
+  },
+  {
+   "id": "fpso.build.topsides.modules",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "공정 모듈 제작·통합",
+   "spec": "분리기·열교환기·배관을 철골 틀에 조립한 모듈을 만들어 선체에 올리고 연결(통합)·시운전한다",
+   "input_type": "component"
+  },
+  {
+   "id": "fpso.build.topsides.compression",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "가스 압축기",
+   "spec": "같이 나온 가스를 고압으로 눌러 땅속에 되넣거나(재주입) 육지로 보낸다. 브라질 프리솔트는 CO2가 많아 압축·분리 설비가 크다",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.build.topsides.power",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "발전용 가스터빈",
+   "spec": "배 전체 전기(수십~100MW)를 만든다. 생산 가스를 연료로 쓴다",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.build.topsides.water",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "해수 처리·주입 펌프",
+   "spec": "바닷물의 황산염을 걸러 고압으로 유층에 넣어 압력을 유지한다(그래야 기름이 계속 올라온다)",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.build.topsides.piping",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "배관·피팅·밸브",
+   "spec": "고압·부식 환경용 배관과 이음쇠·밸브. 수천 톤",
+   "input_type": "component"
+  },
+  {
+   "id": "fpso.build.topsides.control",
+   "kind": "input",
+   "parent": "fpso.build.topsides",
+   "name": "계장·제어·안전 시스템",
+   "spec": "공정 제어(DCS), 비상 정지, 화재·가스 감지",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.build.mooring",
+   "kind": "stage",
+   "parent": "fpso.build",
+   "name": "3-3. 계류 — 한자리에 붙잡아 두기",
+   "spec": "터렛(배가 바람 따라 빙 돌 수 있게 하는 회전축) 또는 사방 계류. 해저까지 체인·로프·앵커로 묶는다. 터렛은 업체 핵심 기술"
+  },
+  {
+   "id": "fpso.build.mooring.turret",
+   "kind": "input",
+   "parent": "fpso.build.mooring",
+   "name": "터렛 계류 시스템",
+   "spec": "배 앞쪽에 박는 거대한 회전 베어링 구조. 라이저(해저 배관)가 이 안으로 들어온다",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.build.mooring.lines",
+   "kind": "input",
+   "parent": "fpso.build.mooring",
+   "name": "계류 체인·로프·앵커",
+   "spec": "수백 m~수 km 길이의 대형 체인과 합성섬유 로프, 해저 말뚝",
+   "input_type": "material"
+  },
+  {
+   "id": "fpso.build.epci_mgmt",
+   "kind": "input",
+   "parent": "fpso.build",
+   "name": "설계·조달·사업 관리(FPSO 업체 본업)",
+   "spec": "FPSO 업체의 진짜 역할: 공정 설계, 수백 개 장비 조달, 여러 야드 조율, 정액 계약의 원가 위험 관리. 공장은 남의 것을 빌리고 '두뇌와 위험'을 판다",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.subsea",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "4. 해저 생산 시스템 — 우물과 FPSO를 잇는 배관망",
+   "spec": "해저 우물 꼭대기에 밸브 덩어리(해저 트리)를 얹고, 여러 우물을 매니폴드로 모아, 라이저로 FPSO까지 올린다. FPSO 한 척에 우물 10~30개(③). FPSO와 따로 발주된다"
+  },
+  {
+   "id": "fpso.subsea.trees",
+   "kind": "input",
+   "parent": "fpso.subsea",
+   "name": "해저 트리·매니폴드·제어",
+   "spec": "수심 2,000m에서 원격으로 우물을 여닫는 장치",
+   "input_type": "equipment"
+  },
+  {
+   "id": "fpso.subsea.surf",
+   "kind": "input",
+   "parent": "fpso.subsea",
+   "name": "엄빌리컬·라이저·플로라인(SURF)",
+   "spec": "제어 신호·화학제를 보내는 탯줄(엄빌리컬)과 원유를 올리는 유연·강관 배관",
+   "input_type": "component"
+  },
+  {
+   "id": "fpso.subsea.install",
+   "kind": "input",
+   "parent": "fpso.subsea",
+   "name": "해저 설치 용역",
+   "spec": "전용선이 배관을 깔고 장비를 내린다",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.install",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "5. 현장 설치 — 끌고 가서 묶고 잇기",
+   "spec": "완성된 FPSO를 예인선이 아시아 야드에서 브라질·가이아나까지 1~3개월 끌고 간다. 앵커를 박고 체인을 걸고 라이저를 끌어올려 연결한 뒤 첫 원유(first oil)"
+  },
+  {
+   "id": "fpso.install.ahts",
+   "kind": "input",
+   "parent": "fpso.install",
+   "name": "예인·앵커 설치 지원선(AHTS)",
+   "spec": "앵커·체인을 다루는 힘센 배. 일일 용선료",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.install.pipeline",
+   "kind": "input",
+   "parent": "fpso.install",
+   "name": "육상 송유관",
+   "spec": "고정식 플랫폼은 원유를 송유관으로 육지에 보낸다",
+   "input_type": "component"
+  },
+  {
+   "id": "fpso.operate",
+   "kind": "stage",
+   "parent": "fpso",
+   "name": "6. 운영 20~30년 — 리스료와 운영비를 받는 시간",
+   "spec": "리스형이면 석유회사가 하루 얼마(용선료)를 낸다. 기름값·생산량과 무관하고, 가동률(uptime)만 맞추면 된다. 운영·정비(O&M)는 별도 계약. MODEC의 O&M 잔고 평균 잔여 14.1년, 용선 잔고 $8.3B·잔여 11.1년(S002)"
+  },
+  {
+   "id": "fpso.operate.om",
+   "kind": "input",
+   "parent": "fpso.operate",
+   "name": "운영·정비 인력(O&M)",
+   "spec": "배 위 100~150명이 2주 교대로 산다. 가동률 98%+ 가 목표",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.operate.vessels",
+   "kind": "input",
+   "parent": "fpso.operate",
+   "name": "보급선·지원선",
+   "spec": "식량·부품·화학제를 실어 나르는 배",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.operate.rov",
+   "kind": "input",
+   "parent": "fpso.operate",
+   "name": "수중 로봇(ROV) 점검·작업",
+   "spec": "사람이 못 가는 수심에서 로봇이 계류·배관·트리를 점검",
+   "input_type": "service_ip"
+  },
+  {
+   "id": "fpso.operate.spares",
+   "kind": "input",
+   "parent": "fpso.operate",
+   "name": "예비 부품·장비 애프터마켓",
+   "spec": "압축기·터빈·펌프 정비 부품. 장비 OEM의 반복 매출",
+   "input_type": "component"
+  },
+  {
+   "id": "fpso.operate.chemicals",
+   "kind": "input",
+   "parent": "fpso.operate",
+   "name": "생산 화학제",
+   "spec": "부식·수화물·스케일 방지제. 생산량에 비례",
+   "input_type": "material"
+  }
+ ]
+}

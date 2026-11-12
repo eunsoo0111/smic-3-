@@ -1,0 +1,1468 @@
+{
+ "schema": "valuechain/bom@1",
+ "chain": "copper_mine",
+ "product": "구리 정광 — 연 10만 톤급 노천 구리 광산 1곳",
+ "unit_basis": "광산 1곳(연 구리 10만 톤, 황화광 노천). 원가 비중의 분모는 노드마다 basis에 적는다(채굴비·선광비·현장 운영비가 다르다)",
+ "asof": "2026-11-12",
+ "status": "v1_filled",
+ "approved_by": {
+  "who": "본체(메인 세션)",
+  "at": "2026-11-12",
+  "stage": "V0",
+  "note": "사용자 요청 「내가 직접 만든다면」 구조로 V0 트리 승인 후 V1 채움. 체인 yaml 이 없어 V2 박스 연결은 빈칸 규약으로 둠"
+ },
+ "stage_log": [
+  {
+   "stage": "V0",
+   "at": "2026-11-12",
+   "by": "본체",
+   "what": "무하네스 초안 — 탐사·개발·채굴·선광·판매 5단계, 입력 31개. '안 쓰는 것' 2행(지하 채굴·SX-EW)"
+  },
+  {
+   "stage": "V0",
+   "at": "2026-11-12",
+   "by": "본체",
+   "what": "레포 문서(03·04)와 대조 — 03·04에 없던 칸: 분쇄 매체·라이너·부선 시약·타이어·자율 운전·EPCM·제련소. work/v0_diff.md"
+  },
+  {
+   "stage": "V1",
+   "at": "2026-11-12",
+   "by": "본체",
+   "what": "메이커·값 채움(웹 + 레포 + 모델 지식). 서브에이전트 대신 본체가 직접 채움"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "cu_mine",
+   "kind": "product",
+   "parent": null,
+   "name": "구리 정광 — 연 10만 톤급 노천 구리 광산 1곳",
+   "spec": "황화 구리 광석(평균 품위 약 0.5~0.6%)을 캐서 갈고 골라 구리 25~30% 정광으로 만들어 제련소에 판다. 판매가 = LME 구리값 × 지급 비율 − 제련수수료(TC/RC). 구리 1톤을 얻으려면 광석 약 200톤(회수율 85~90% 가정)과 그만큼의 폐석을 함께 옮긴다(추정)",
+   "box_ref": "없음 — 제품 노드는 박스 축 아님",
+   "open_questions": [
+    "품위 0.5% 가정의 정확한 2026년 세계 평균(S&P 최신판) 확인"
+   ],
+   "price": {
+    "v": 13768,
+    "unit": "USD/t(구리, LME 3개월물)",
+    "asof": "2026-11-12",
+    "source": "S010",
+    "grade": "②",
+    "basis": "11-09 종가. 9월 사상 최고 $14,858(레포 03번)"
+   }
+  },
+  {
+   "id": "cu_mine.explore",
+   "kind": "stage",
+   "parent": "cu_mine",
+   "name": "1. 탐사 — 땅속에 구리가 얼마나 있나 찾기",
+   "spec": "지질도·물리탐사로 후보지를 고르고, 구멍을 수천 개 뚫어 돌 기둥(코어)을 꺼내 성분을 분석한다. 그 숫자로 매장량 모델을 만든다. 발견에서 생산까지 평균 17.5년(S001)",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "구리 탐사 예산 중 주니어(소형 탐사사) 비중 — 주니어가 금값·주식시장 자금에 민감"
+   ]
+  },
+  {
+   "id": "cu_mine.explore.geophysics",
+   "kind": "input",
+   "parent": "cu_mine.explore",
+   "name": "지질·물리 탐사",
+   "spec": "항공 자력·전자기·유도분극(IP) 탐사, 위성 분광. 시추할 자리를 고르는 단계",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 프로젝트별 용역가, 공개 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": "미측정 — 소규모 전문 업체가 대부분이고 대표 상장사가 없다(이번 범위 밖)"
+  },
+  {
+   "id": "cu_mine.explore.drilling",
+   "kind": "input",
+   "parent": "cu_mine.explore",
+   "name": "탐사 시추 용역",
+   "spec": "다이아몬드 코어 시추(돌 기둥 채취)·RC 시추(돌가루 채취). 리그 1대 + 시추공 2~3명이 하루 24시간 교대. 미터당 단가로 받는다. 매출은 '리그 수 × 가동률 × 단가'",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "시추사 가동률이 몇 %를 넘으면 단가가 오르나(과거 2011년 사이클 대조)"
+   ],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 미터당 단가는 회사들이 공시하지 않음",
+   "cost_share_pct": "미측정 — 탐사 예산 중 시추비 비중 공개 자료 없음(업계 통념은 절반 이상, 검증 필요)",
+   "makers": [
+    {
+     "name": "Major Drilling",
+     "grade": "①",
+     "source": "S017",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTSE:MDI",
+     "country": "CA",
+     "note": "특수 시추 세계 최대급. 1Q FY27 매출 +22.4%",
+     "role": "main"
+    },
+    {
+     "name": "Foraco",
+     "grade": "①",
+     "source": "S015",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTSE:FAR",
+     "country": "FR/CA",
+     "note": "3Q 매출 +21.4%, 가동률 53%"
+    },
+    {
+     "name": "Capital Ltd",
+     "grade": "②",
+     "source": "S016",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XLON:CAPD",
+     "country": "GB/아프리카",
+     "note": "3Q 시추 가동률 72%(전년 76%)"
+    },
+    {
+     "name": "Perenti(DDH1 시추 부문)",
+     "grade": "②",
+     "source": "S025",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:PRN",
+     "country": "AU",
+     "note": "채굴 용역이 주력, 시추는 일부"
+    },
+    {
+     "name": "Boart Longyear",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "American Industrial Partners(사모펀드, 2024 인수)",
+      "parent_ticker": null
+     },
+     "country": "US",
+     "note": "2024년 상장폐지"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.explore.drill_tools",
+   "kind": "input",
+   "parent": "cu_mine.explore",
+   "name": "시추 소모품·시추공 센서",
+   "spec": "다이아몬드 비트·로드, 시추 유체, 시추공 방향 측정 센서, 현장 코어 분석기. 미터를 뚫을 때마다 닳는 소모품",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "component",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Imdex",
+     "grade": "②",
+     "source": "S024",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:IMD",
+     "country": "AU",
+     "note": "시추공 센서·유체 임대. 1Q FY27 매출 +31%",
+     "role": "main"
+    },
+    {
+     "name": "Boart Longyear",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "American Industrial Partners",
+      "parent_ticker": null
+     },
+     "country": "US"
+    },
+    {
+     "name": "Epiroc",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSTO:EPI-A",
+     "country": "SE",
+     "note": "시추 공구 일부"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.explore.assay",
+   "kind": "input",
+   "parent": "cu_mine.explore",
+   "name": "시료 분석(지화학 시험)",
+   "spec": "코어를 잘라 갈고 녹여 구리·금 등 함량을 잰다. 시료 1개당 요금. 탐사사가 시험소를 고르지만 대형 시험소 몇 곳이 대부분을 처리한다. 운영 광산의 품위 관리 시료도 받는다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 시료당 요금표 비공개",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "ALS",
+     "grade": "①",
+     "source": "S011",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:ALQ",
+     "country": "AU",
+     "note": "지화학 1위. 광물 마진 33%, FY27 광물 유기 성장 가이던스 +13~15%",
+     "role": "main"
+    },
+    {
+     "name": "SGS",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSWX:SGSN",
+     "country": "CH"
+    },
+    {
+     "name": "Bureau Veritas",
+     "grade": "①",
+     "source": "S026",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XPAR:BVI",
+     "country": "FR",
+     "note": "광물은 일부. 산업·원자재 부문 3Q 유기 +5.1%"
+    },
+    {
+     "name": "Intertek",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XLON:ITRK",
+     "country": "GB"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.explore.software",
+   "kind": "input",
+   "parent": "cu_mine.explore",
+   "name": "자원량 모델링·광산 설계 소프트웨어",
+   "spec": "시추 결과로 3D 광체 모델을 만들고 채굴 계획을 짠다. 구독형(연 반복 매출)",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Micromine",
+     "grade": "①",
+     "source": "S012",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Weir Group",
+      "parent_ticker": "XLON:WEIR"
+     },
+     "country": "AU/GB",
+     "note": "Weir가 2025년 인수. 2026 반복매출 +25% 이상 목표(회사 주장)"
+    },
+    {
+     "name": "Seequent",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Bentley Systems",
+      "parent_ticker": "XNAS:BSY"
+     },
+     "country": "NZ/US"
+    },
+    {
+     "name": "Datamine",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Constellation Software",
+      "parent_ticker": "XTSE:CSU"
+     },
+     "country": "GB"
+    },
+    {
+     "name": "Maptek",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "AU"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.develop",
+   "kind": "stage",
+   "parent": "cu_mine",
+   "name": "2. 개발·건설 — 광산과 공장을 짓기",
+   "spec": "타당성 조사 → 인허가(환경·물·지역사회) → 건설. 연 10만 톤이면 약 $2.2B(S&P 가중평균 기준 추정), 북미는 1톤당 약 $28,900로 더 비싸다. 2000년엔 1톤당 $4,000~5,000",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "2026년 착공(FID) 구리 프로젝트 목록과 장비 발주 시점"
+   ],
+   "price": {
+    "v": 22359,
+    "unit": "USD/(연간 1톤 생산능력)",
+    "asof": "2026-11-12",
+    "source": "S003",
+    "grade": "②",
+    "basis": "신규 26개 프로젝트 가중평균. 연 10만 톤 광산이면 약 $2.2B(추정)"
+   }
+  },
+  {
+   "id": "cu_mine.develop.epcm",
+   "kind": "input",
+   "parent": "cu_mine.develop",
+   "name": "설계·조달·건설관리(EPCM)",
+   "spec": "엔지니어링 회사가 광산·선광장을 설계하고 장비를 사 주고 건설을 관리한다. 건설비의 일부를 수수료로 받는다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Worley",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:WOR",
+     "country": "AU"
+    },
+    {
+     "name": "Fluor",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XNYS:FLR",
+     "country": "US"
+    },
+    {
+     "name": "Hatch",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "직원 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "CA"
+    },
+    {
+     "name": "Bechtel",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "가족 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "US"
+    },
+    {
+     "name": "Ausenco",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "독립 비상장",
+      "parent_ticker": null
+     },
+     "country": "AU"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.develop.infra",
+   "kind": "input",
+   "parent": "cu_mine.develop",
+   "name": "물·전력·도로 기반시설",
+   "spec": "칠레·페루 사막 광산은 해수담수화 설비와 수백 km 송수관이 필요하다. 송전선·변전소·접근 도로·항만 포함",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": "미측정 — 이번 범위 밖(담수화·송전 업체는 별도 체인)"
+  },
+  {
+   "id": "cu_mine.mine",
+   "kind": "stage",
+   "parent": "cu_mine",
+   "name": "3. 채굴 — 뚫고, 터뜨리고, 싣고, 나르기",
+   "spec": "노천광은 계단식 구덩이(피트)를 판다. 천공기가 구멍을 뚫고, 폭약으로 암반을 깨고, 굴착기(쇼벨)가 300~400톤 트럭에 실어 파쇄기나 폐석장으로 나른다. 품위가 떨어질수록 같은 구리를 얻으려고 더 많은 돌을 옮겨야 한다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "대표 광산 1곳의 연간 이동 물량(광석+폐석)과 트럭 대수 — 칠레 Escondida 등 공시로 확인"
+   ]
+  },
+  {
+   "id": "cu_mine.mine.drill_rig",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "생산 천공기(발파공)",
+   "spec": "지름 20~30cm, 깊이 15m 안팎 구멍을 격자로 뚫는다. 자율 운전 확대",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Epiroc",
+     "grade": "②",
+     "source": "S014",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSTO:EPI-A",
+     "country": "SE",
+     "note": "3Q 수주 유기 +12%, 광산 고객 83%",
+     "role": "main"
+    },
+    {
+     "name": "Caterpillar",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XNYS:CAT",
+     "country": "US"
+    },
+    {
+     "name": "Komatsu(P&H)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6301",
+     "country": "JP"
+    },
+    {
+     "name": "Sandvik",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSTO:SAND",
+     "country": "SE",
+     "note": "지하 천공이 주력"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.explosives",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "폭약·기폭 시스템",
+   "spec": "질산암모늄 기반 벌크 폭약(에멀전·ANFO)을 트럭이 구멍에 바로 채우고, 전자 뇌관으로 순서대로 터뜨린다. 폭약 회사가 현장에 상주해 장전까지 해 주는 서비스형",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "material",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 채굴비 중 '석유계 품목(연료·폭약·타이어)'이 절반 미만이라는 자료만 있음(S005)",
+   "makers": [
+    {
+     "name": "Orica",
+     "grade": "②",
+     "source": "S020",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:ORI",
+     "country": "AU",
+     "note": "세계 1위. 2026년부터 발파 물량 공시 중단",
+     "role": "main"
+    },
+    {
+     "name": "Dyno Nobel",
+     "grade": "②",
+     "source": "S021",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:DNL",
+     "country": "AU/US"
+    },
+    {
+     "name": "Enaex",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Sigdo Koppers",
+      "parent_ticker": "XSGO:SK"
+     },
+     "country": "CL",
+     "note": "칠레 1위"
+    },
+    {
+     "name": "한화(글로벌 부문 산업용 화약)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "000880",
+     "country": "KR",
+     "note": "국내 대안. 해외 광산 매출 비중은 미확인"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.shovel",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "적재 장비(전기 로프 쇼벨·초대형 굴착기)",
+   "spec": "버킷 한 번에 50~100톤을 떠서 트럭에 싣는다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Komatsu",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6301",
+     "country": "JP"
+    },
+    {
+     "name": "Caterpillar",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XNYS:CAT",
+     "country": "US"
+    },
+    {
+     "name": "Hitachi Construction Machinery",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6305",
+     "country": "JP"
+    },
+    {
+     "name": "Liebherr",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "가족 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "CH/DE"
+    },
+    {
+     "name": "HD현대건설기계",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "267270",
+     "country": "KR",
+     "note": "국내 대안이지만 초대형 광산 쇼벨은 없음, 중대형 굴착기까지"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.haul_truck",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "초대형 운반 트럭(220~400톤급)",
+   "spec": "광산 운영비의 큰 몫. 점점 무인 자율 운전으로 바뀐다. 트럭은 10~20년 쓰고 부품·정비가 반복 매출",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Caterpillar",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XNYS:CAT",
+     "country": "US",
+     "role": "main"
+    },
+    {
+     "name": "Komatsu",
+     "grade": "②",
+     "source": "S022",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6301",
+     "country": "JP",
+     "note": "상반기 광산 장비 외부 매출 +8.5%(환율 제외 -1.4%)",
+     "role": "main"
+    },
+    {
+     "name": "Hitachi Construction Machinery",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6305",
+     "country": "JP"
+    },
+    {
+     "name": "Liebherr",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "가족 소유 비상장",
+      "parent_ticker": null
+     },
+     "country": "DE"
+    },
+    {
+     "name": "BelAZ",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "벨라루스 국영",
+      "parent_ticker": null
+     },
+     "country": "BY"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.truck_body",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "트럭 적재함·버킷",
+   "spec": "광석에 따라 맞춤 설계한 경량 적재함. 닳으면 교체",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "component",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Austin Engineering",
+     "grade": "②",
+     "source": "S019",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:ANG",
+     "country": "AU",
+     "note": "FY26 가이던스 세 번 하향(미주 공장 문제)"
+    },
+    {
+     "name": "ESCO(버킷·마모 부품)",
+     "grade": "①",
+     "source": "S012",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Weir Group",
+      "parent_ticker": "XLON:WEIR"
+     },
+     "country": "US",
+     "note": "Weir 사업부. 3Q 장비 수주 유기 -26%"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.tyres",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "초대형 광산용 타이어(OTR 57~63인치)",
+   "spec": "개당 수천만 원, 수명 1년 안팎. 석유계 원가 항목",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "국내 타이어사(한국타이어 등)의 초대형 광산용 진입 여부 — 없음으로 가정(③)"
+   ],
+   "input_type": "component",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Bridgestone",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:5108",
+     "country": "JP"
+    },
+    {
+     "name": "Michelin",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XPAR:ML",
+     "country": "FR"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.fuel",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "디젤 연료",
+   "spec": "트럭·쇼벨·천공기 연료. 전기 트롤리·배터리 트럭으로 일부 대체 중",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "material",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": {
+    "v": 15,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S006",
+    "grade": "②",
+    "basis": "에너지(연료+전력) 합계가 Freeport 구리 광산 현장 운영비의 15%(2025), 2026년 약 17%. 연료만의 비중은 미측정"
+   },
+   "makers": "미측정 — 지역 연료 유통사, 투자 대상 아님"
+  },
+  {
+   "id": "cu_mine.mine.maintenance",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "중장비 정비 인력·부품",
+   "spec": "트럭·쇼벨을 24시간 돌리려면 정비가 필수. 숙련 정비공이 모자라 외주가 는다. 딜러가 부품·서비스를 함께 판다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": {
+    "v": 43,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S005",
+    "grade": "②",
+    "basis": "인건비가 노천 채굴비의 43%(Costmine 북미 표본, 정비 외 운전 인력 포함) — 정비만의 비중 아님"
+   },
+   "makers": [
+    {
+     "name": "Mader Group",
+     "grade": "②",
+     "source": "S018",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:MAD",
+     "country": "AU",
+     "note": "정비 인력 파견. FY26 순이익 A$50.4M, 컨센 하회"
+    },
+    {
+     "name": "Finning(Cat 딜러)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTSE:FTT",
+     "country": "CA/CL"
+    },
+    {
+     "name": "장비 OEM 자체 서비스",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Caterpillar·Komatsu 등",
+      "parent_ticker": "XNYS:CAT"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.autonomy",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "자율 운전·관제 소프트웨어",
+   "spec": "무인 트럭·천공기 운행 시스템과 운영 최적화 소프트웨어. 장비에 묶여 팔린다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Caterpillar(MineStar)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XNYS:CAT",
+     "country": "US"
+    },
+    {
+     "name": "Komatsu(FrontRunner)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:6301",
+     "country": "JP"
+    },
+    {
+     "name": "Epiroc",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSTO:EPI-A",
+     "country": "SE"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.mine.underground",
+   "kind": "input",
+   "parent": "cu_mine.mine",
+   "name": "지하 채굴 장비·용역",
+   "spec": "노천이 아닌 지하 광산이면 지하 로더·트럭·천공 점보와 채굴 용역 업체를 쓴다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "없음 — 이 체인은 노천 광산 기준. 지하 광산이면 Epiroc·Sandvik 지하 장비와 Perenti 같은 용역이 들어간다",
+   "price": "없음 — 노천 광산 기준이라 쓰지 않음",
+   "cost_share_pct": "없음 — 노천 광산 기준이라 쓰지 않음",
+   "makers": "없음 — 노천 기준. 지하라면 Perenti(XASX:PRN)·Epiroc·Sandvik"
+  },
+  {
+   "id": "cu_mine.process",
+   "kind": "stage",
+   "parent": "cu_mine",
+   "name": "4. 선광 — 돌을 밀가루처럼 갈아 구리만 골라내기",
+   "spec": "파쇄 → 분쇄(SAG 밀·볼 밀) → 부선(거품에 구리 광물만 붙여 띄움) → 농축·여과 → 정광. 남은 99%의 돌가루(광미)는 댐에 쌓는다. 원가의 대부분이 분쇄(한 광산 사례 59%, S023)이고, 분쇄는 전력과 쇠공·라이너를 먹는다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "품위가 0.1%p 떨어질 때 같은 구리량에 필요한 분쇄 물량·소모품 증가율(추정 모델)"
+   ],
+   "cost_share_pct": {
+    "v": 59.1,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S023",
+    "grade": "②",
+    "basis": "한 노천 구리 광산 사례에서 분쇄가 전체 운영비의 59.1%, 파쇄 약 11%"
+   }
+  },
+  {
+   "id": "cu_mine.process.crusher",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "1차 파쇄기(자이러토리 크러셔)",
+   "spec": "트럭이 쏟은 1m짜리 돌을 15~20cm로 깬다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": {
+    "v": 11,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S023",
+    "grade": "②",
+    "basis": "한 광산 사례에서 파쇄가 운영비의 약 11%"
+   },
+   "makers": [
+    {
+     "name": "Metso",
+     "grade": "①",
+     "source": "S013",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI",
+     "role": "main"
+    },
+    {
+     "name": "FLSmidth",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK",
+     "note": "2022년 thyssenkrupp 광산 사업 인수"
+    },
+    {
+     "name": "Sandvik",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSTO:SAND",
+     "country": "SE"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.mill",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "분쇄기(SAG 밀·볼 밀)",
+   "spec": "지름 10~13m 회전 드럼에 돌과 쇠공을 넣고 돌려 0.1mm 이하로 간다. 광산 전력의 가장 큰 소비처. 신규 선광장 수주가 '장비 수주'의 핵심",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Metso",
+     "grade": "①",
+     "source": "S013",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI",
+     "note": "3Q 광산 장비 수주 +79%(분쇄·파쇄가 견인)",
+     "role": "main"
+    },
+    {
+     "name": "FLSmidth",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK"
+    },
+    {
+     "name": "CITIC Heavy Industries",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSHG:601608",
+     "country": "CN"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.grinding_media",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "분쇄 매체(강철 볼)",
+   "spec": "밀 안에서 돌과 함께 굴러 돌을 깨는 쇠공. 돌을 갈수록 쇠공도 닳아 계속 넣는다 — 처리하는 돌의 양에 비례하는 소모품",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "상장사 접근로가 약하다 — 분쇄 매체는 사모펀드·칠레 그룹 소유가 대부분"
+   ],
+   "input_type": "material",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": {
+    "v": 21.5,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S005",
+    "grade": "②",
+    "basis": "선광비 중 분쇄 매체 21.5%(Costmine 북미 표본). CRU는 칠레 선광장 원가의 약 75%가 소모품·에너지·분쇄 매체라고 함(S004)"
+   },
+   "makers": [
+    {
+     "name": "Moly-Cop",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "American Industrial Partners(사모펀드)",
+      "parent_ticker": null
+     },
+     "country": "US/CL",
+     "role": "main"
+    },
+    {
+     "name": "ME Elecmetal",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Elecmetal(칠레 비상장)",
+      "parent_ticker": null
+     },
+     "country": "CL"
+    },
+    {
+     "name": "Magotteaux",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Sigdo Koppers",
+      "parent_ticker": "XSGO:SK"
+     },
+     "country": "BE/CL"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.liners",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "밀 라이너(내벽 보호판)",
+   "spec": "밀 안쪽을 덮는 고무·강철 판. 몇 달마다 교체. 교체하는 동안 밀이 멈추므로 수명과 교체 속도가 돈이다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "component",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Metso",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI"
+    },
+    {
+     "name": "Weir(Vulco)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XLON:WEIR",
+     "country": "GB"
+    },
+    {
+     "name": "ME Elecmetal",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Elecmetal(칠레 비상장)",
+      "parent_ticker": null
+     },
+     "country": "CL"
+    },
+    {
+     "name": "FLSmidth",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.slurry_pump",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "슬러리 펌프·사이클론",
+   "spec": "간 돌가루+물(슬러리)을 다음 공정으로 밀어 보낸다. 돌가루가 펌프 속을 갈아 먹어 임펠러·라이너를 계속 갈아 끼운다 — 펌프 1대 판매 뒤 수십 년 소모품 매출",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Weir(Warman)",
+     "grade": "①",
+     "source": "S012",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XLON:WEIR",
+     "country": "GB",
+     "note": "광물 부문 수주의 75%가 애프터마켓. 아프리카 최대 설치 기반(회사 주장, S028)",
+     "role": "main"
+    },
+    {
+     "name": "Metso",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI"
+    },
+    {
+     "name": "FLSmidth(Krebs)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK"
+    },
+    {
+     "name": "KSB",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XETR:KSB",
+     "country": "DE"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.flotation",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "부선기",
+   "spec": "약품을 넣은 슬러리에 공기를 불어 구리 광물만 거품에 붙여 걷어 낸다. 구리 0.5% 돌가루가 25~30% 정광이 되는 단계",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Metso",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI"
+    },
+    {
+     "name": "FLSmidth",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK"
+    },
+    {
+     "name": "Glencore Technology(Jameson Cell)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Glencore",
+      "parent_ticker": "XLON:GLEN"
+     },
+     "country": "AU"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.reagents",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "부선 시약(포수제·기포제)",
+   "spec": "구리 광물 표면에 달라붙어 거품에 뜨게 하는 화학품. 처리 물량에 비례",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "material",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Syensqo(옛 Solvay 광업 화학)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XBRU:SYENS",
+     "country": "BE"
+    },
+    {
+     "name": "Clariant",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSWX:CLN",
+     "country": "CH"
+    },
+    {
+     "name": "Orica(광업 화학)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XASX:ORI",
+     "country": "AU"
+    },
+    {
+     "name": "Nouryon",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "Carlyle(사모펀드)",
+      "parent_ticker": null
+     },
+     "country": "NL"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.dewater",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "농축·여과기",
+   "spec": "정광의 물을 빼 운송 가능한 상태로, 광미의 물을 회수해 재사용",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "FLSmidth",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XCSE:FLS",
+     "country": "DK"
+    },
+    {
+     "name": "Metso",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XHEL:METSO",
+     "country": "FI"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.tailings",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "광미 저장·관리",
+   "spec": "남은 돌가루(전체의 99% 이상)를 댐에 쌓고 감시한다. 붕괴 사고 뒤 규제가 강해져 비용이 는다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "WSP(옛 Golder)",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTSE:WSP",
+     "country": "CA"
+    },
+    {
+     "name": "Weir(광미 펌프)",
+     "grade": "①",
+     "source": "S012",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XLON:WEIR",
+     "country": "GB",
+     "note": "상반기 광미 수주 £20M 2건"
+    }
+   ]
+  },
+  {
+   "id": "cu_mine.process.power",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "전력",
+   "spec": "분쇄가 광산 전력의 대부분을 쓴다. 칠레는 재생에너지 구매계약(PPA)으로 전환 중",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "material",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": {
+    "v": 15,
+    "unit": "%",
+    "asof": "2026-11-12",
+    "source": "S006",
+    "grade": "②",
+    "basis": "에너지 합계 비중(연료 포함) — Freeport 2025"
+   },
+   "makers": "미측정 — 지역 전력회사, 이번 범위 밖"
+  },
+  {
+   "id": "cu_mine.process.sxew",
+   "kind": "input",
+   "parent": "cu_mine.process",
+   "name": "용매추출·전해채취(SX-EW)",
+   "spec": "산화 구리 광석을 산으로 녹여 바로 구리판(음극동)을 만드는 다른 공정",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "equipment",
+   "qty_per_unit": "없음 — 이 체인은 황화광 → 정광 경로. 산화광 광산만 SX-EW를 쓰고, 그 경우 정광·제련 단계가 없다",
+   "price": "없음 — 황화광 경로라 쓰지 않음",
+   "cost_share_pct": "없음 — 황화광 경로라 쓰지 않음",
+   "makers": "없음 — 황화광 경로라 쓰지 않음"
+  },
+  {
+   "id": "cu_mine.sell",
+   "kind": "stage",
+   "parent": "cu_mine",
+   "name": "5. 판매 — 정광을 제련소로 보내기",
+   "spec": "정광을 트럭·철도로 항구에 보내 배로 중국·일본·한국·유럽 제련소에 판다. 제련소는 구리값에서 제련수수료(TC/RC)를 떼고 산다. 정광이 남아돌면 TC가 높고, 모자라면 TC가 0 이하로 떨어진다",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "2027년 TC/RC 벤치마크 결과(보통 연말 타결)"
+   ]
+  },
+  {
+   "id": "cu_mine.sell.logistics",
+   "kind": "input",
+   "parent": "cu_mine.sell",
+   "name": "운송·항만·해운",
+   "spec": "정광 트럭·철도, 항만 하역, 벌크선",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": "미측정 — 공개 단가 없음",
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": "미측정 — 이번 범위 밖"
+  },
+  {
+   "id": "cu_mine.sell.smelter",
+   "kind": "input",
+   "parent": "cu_mine.sell",
+   "name": "제련소(정광의 고객)",
+   "spec": "정광을 녹여 99.99% 구리로 만든다. 광산 입장에선 제련수수료(TC/RC)가 '비용', 제련소 입장에선 '매출'. 지금은 정광이 모자라 제련소가 돈을 내고 사는 역전 상태",
+   "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+   "open_questions": [
+    "LS MnM·고려아연의 2026년 TC 계약 조건과 제련 마진"
+   ],
+   "input_type": "service_ip",
+   "qty_per_unit": "미측정 — 광산·선박마다 달라 1단위 수량을 정하지 않았다",
+   "price": {
+    "v": -310,
+    "unit": "USD/t(정광, TC)",
+    "asof": "2026-11-12",
+    "source": "S008",
+    "grade": "②",
+    "basis": "Antofagasta 11월 선적분 입찰. 2026 벤치마크는 $0(S009)"
+   },
+   "cost_share_pct": "미측정 — 공개 원가 구성 자료 없음",
+   "makers": [
+    {
+     "name": "Jiangxi Copper",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSHG:600362",
+     "country": "CN"
+    },
+    {
+     "name": "Tongling Nonferrous",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XSHE:000630",
+     "country": "CN"
+    },
+    {
+     "name": "JX Advanced Metals",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XTKS:5016",
+     "country": "JP"
+    },
+    {
+     "name": "Aurubis",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "XETR:NDA",
+     "country": "DE"
+    },
+    {
+     "name": "LS MnM",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "unlisted": {
+      "parent": "LS",
+      "parent_ticker": "006260"
+     },
+     "country": "KR",
+     "note": "국내 최대 구리 제련. TC 역전의 피해자 쪽"
+    },
+    {
+     "name": "고려아연",
+     "grade": "③",
+     "source": "S000",
+     "share_pct": "미측정 — 공개 점유율 자료 없음(유료 리포트 영역)",
+     "box_ref": "없음 — 이 레포에 체인 yaml(core/valuechain) 없음. 박스 후보는 GAPS.md §박스 후보",
+     "ticker": "010130",
+     "country": "KR",
+     "note": "아연·연 중심, 구리는 일부"
+    }
+   ]
+  }
+ ]
+}
