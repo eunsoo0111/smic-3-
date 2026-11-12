@@ -1,0 +1,528 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "valuechain/bom@1",
+ "title": "밸류체인 스터디 bom.json — 물리적 제품 구조 트리(valuechain-study 스킬)",
+ "description": "제품 → 하위 구조/공정 단계 → 입력(소재·장비·서비스/IP·부품). 빈칸은 값 객체 / \"없음 — <이유>\" / \"미측정 — <이유>\" 셋 중 하나. 의미 검사(트리 정합·출처 실재·box_ref 실재)는 check_bom.py 가 한다.",
+ "type": "object",
+ "required": [
+  "schema",
+  "chain",
+  "product",
+  "unit_basis",
+  "asof",
+  "status",
+  "approved_by",
+  "nodes"
+ ],
+ "properties": {
+  "schema": {
+   "const": "valuechain/bom@1"
+  },
+  "chain": {
+   "type": "string",
+   "pattern": "^[a-z0-9_]+$"
+  },
+  "product": {
+   "type": "string",
+   "minLength": 2
+  },
+  "unit_basis": {
+   "type": "string",
+   "minLength": 4,
+   "description": "qty_per_unit·cost_share_pct 의 분모 — 예: HBM3E 12-Hi 1 스택(36GB)"
+  },
+  "asof": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "status": {
+   "enum": [
+    "v0_draft",
+    "v0_approved",
+    "v1_filled",
+    "v2_linked",
+    "v3_queued",
+    "active"
+   ]
+  },
+  "approved_by": {
+   "anyOf": [
+    {
+     "type": "null"
+    },
+    {
+     "type": "object",
+     "required": [
+      "who",
+      "at",
+      "stage",
+      "note"
+     ],
+     "properties": {
+      "who": {
+       "type": "string"
+      },
+      "at": {
+       "type": "string"
+      },
+      "stage": {
+       "enum": [
+        "V0",
+        "V1",
+        "V2",
+        "V3",
+        "V4"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     }
+    }
+   ]
+  },
+  "stage_log": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "stage",
+     "at",
+     "by",
+     "what"
+    ]
+   }
+  },
+  "nodes": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "$ref": "#/$defs/node"
+   }
+  },
+  "process_lib_ref": {
+   "type": "string",
+   "description": "공정 묶음 라이브러리 파일 경로(레포 기준) — 노드 lib_ref·flow_ref 가 여기서 풀린다. 예 market-intel/valuechain/_process_lib/process_lib.json"
+  },
+  "process_lib": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/bundle"
+   },
+   "description": "이 제품에만 쓰는 묶음(인라인). 공용 묶음은 process_lib_ref 파일에 둔다 — 같은 id 를 두 곳에 두면 실패"
+  }
+ },
+ "$defs": {
+  "blank": {
+   "type": "string",
+   "pattern": "^(없음|미측정) — .{4,}"
+  },
+  "val": {
+   "type": "object",
+   "required": [
+    "v",
+    "unit",
+    "asof",
+    "source",
+    "grade"
+   ],
+   "properties": {
+    "v": {
+     "type": [
+      "number",
+      "string",
+      "array"
+     ],
+     "description": "값 — 범위는 [lo, hi]"
+    },
+    "unit": {
+     "type": "string",
+     "minLength": 1,
+     "description": "축 선언(개/스택·USD/스택·%·KRW…)"
+    },
+    "basis": {
+     "type": "string",
+     "description": "분모·시장·연도 한 줄"
+    },
+    "asof": {
+     "type": "string"
+    },
+    "source": {
+     "type": "string",
+     "pattern": "^S\\d{3,}$"
+    },
+    "grade": {
+     "enum": [
+      "①",
+      "②",
+      "③"
+     ]
+    },
+    "var_ref": {
+     "type": "string",
+     "pattern": "^(g|c|x)\\.[a-z0-9_]+(\\.[A-Za-z0-9_]+)+$",
+     "description": "선택 — 체인 공유 변수 id(GLOBALS_CONTRACT §12). 같은 숫자의 정본은 core/valuechain/models/_globals 레지스트리(또는 척추 inputs) 한 곳이고, 이 칸의 v 는 그 id 의 사본·범위 표기다(어긋나면 레지스트리가 정본)"
+    }
+   }
+  },
+  "val_or_blank": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/val"
+    },
+    {
+     "$ref": "#/$defs/blank"
+    }
+   ]
+  },
+  "boxref_or_blank": {
+   "anyOf": [
+    {
+     "type": "string",
+     "pattern": "^[a-z0-9_]+#[A-Za-z0-9_.-]+$"
+    },
+    {
+     "$ref": "#/$defs/blank"
+    }
+   ]
+  },
+  "maker": {
+   "type": "object",
+   "required": [
+    "name",
+    "grade",
+    "source",
+    "share_pct",
+    "box_ref"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "ticker": {
+     "type": "string",
+     "description": "KRX 6자리 또는 <MIC>:<심볼>(universe coverage_overseas 꼴)"
+    },
+    "unlisted": {
+     "type": "object",
+     "required": [
+      "parent"
+     ],
+     "properties": {
+      "parent": {
+       "type": "string"
+      },
+      "parent_ticker": {
+       "type": [
+        "string",
+        "null"
+       ]
+      }
+     }
+    },
+    "country": {
+     "type": "string"
+    },
+    "role": {
+     "enum": [
+      "main",
+      "second",
+      "qualifying",
+      "captive",
+      "historical"
+     ]
+    },
+    "share_pct": {
+     "$ref": "#/$defs/val_or_blank"
+    },
+    "grade": {
+     "enum": [
+      "①",
+      "②",
+      "③"
+     ]
+    },
+    "source": {
+     "type": "string",
+     "pattern": "^S\\d{3,}$"
+    },
+    "box_ref": {
+     "$ref": "#/$defs/boxref_or_blank"
+    },
+    "note": {
+     "type": "string"
+    }
+   },
+   "oneOf": [
+    {
+     "required": [
+      "ticker"
+     ],
+     "not": {
+      "required": [
+       "unlisted"
+      ]
+     }
+    },
+    {
+     "required": [
+      "unlisted"
+     ],
+     "not": {
+      "required": [
+       "ticker"
+      ]
+     }
+    }
+   ]
+  },
+  "node": {
+   "type": "object",
+   "required": [
+    "id",
+    "kind",
+    "parent",
+    "name",
+    "spec",
+    "box_ref",
+    "open_questions"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z0-9_]+(\\.[a-z0-9_]+)*$"
+    },
+    "kind": {
+     "enum": [
+      "product",
+      "stage",
+      "input"
+     ]
+    },
+    "input_type": {
+     "enum": [
+      "material",
+      "equipment",
+      "service_ip",
+      "component"
+     ]
+    },
+    "parent": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "name": {
+     "type": "string",
+     "minLength": 1
+    },
+    "spec": {
+     "type": "string",
+     "minLength": 4
+    },
+    "qty_per_unit": {
+     "$ref": "#/$defs/val_or_blank"
+    },
+    "price": {
+     "$ref": "#/$defs/val_or_blank"
+    },
+    "cost_share_pct": {
+     "$ref": "#/$defs/val_or_blank"
+    },
+    "makers": {
+     "anyOf": [
+      {
+       "type": "array",
+       "items": {
+        "$ref": "#/$defs/maker"
+       }
+      },
+      {
+       "$ref": "#/$defs/blank"
+      }
+     ]
+    },
+    "box_ref": {
+     "$ref": "#/$defs/boxref_or_blank"
+    },
+    "open_questions": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "note": {
+     "type": "string"
+    },
+    "lib_ref": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^lib\\.[a-z0-9_]+$"
+     },
+     "description": "이 단계가 쓰는 공정 묶음 id — 장비·소재는 묶음에서 한 번만 정의"
+    },
+    "flow_ref": {
+     "type": "string",
+     "description": "process_lib.flows 의 흐름 id(예 logic_cmos_105) — 이 단계가 그 흐름 전체를 탄다"
+    },
+    "stage_kind": {
+     "enum": [
+      "wafer",
+      "oxidation",
+      "photo",
+      "etch",
+      "deposition",
+      "implant",
+      "metallization",
+      "test",
+      "packaging",
+      "clean",
+      "anneal"
+     ],
+     "description": "8대 공정 태그 정규화(원문 태그는 process_lib flows 의 process_tag 에 보존) — kind(product|stage|input)와 다른 칸"
+    },
+    "step_no": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "bundle": {
+   "type": "object",
+   "required": [
+    "id",
+    "name",
+    "stage_kind",
+    "steps",
+    "inputs"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^lib\\.[a-z0-9_]+$"
+    },
+    "name": {
+     "type": "string"
+    },
+    "stage_kind": {
+     "enum": [
+      "wafer",
+      "oxidation",
+      "photo",
+      "etch",
+      "deposition",
+      "implant",
+      "metallization",
+      "test",
+      "packaging",
+      "clean",
+      "anneal"
+     ]
+    },
+    "hbm_path": {
+     "type": "boolean"
+    },
+    "steps": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     },
+     "description": "이 묶음을 쓰는 105단계 번호(빌더가 다시 잰다)"
+    },
+    "inputs": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/node"
+     }
+    }
+   }
+  },
+  "flow_step": {
+   "type": "object",
+   "required": [
+    "step",
+    "id",
+    "title",
+    "process_tag",
+    "stage_kind",
+    "lib_ref"
+   ],
+   "properties": {
+    "step": {
+     "type": "integer"
+    },
+    "id": {
+     "type": "string",
+     "pattern": "^s\\d{3}$"
+    },
+    "title": {
+     "type": "string"
+    },
+    "process_tag": {
+     "type": "string"
+    },
+    "stage_kind": {
+     "enum": [
+      "wafer",
+      "oxidation",
+      "photo",
+      "etch",
+      "deposition",
+      "implant",
+      "metallization",
+      "test",
+      "packaging",
+      "clean",
+      "anneal",
+      "other"
+     ]
+    },
+    "section": {
+     "type": "string"
+    },
+    "desc": {
+     "type": "string"
+    },
+    "lib_ref": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "process_lib_file": {
+   "type": "object",
+   "required": [
+    "schema",
+    "asof",
+    "source",
+    "flows",
+    "bundles"
+   ],
+   "properties": {
+    "schema": {
+     "const": "valuechain/process_lib@1"
+    },
+    "flows": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "array",
+      "items": {
+       "$ref": "#/$defs/flow_step"
+      }
+     }
+    },
+    "bundles": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/bundle"
+     }
+    }
+   }
+  }
+ }
+}
