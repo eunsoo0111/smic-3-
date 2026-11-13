@@ -1,0 +1,17 @@
+year  bottles(k)  net/btl  sga/btl  cogs/btl  contrib/btl
+2024        163     1105     1456       79     -429
+2025        400     1128     1068       77      -17
+2026E       618     1170      927       82      161
+2027E       796     1200      785       84      331
+Medicare claims share of bottles: 2024 0.375  2025 0.436
+Medicare claims growth 2025: 2.85 x ; total bottles growth 2.45 x
+bottles per Medicare bene 2025 1.087  2024 1.062
+2025 patients ~ 368 k
+2026E patients ~ 568 k
+Medicare benes 2025 / PartD enrollees(~55M): 0.29 %
+peak 2000 net price growth 3%/yr: net/btl $1,356, bottles 1,475k, patients 1,357k, new pts 1,085k/yr
+peak 2000 net price growth 5%/yr: net/btl $1,493, bottles 1,339k, patients 1,232k, new pts 986k/yr
+peak 2200 net price growth 3%/yr: net/btl $1,356, bottles 1,622k, patients 1,492k, new pts 1,194k/yr
+peak 2200 net price growth 5%/yr: net/btl $1,493, bottles 1,473k, patients 1,355k, new pts 1,084k/yr
+new starts 2026 454k -> 2031 1076k: CAGR 18.8%, cumulative unique pts thru 2031 ~4.8M = 19% of 25M, 54% of 9M
+new starts 2026 454k -> 2031 1200k: CAGR 21.4%, cumulative unique pts thru 2031 ~5.1M = 21% of 25M, 57% of 9M

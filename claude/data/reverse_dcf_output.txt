@@ -1,0 +1,39 @@
+MktCap 3,791  EV 3,556  EV+contingent 3,642
+EV/2026E guide mid 4.9x
+EV/2027 cons 3.9x
+EV/2028 cons 3.2x
+
+XDEMVY standalone NPV ($M) by peak sales / WACC  (mature EBIT margin 50%, peak 2031, LOE 2038)
+WACC 9%: peak 1.0B -> 2,488  peak 1.2B -> 2,890  peak 1.5B -> 3,484  peak 2.0B -> 4,459  peak 2.5B -> 5,420
+WACC 10%: peak 1.0B -> 2,361  peak 1.2B -> 2,740  peak 1.5B -> 3,299  peak 2.0B -> 4,216  peak 2.5B -> 5,119
+WACC 11%: peak 1.0B -> 2,244  peak 1.2B -> 2,601  peak 1.5B -> 3,128  peak 2.0B -> 3,991  peak 2.5B -> 4,841
+pipeline net value +0: implied XDEMVY peak (WACC10%) = 1,686
+pipeline net value -500: implied XDEMVY peak (WACC10%) = 1,959
+pipeline net value +500: implied XDEMVY peak (WACC10%) = 1,415
+sensitivity: margin 45% -> 1836  LOE 2035 -> 2214  LOE 2032 -> 3905
+
+--- peak timing sensitivity (WACC10%, margin 50%/55%, LOE2038) ---
+margin 50% peak 2000 in 2035: XDEMVY NPV 3,519 -> per share (pipeline 0) 74.4
+margin 50% peak 2000 in 2033: XDEMVY NPV 3,855 -> per share (pipeline 0) 81.2
+margin 50% peak 2000 in 2031: XDEMVY NPV 4,216 -> per share (pipeline 0) 88.5
+margin 50% peak 2300 in 2031: XDEMVY NPV 4,759 -> per share (pipeline 0) 99.6
+margin 50% peak 2600 in 2031: XDEMVY NPV 5,298 -> per share (pipeline 0) 110.5
+margin 55% peak 2000 in 2035: XDEMVY NPV 3,774 -> per share (pipeline 0) 79.6
+margin 55% peak 2000 in 2033: XDEMVY NPV 4,136 -> per share (pipeline 0) 86.9
+margin 55% peak 2000 in 2031: XDEMVY NPV 4,516 -> per share (pipeline 0) 94.6
+margin 55% peak 2300 in 2031: XDEMVY NPV 5,105 -> per share (pipeline 0) 106.6
+margin 55% peak 2600 in 2031: XDEMVY NPV 5,688 -> per share (pipeline 0) 118.4
+
+--- scenarios ---
+Bear {'p': 1300, 'py': 2030, 'm': 0.45, 'loe': 2035, 'pipe': -600} XDEMVY 2297 per share 37.4
+Base {'p': 2200, 'py': 2031, 'm': 0.55, 'loe': 2038, 'pipe': 0} XDEMVY 4909 per share 102.6
+Bull {'p': 2800, 'py': 2032, 'm': 0.55, 'loe': 2038, 'pipe': 800} XDEMVY 5751 per share 135.9
+
+--- no-growth floor: sales flat at 2027 level ---
+flat $955M from 2027, margin 40%, LOE 2035: NPV 1,747 -> per share (pipeline 0) 38.5; pipeline -600 -> 26.3
+flat $955M from 2027, margin 40%, LOE 2038: NPV 2,079 -> per share (pipeline 0) 45.2; pipeline -600 -> 33.0
+flat $955M from 2027, margin 45%, LOE 2035: NPV 1,849 -> per share (pipeline 0) 40.5; pipeline -600 -> 28.3
+flat $955M from 2027, margin 45%, LOE 2038: NPV 2,222 -> per share (pipeline 0) 48.1; pipeline -600 -> 35.9
+
+market cap history: Nov-2025 ~ 3406 Nov-2026 3791
+EV/annualized quarterly sales: Q3-25 6.4  Q3-26 4.6

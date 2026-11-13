@@ -1,0 +1,14 @@
+{
+ "prescribers_2023": 1646,
+ "prescribers_2024": 9839,
+ "claims_2024_national": 61157,
+ "ge65_claims_2024": 58330,
+ "n_prescribers_ge11_2024": 1277,
+ "claims_ge11_share_of_national": 0.612,
+ "median_claims_ge11_prescriber": 19.0,
+ "top10pct_of_ge11_share": 0.355,
+ "state_median_per_100k": 92.2,
+ "national_per_100k": 114.0,
+ "top_quintile_per_100k": 181.7,
+ "uplift_if_all_states_top_quintile": 1.59
+}

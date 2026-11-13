@@ -1,0 +1,4 @@
+prescriber_type,n_prescribers_ge11,claims,share_of_ge11_claims
+Optometry,804,22758,0.608
+Ophthalmology,471,14626,0.391
+Physician Assistant,2,49,0.001
