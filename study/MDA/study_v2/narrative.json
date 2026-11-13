@@ -1,0 +1,211 @@
+{
+ "ticker": "MDA",
+ "name": "MDA Space Ltd. (TSX/NYSE: MDA)",
+ "asof": "2026-11-13",
+ "created": "2026-11-13",
+ "attention": {
+  "why_now_one_liner": "수주잔고는 1Q26에 바닥을 지났는데 주가는 미국 상장가·증자가·전략 주주(CSG) 취득가 아래에 있고, 캐나다 군 통신 중궤도 본계약과 Telesat 부채 만기(12/6), 2027년 가이던스(3월)가 앞에 있다.",
+  "market_logic": "고객(Telesat·Globalstar·EchoStar)이 스페이스X·아마존에 밀리는 상업 사업자라서 수주잔고가 줄고, 성장은 인수로 사는 회사다.",
+  "must_be_true": [
+   "[정책] 캐나다 국방·우주 지출이 실제 발주로 이어진다(ESCP-P 중궤도, 레이더위성, 감시위성)",
+   "[회사 실행] 수주잔고가 1Q26 저점에서 다시 늘어난다",
+   "[고객 신용] Telesat의 GEO 부채 문제가 Lightspeed 지급을 끊지 않는다"
+  ],
+  "where_to_check": [
+   "캐나다 국방투자청 공고·MDA 분기 수주표",
+   "분기 실적 보도자료의 수주잔고 표",
+   "Telesat 6-K, 12/6 만기 전후 공시"
+  ],
+  "approved_by": null
+ },
+ "business_nature": {
+  "one_liner": "큰 정부·준정부 위성 프로그램을 수주해 몇 해에 걸쳐 매출로 바꾸는 수주 산업 — 수주잔고와 그 발주처의 지불 능력이 전부다.",
+  "what_matters_most": [
+   "대형 프로그램 수주(분기 수주의 80% 이상이 한두 건)",
+   "발주처가 정부인지 여부",
+   "납기 실행(지체상금·일정)"
+  ],
+  "what_matters_less": [
+   "분기 마진(19~20%에서 안정)",
+   "우주 테마 수급"
+  ],
+  "evidence": [
+   "2026년 9개월 수주 C$1,397M 중 두 건이 C$1,162M (분기 실적 보도자료)",
+   "9개월 매출의 70%가 캐나다 (3Q26 재무제표 주석)"
+  ],
+  "approved_by": null
+ },
+ "market_narratives": [
+  {
+   "id": "MN1",
+   "claim": "MDA의 고객은 스페이스X에 질 상업 사업자다",
+   "who_says": [
+    "2025-10-30 회사 시장 안내(고객사 M&A 루머로 주가 급변)",
+    "EchoStar 해지 2025-09"
+   ],
+   "grade": "①",
+   "priced_in": "partial",
+   "evidence": "EchoStar 해지, Globalstar 피인수, Telesat GEO 부채 만기"
+  },
+  {
+   "id": "MN2",
+   "claim": "수주잔고가 줄고 있고 성장은 인수로 만든다",
+   "who_says": [
+    "분기 실적: 잔고 4,838(1Q25)→3,949(3Q26)",
+    "2025년 수주/매출 0.73"
+   ],
+   "grade": "①",
+   "priced_in": "yes",
+   "evidence": "4Q26 가이던스 내재 매출 전년 대비 -2~-12%"
+  },
+  {
+   "id": "MN3",
+   "claim": "2027년 매출 C$2.84B, EBITDA C$540~565M",
+   "who_says": [
+    "컨센서스 12곳",
+    "Beacon 2026-11-06"
+   ],
+   "grade": "③",
+   "priced_in": "yes",
+   "evidence": "기존 사업 두 자릿수 성장 + 인수 2건 약 C$700M"
+  },
+  {
+   "id": "MN4",
+   "claim": "각국 정부의 탈(脫)스타링크 수요가 MDA의 세계 시장을 넓힌다",
+   "who_says": [
+    "MDA IR 자료(주소가능 20~30%)",
+    "Beacon"
+   ],
+   "grade": "②",
+   "priced_in": "partial",
+   "evidence": "검증 결과 캐나다 밖에서는 부품 공급뿐(IRIS² C$100M+)"
+  }
+ ],
+ "our_hypotheses": [
+  {
+   "id": "H1",
+   "claim": "MDA의 실질 발주처는 이미 캐나다 정부이고, 캐나다 국방·우주 지출 확대가 향후 3년 수주를 정한다",
+   "depends_on": [
+    "MN1"
+   ],
+   "test": "프로그램별 자금 출처를 추적해 수주잔고를 정부 재원/상업 재원으로 재분류; 캐나다 국방 우주 사업 목록과 예산·일정 표",
+   "metric": "GOV_FUNDED_BACKLOG_SHARE",
+   "falsify": "정부 재원 비중이 50% 미만이거나 ESCP-P 중궤도·감시위성 발주가 2028년 이후로 밀림",
+   "priority": 1
+  },
+  {
+   "id": "H2",
+   "claim": "수주잔고는 1Q26(C$3.69B)이 바닥이고 2027년 말까지 종전 최고(C$4.84B)를 넘는다",
+   "depends_on": [
+    "MN2"
+   ],
+   "test": "식별 가능한 대형 건(ESCP-P 중궤도, IRIS² 본계약, Lightspeed 옵션 73기, 미국 BCT 경유분)의 금액·시점 시나리오로 분기 잔고 경로 작성",
+   "metric": "BACKLOG_END",
+   "falsify": "ESCP-P 중궤도 본계약이 2027년 상반기까지 없거나 분기말 잔고가 3.69B 아래로 내려감",
+   "priority": 2
+  },
+  {
+   "id": "H3",
+   "claim": "회사는 3년 연속 최초 가이던스를 넘겼고 2027년에도 기존 사업 두 자릿수 성장이 가능하다",
+   "depends_on": [
+    "MN3"
+   ],
+   "test": "Lightspeed·Globalstar·레이더위성·Canadarm3의 연도별 매출 인식 경로를 잔고에서 역산",
+   "metric": "ORGANIC_REVENUE_GROWTH",
+   "falsify": "1Q27 기존 사업 매출이 전년 동기(464) 이하",
+   "priority": 3
+  },
+  {
+   "id": "H4",
+   "claim": "[신용·거시] Telesat GEO 부채가 법원 절차로 가도 Lightspeed 지급은 이어진다(정부 선급 C$2.0B·정부 대출). MDA 자체 레버리지는 인수 후에도 목표 범위(1.5~2.5배) 안이다",
+   "depends_on": [
+    "MN1"
+   ],
+   "test": "Telesat 20-F·6-K에서 LEO 법인의 보증 여부·정부 대출 조건·MDA 지급 조건 확인; MDA 인수 후 순차입/EBITDA 계산",
+   "metric": "TELESAT_STATUS",
+   "falsify": "Lightspeed 공사 중단 또는 MDA의 Lightspeed 채권 손상 공시",
+   "priority": 4
+  },
+  {
+   "id": "H5",
+   "claim": "[배수] 전략 주주 CSG가 C$42.69에 9.5%를 샀고 추가 노출을 쌓는 중이라 현재가 부근에 하방 지지가 있고, 수주가 돌면 배수가 회복된다",
+   "depends_on": [
+    "MN2"
+   ],
+   "test": "주가와 잔고·수주 발표일의 반응, 동종(Rocket Lab·York·Redwire) EV/EBITDA·EV/잔고 비교, CSG 13D 추적",
+   "metric": "EV_EBITDA_2027",
+   "falsify": "CSG가 지분을 줄이거나 스왑을 중단",
+   "priority": 5
+  }
+ ],
+ "drivers": [
+  {
+   "name": "분기말 수주잔고",
+   "axis": {
+    "measure": "amount",
+    "currency": "contract"
+   },
+   "current": {
+    "v": 3949.1,
+    "asof": "2026-09-30",
+    "source": "3Q26 실적 보도자료 (C$M)"
+   },
+   "moves": "both"
+  },
+  {
+   "name": "분기 신규 수주",
+   "axis": {
+    "measure": "amount",
+    "currency": "contract"
+   },
+   "current": {
+    "v": 444.2,
+    "asof": "3Q26",
+    "source": "3Q26 실적 보도자료 (C$M)"
+   },
+   "moves": "multiple"
+  },
+  {
+   "name": "캐나다 매출 비중",
+   "axis": {
+    "measure": "ratio",
+    "currency": "n/a"
+   },
+   "current": {
+    "v": 0.7,
+    "asof": "9M 2026",
+    "source": "3Q26 재무제표 주석"
+   },
+   "moves": "multiple"
+  },
+  {
+   "name": "분기 매출",
+   "axis": {
+    "measure": "amount",
+    "currency": "contract"
+   },
+   "current": {
+    "v": 498.1,
+    "asof": "3Q26",
+    "source": "3Q26 실적 보도자료 (C$M)"
+   },
+   "moves": "eps"
+  }
+ ],
+ "key_questions": [
+  "ESCP-P 중궤도 본계약은 언제, 얼마인가?",
+  "수주잔고 중 정부가 돈을 대는 비중은 얼마인가?",
+  "인수를 빼고 2027년 매출은 늘어나는가(Globalstar 소진을 무엇이 메우나)?",
+  "Telesat이 12/6을 넘기지 못하면 Lightspeed와 MDA 채권은 어떻게 되는가?",
+  "시장 컨센서스와 다른 숫자를 어디서 낼 수 있는가(2028년 수주잔고·매출)?"
+ ],
+ "what_we_do_not_know": [
+  "ESCP-P 중궤도 금액·시점, 감시위성(DESSP) 일정",
+  "수주잔고의 사업부별·연도별 인식 일정",
+  "Lightspeed·Globalstar 지체상금 규모",
+  "Telesat LEO 법인의 GEO 부채 보증 여부(원문 미확인)",
+  "컨센서스 2028년, 셀사이드 원문(0편 정독)",
+  "Canadarm3 전용에 따른 계약 변경 여부"
+ ],
+ "approved_by": null
+}
